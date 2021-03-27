@@ -1,11 +1,11 @@
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/reusableText.dart';
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/secondBar.dart';
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/thirdBar.dart';
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/transactionItems.dart';
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/upperBar.dart';
+import 'package:bitshore/widgets/bottomNavBar.dart';
+import 'package:bitshore/widgets/reusableText.dart';
+import 'package:bitshore/widgets/secondBar.dart';
+import 'package:bitshore/widgets/thirdBar.dart';
+import 'package:bitshore/widgets/transactionItems.dart';
+import 'package:bitshore/widgets/upperBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/bottomNavBar.dart';
 
 class HomePage extends StatefulWidget {
   static String id = 'homepage';

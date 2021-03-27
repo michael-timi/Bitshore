@@ -1,4 +1,4 @@
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/reusableText.dart';
+import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 
 class HomePageOptions extends StatelessWidget {

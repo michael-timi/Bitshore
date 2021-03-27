@@ -1,10 +1,10 @@
+import 'package:bitshore/screens/homepage_Screen.dart';
 import 'package:bitshore/screens/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onBoardingScreen_two.dart';
 
 import 'exchangePage.dart';
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/screens/homepage_Screen.dart';
 import 'package:bitshore/profilePage.dart';
 import 'package:bitshore/savingsPage.dart';
 import 'package:flutter/material.dart';
