@@ -1,6 +1,6 @@
+import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'reusableText.dart';
 
 class TransactionItems extends StatelessWidget {
 
@@ -25,11 +25,11 @@ class TransactionItems extends StatelessWidget {
               children: [
                     Container(
                       padding: EdgeInsets.all(5),
-                      height: 36,
-                     width: 36,
+                      height: 50,
+                     width: 50,
                      decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(5.0),
-                      border: Border.all( color: Color(0xFF30459D))
+                       borderRadius: BorderRadius.circular(2.0),
+                      border: Border.all( color: Colors.black45)
                     ),
                     ),
 
@@ -40,15 +40,15 @@ class TransactionItems extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
 
-                          ReusableText(textSize: 12,
+                          ReusableText(textSize: 15,
                               textString: '$firstString',
-                              textColor: Color(0xFF262626),
-                              textWeight: FontWeight.bold, textFamily: 'DM Sans',),
+                              textColor: Colors.black87,
+                              textWeight: FontWeight.bold),
 
                           ReusableText(textSize: 10,
                               textString: '$secondString',
-                              textColor: Color(0xFF878787),
-                              textWeight: FontWeight.normal, textFamily: 'DM Sans',),
+                              textColor: Colors.black45,
+                              textWeight: FontWeight.normal),
                         ]
                     )
                 ),
@@ -58,10 +58,13 @@ class TransactionItems extends StatelessWidget {
 
             ReusableText(textSize: 12,
                 textString: '$lastString',
-                textColor: Color(0xFF06B692),
-                textWeight: FontWeight.normal),
+                textColor: Color(0xFF197CEC),
+                textWeight: FontWeight.bold),
           ],
         )
     );
   }
 }
+
+/*
+ */

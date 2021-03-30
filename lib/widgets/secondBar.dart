@@ -1,5 +1,5 @@
+import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
-import 'reusableText.dart';
 
 class SecondBar extends StatelessWidget {
 
@@ -13,53 +13,43 @@ class SecondBar extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-        height: 135,
-        width: 293,
+        height: 100,
+        width: 300,
         decoration: BoxDecoration(
-          color: colour,
           borderRadius: BorderRadius.circular(10.0),
-          image: DecorationImage(image: AssetImage('assets/images/secondBarMask.png'),
-            fit: BoxFit.fill,
-        ),
+          color: colour,
         ),
 
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Center(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-                  ReusableText(textString: 'Account Balance', textSize: 14, textColor: Colors.white, textFamily: 'DM Sans', textWeight: FontWeight.bold),
-
-                  SizedBox(width: 40),
+                  ReusableText(textString: 'Account Balance', textSize: 15, textColor: Colors.white,),
 
                   IconButton(
                     iconSize: 15,
-                    icon: Icon(Icons.visibility_off_outlined,
+                    icon: Icon(Icons.remove_red_eye_outlined,
                     color: Colors.white),
                     color: Colors.white,
                     onPressed: (){
 
                     },
-                  ),
-
-                  SizedBox(width: 15),
+                  )
 
                 ],
               ),
             ),
 
-            ReusableText(textString: '$accountBalance', textSize: 30, textColor: Colors.white, textWeight:FontWeight.bold, textFamily: 'Nunito',),
+            ReusableText(textString: '$accountBalance', textSize: 25, textColor: Colors.white, textWeight:FontWeight.bold),
 
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 0.0),
+              padding: EdgeInsets.symmetric(horizontal: 15,),
                 alignment: AlignmentDirectional.bottomEnd,
-                child: ReusableText(textString: '$currency', textSize: 12, textColor: Colors.white, textWeight:FontWeight.bold, textFamily: 'DM Sans',)),
-
-            SizedBox(height: 10),
-
+                child: ReusableText(textString: '$currency', textSize: 12, textColor: Colors.white, textWeight:FontWeight.normal)),
           ],
         )
     );
