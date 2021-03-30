@@ -17,18 +17,16 @@ class UpperBar extends StatelessWidget {
 
                 Expanded(
                   child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       children: [
                         Container(
                           alignment: AlignmentDirectional.topStart,
                           child: Text('Welcome back',
                             style: TextStyle(
-                              wordSpacing: -2,
                               fontWeight: FontWeight.normal,
-                              fontSize: 16,
-                              fontFamily: 'Sans serif',
-                              color: Colors.deepPurpleAccent[400],
+                              fontSize: 12,
+                              fontFamily: 'DM Sans',
+                              color: Color(0xFF828282)
 
                             ),
                           ),
@@ -38,11 +36,10 @@ class UpperBar extends StatelessWidget {
                           alignment: AlignmentDirectional.centerStart,
                           child: Text('Lagbaja Tamedo',
                             style: TextStyle(
-                              wordSpacing: -2,
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              fontFamily: 'Sans serif',
-                              color: Colors.deepPurpleAccent[400],
+                              fontSize: 18,
+                              fontFamily: 'Nunito',
+                              color:  Color(0xFF263238)
                             ),
                           ),
                         ),
@@ -58,7 +55,7 @@ class UpperBar extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       iconSize: 50,
                       icon: CircleAvatar(
-                          backgroundImage: AssetImage('images/id_image.png') ),
+                          backgroundImage: AssetImage('assets/images/id_image.png') ),
                       onPressed: () {
                         Navigator.pushNamed(context, ProfilePage.id);
                       },

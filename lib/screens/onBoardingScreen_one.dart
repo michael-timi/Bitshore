@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:bitshore/screens/onBoardingScreen_two.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
@@ -17,12 +16,13 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
   @override
   void initState(){
     super.initState();
-    Timer(Duration(seconds: 5),
+    Timer(Duration(seconds: 8),
         () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder:
         (BuildContext context) => OnBoardingScreenTwo())));
 
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +36,11 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Center(child: Image.asset('bitshoreLogo2.png', color: Colors.white, height: 50, width: 70)),
+              Image.asset('assets/images/bitshoreLogo2.png', color: Colors.white, height: 30, width: 50),
+              
               ReusableText(textString: 'Bitshore is your first bank for Dubai and Nigeria! We are here to give you the best banking experience.',
                   textColor: Colors.white, textSize: 20, textAligner: TextAlign.center),
-              Image.asset('onBoardingOne.png'),
+              Image.asset('assets/images/onBoardingOne.png'),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

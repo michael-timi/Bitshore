@@ -1,7 +1,4 @@
-import 'package:bitshore/savingsPage.dart';
 import 'package:flutter/material.dart';
-import '../exchangePage.dart';
-import '../fundTransferPage.dart';
 import 'homePageOptions.dart';
 
 class ThirdBar extends StatelessWidget {
@@ -9,10 +6,17 @@ class ThirdBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
 
-     height: 20,
-      width: 380,
+     height: 106,
+      width: 345,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black45,
+            blurRadius: 2,
+            offset: Offset(0, 2)
+          )
+        ],
+        borderRadius: BorderRadius.circular(5.0),
         color: Color(0xFF005CEE),
       ),
 
@@ -22,39 +26,20 @@ class ThirdBar extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(12, 12, 6, 12),
-                  child: MaterialButton(
-                    padding: EdgeInsets.zero,
-                    elevation: 5.0,
-                    child: HomePageOptions(firstText: 'Add', secondText: 'Money', lastText: 'Fund your account', onPressed: (){
-                      Navigator.pushNamed(context, TransferPage.id);
-                    },),
-                  )),
+                  child: HomePageOptions(firstText: 'Fund', secondText: 'Account', lastText: 'Fund your account',)),
             ),
 
             Expanded(
               child: Padding(
                   padding: EdgeInsets.fromLTRB(6, 12, 6, 12,),
-                  child: MaterialButton(
-                    padding: EdgeInsets.zero,
-                    elevation: 5.0,
-                    child: HomePageOptions( firstText: 'My', secondText: 'Cards', lastText: 'Manage your cards', onPressed: () {
-                Navigator.pushNamed(context, SavingsPage.id);
-              },),
-                  )),
+                  child: HomePageOptions( firstText: 'Create', secondText: 'Account', lastText: 'Manage your cards',)),
             ),
 
             Expanded(
               child: Padding(
                   padding: EdgeInsets.fromLTRB(6, 12, 12, 12),
-                  child: MaterialButton(
-                    padding: EdgeInsets.zero,
-                    elevation: 5.0,
-                    child: HomePageOptions( firstText: 'Savings', secondText: 'Plans', lastText: 'Create savings plans',onPressed: () {
-                Navigator.pushNamed(context, ExchangePage.id);
-              },),
-                  )),
+                  child: HomePageOptions( firstText: 'Start', secondText: 'Saving', lastText: 'Setup savings',)),
             ),
-
           ],
 
       ),
