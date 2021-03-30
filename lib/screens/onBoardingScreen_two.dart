@@ -29,7 +29,7 @@ class OnBoardingScreenTwo extends StatelessWidget {
         ),
               ),
 
-              Image.asset('onBoardingTwo.png'),
+              Image.asset('assets/images/onBoardingTwo.png'),
 
               ReusableText(textString:'Secure Transactions', textColor: Color(0xFF005CEE), textSize: 25, textWeight: FontWeight.bold, textAligner: TextAlign.left,),
               ReusableText(textString: 'We provide seamless and secure transfers, payment, savings, currency exchanges all over the globe ',

@@ -1,6 +1,6 @@
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/reusableText.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'reusableText.dart';
 
 class TransactionItems extends StatelessWidget {
 
@@ -25,11 +25,11 @@ class TransactionItems extends StatelessWidget {
               children: [
                     Container(
                       padding: EdgeInsets.all(5),
-                      height: 50,
-                     width: 50,
+                      height: 36,
+                     width: 36,
                      decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(2.0),
-                      border: Border.all( color: Colors.black45)
+                       borderRadius: BorderRadius.circular(5.0),
+                      border: Border.all( color: Color(0xFF30459D))
                     ),
                     ),
 
@@ -40,15 +40,15 @@ class TransactionItems extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
 
-                          ReusableText(textSize: 15,
+                          ReusableText(textSize: 12,
                               textString: '$firstString',
-                              textColor: Colors.black87,
-                              textWeight: FontWeight.bold),
+                              textColor: Color(0xFF262626),
+                              textWeight: FontWeight.bold, textFamily: 'DM Sans',),
 
                           ReusableText(textSize: 10,
                               textString: '$secondString',
-                              textColor: Colors.black45,
-                              textWeight: FontWeight.normal),
+                              textColor: Color(0xFF878787),
+                              textWeight: FontWeight.normal, textFamily: 'DM Sans',),
                         ]
                     )
                 ),
@@ -58,13 +58,10 @@ class TransactionItems extends StatelessWidget {
 
             ReusableText(textSize: 12,
                 textString: '$lastString',
-                textColor: Color(0xFF197CEC),
-                textWeight: FontWeight.bold),
+                textColor: Color(0xFF06B692),
+                textWeight: FontWeight.normal),
           ],
         )
     );
   }
 }
-
-/*
- */

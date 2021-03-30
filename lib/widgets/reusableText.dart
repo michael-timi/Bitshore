@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-
 class ReusableText extends StatelessWidget {
-  String textString = '';
-  final Color textColor;
-  final FontWeight textWeight;
-  final double textSize;
-  final TextAlign textAligner;
+  String textString;
+  Color textColor;
+  FontWeight textWeight= FontWeight.normal;
+  double textSize;
+  TextAlign textAligner;
+  String textFamily;
 
-  ReusableText({this.textString, this.textColor, this.textWeight, this.textSize, this.textAligner});
+  ReusableText({this.textString, this.textColor, this.textWeight, this.textSize, this.textAligner, this.textFamily});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,8 @@ class ReusableText extends StatelessWidget {
         fontWeight: textWeight,
         fontSize: textSize,
         color: textColor,
-      )
+            fontFamily: textFamily,
+      ),
       ),
     );
   }

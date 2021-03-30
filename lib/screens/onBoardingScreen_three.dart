@@ -29,7 +29,7 @@ class OnBoardingScreenThree extends StatelessWidget {
                       ),
                     ),
 
-                    Image.asset('onBoardingThree.png'),
+                    Image.asset('assets/images/onBoardingThree.png'),
 
                     ReusableText(textString:'Multiple Virtual Cards', textColor: Color(0xFF005CEE), textSize: 25, textWeight: FontWeight.bold, textAligner: TextAlign.left,),
                     ReusableText(textString: 'Generate several cards to transact in several currencies all over the world',

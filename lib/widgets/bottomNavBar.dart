@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -20,46 +22,38 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Container(
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-       //selectedIconTheme: IconThemeData(
-         // color: Color(0xFF197CEC),),
-        items: const <BottomNavigationBarItem>[
+
+        items:  <BottomNavigationBarItem>[
 
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_rounded,
-                  color: Colors.black45),
-              label: 'Home'
+              icon: SvgPicture.asset('assets/images/homeIcon.svg', color: ( _selectedIndex == 0 ) ? Color(0xFF005CEE): Color(0xFF828282)),
+               label: 'Home',
           ),
 
           BottomNavigationBarItem(
-              icon: Icon(Icons.credit_card_rounded,
-                  color: Colors.black45),
-              label: 'Cards'
+              icon: SvgPicture.asset('assets/images/bankIcon.svg', color: ( _selectedIndex == 1 ) ? Color(0xFF005CEE): Color(0xFF828282)),
+              label: 'Bank'
           ),
 
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet_rounded,
-                  color: Colors.black45),
+              icon: SvgPicture.asset('assets/images/savingsIcon.svg', color: ( _selectedIndex == 2 ) ? Color(0xFF005CEE): Color(0xFF828282)),
               label: 'Savings'
           ),
 
           BottomNavigationBarItem(
-              icon: Icon(Icons.alt_route_rounded,
-                  color: Colors.black45),
-              label: 'Exchange'
+               icon: SvgPicture.asset('assets/images/exchangeIcon.svg', color: ( _selectedIndex == 3 ) ? Color(0xFF005CEE): Color(0xFF828282)),
+              label: 'Exchange',
+
           ),
 
           BottomNavigationBarItem(
-              icon: Icon(Icons.menu_rounded,
-                  color: Colors.black45),
+              icon: SvgPicture.asset('assets/images/moreIconMore.svg', color: ( _selectedIndex == 4 ) ? Color(0xFF005CEE): Color(0xFF828282)),
               label: 'More'
           ),
 
         ],
-
         currentIndex: _selectedIndex,
-        fixedColor: Color(0xFF197CEC),
-        //selectedItemColor: Color(0xFF197CEC),
-        //unselectedItemColor: Colors.black45,
+        selectedItemColor: Color(0xFF005CEE),
         onTap: _onItemTapped,
       ),
     );

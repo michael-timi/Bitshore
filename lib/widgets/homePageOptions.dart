@@ -1,21 +1,23 @@
-import 'file:///C:/Users/Regina/AndroidStudioProjects/bitshore/lib/widgets/reusableText.dart';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'reusableText.dart';
 
 class HomePageOptions extends StatelessWidget {
-  final Function onPressed;
+
   final String firstText;
   final String secondText;
   final String lastText;
 
-  HomePageOptions({this.firstText, this.secondText, this.lastText, this.onPressed});
+  HomePageOptions({ this.firstText, this.secondText, this.lastText});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 100,
+    height: 80,
     decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(12.0),
-    color: Colors.white,
-
+      color: Colors.white,
     ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -23,34 +25,34 @@ class HomePageOptions extends StatelessWidget {
             children: [
                  Expanded(
                    child: Container(
-                     padding: EdgeInsets.all(3),
+                     padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 1.0),
                      alignment: AlignmentDirectional.topEnd,
                      child: Icon(Icons.arrow_forward_rounded,
-                       color: Color(0xFF197CEC),
-                       size: 24,
+                       color: Color(0xFF30459D),
+                       size: 13,
                 ),
                    ),
                  ),
 
              Expanded(
                child: Container(
-                   padding: EdgeInsets.symmetric(horizontal: 3.0, vertical: 1.0),
+                   padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 3.0),
                    alignment: AlignmentDirectional.centerStart,
-                   child: ReusableText(textString: firstText, textWeight: FontWeight.bold, textColor: Color(0xFF197CEC),)),
+                   child: ReusableText(textString: firstText, textWeight: FontWeight.bold, textColor: Color(0xFF30459D), textSize: 14, textFamily: 'Nunito',)),
              ),
 
               Expanded(
                 child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 3.0, vertical: 1.0),
+                    padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 3.0),
                     alignment: AlignmentDirectional.centerStart,
-                    child: ReusableText(textString: secondText, textWeight: FontWeight.bold, textColor: Color(0xFF197CEC),)),
+                    child: ReusableText(textString: secondText, textWeight: FontWeight.bold, textColor: Color(0xFF30459D), textFamily: 'DM Sans', textSize: 14,)),
               ),
 
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 3.0, vertical: 1.0),
+                    padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 3.0),
                     alignment: AlignmentDirectional.bottomCenter,
-                    child: ReusableText(textString: lastText, textWeight: FontWeight.normal, textColor: Color(0xFF197CEC), textSize: 10,)),
+                    child: ReusableText(textString: lastText, textWeight: FontWeight.bold, textColor: Color(0xFF197CEC), textSize: 10, textAligner: TextAlign.left,)),
               ),
             ]
 
