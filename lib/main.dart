@@ -3,7 +3,6 @@ import 'package:bitshore/screens/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onBoardingScreen_two.dart';
-
 import 'exchangePage.dart';
 import 'package:bitshore/profilePage.dart';
 import 'package:bitshore/savingsPage.dart';
