@@ -1,38 +1,48 @@
-import 'package:bitshore/screens/homepage_Screen.dart';
-import 'package:bitshore/screens/onBoardingScreen_four.dart';
-import 'package:bitshore/screens/onBoardingScreen_one.dart';
-import 'package:bitshore/screens/onBoardingScreen_three.dart';
-import 'package:bitshore/screens/onBoardingScreen_two.dart';
-
-import 'exchangePage.dart';
-import 'package:bitshore/profilePage.dart';
-import 'package:bitshore/savingsPage.dart';
+import 'package:bitshore/screens/page/homepage_Screen.dart';
+import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
+import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
+import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
+import 'package:bitshore/screens/onboarding/onBoardingScreen_two.dart';
+import 'package:bitshore/screens/page/loginPage.dart';
+import 'package:bitshore/screens/page/otpPage.dart';
+import 'package:bitshore/screens/page/signupPage.dart';
+import 'package:bitshore/screens/page/welcomePage.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'screens/page/exchangePage.dart';
+import 'package:bitshore/screens/page/profilePage.dart';
+import 'package:bitshore/screens/page/savingsPage.dart';
 import 'package:flutter/material.dart';
-import 'fundTransferPage.dart';
+import 'screens/page/fundTransferPage.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      home: OnBoardingScreenOne(),
-      routes: {
-        OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
-        OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),
-        OnBoardingScreenThree.id: (context) => OnBoardingScreenThree(),
-        OnBoardingScreenThree.id: (context) => OnBoardingScreenFour(),
-        HomePage.id: (context) => HomePage(),
-        ProfilePage.id: (context) => ProfilePage(),
-        SavingsPage.id: (context) => SavingsPage(),
-        TransferPage.id: (context) => TransferPage(),
-        ExchangePage.id: (context) => ExchangePage(),
-    }
-    );
+        title: 'Bitshore',
+        theme: ThemeData(
+          textTheme:
+              GoogleFonts.nunitoSansTextTheme(Theme.of(context).textTheme),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: WelcomePage(),
+        routes: {
+          OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
+          OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),
+          OnBoardingScreenThree.id: (context) => OnBoardingScreenThree(),
+          OnBoardingScreenThree.id: (context) => OnBoardingScreenFour(),
+          WelcomePage.id: (context) => WelcomePage(),
+          SignUpPage.id: (context) => SignUpPage(),
+          LoginPage.id: (context) => LoginPage(),
+          OtpPage.id: (context) => OtpPage(),
+          HomePage.id: (context) => HomePage(),
+          ProfilePage.id: (context) => ProfilePage(),
+          SavingsPage.id: (context) => SavingsPage(),
+          TransferPage.id: (context) => TransferPage(),
+          ExchangePage.id: (context) => ExchangePage(),
+        });
   }
 }
-
