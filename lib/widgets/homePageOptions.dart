@@ -20,12 +20,12 @@ class HomePageOptions extends StatelessWidget {
       color: Colors.white,
     ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
             children: [
                  Expanded(
                    child: Container(
-                     padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 1.0),
+                     padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
                      alignment: AlignmentDirectional.topEnd,
                      child: Icon(Icons.arrow_forward_rounded,
                        color: Color(0xFF30459D),
@@ -36,23 +36,23 @@ class HomePageOptions extends StatelessWidget {
 
              Expanded(
                child: Container(
-                   padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 3.0),
+                   padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0.0),
                    alignment: AlignmentDirectional.centerStart,
                    child: ReusableText(textString: firstText, textWeight: FontWeight.bold, textColor: Color(0xFF30459D), textSize: 14, textFamily: 'Nunito',)),
              ),
 
               Expanded(
                 child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 3.0),
+                    padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0.0),
                     alignment: AlignmentDirectional.centerStart,
-                    child: ReusableText(textString: secondText, textWeight: FontWeight.bold, textColor: Color(0xFF30459D), textFamily: 'DM Sans', textSize: 14,)),
+                    child: ReusableText(textString: secondText, textWeight: FontWeight.bold, textColor: Color(0xFF30459D), textFamily: 'Nunito', textSize: 14,)),
               ),
 
               Expanded(
                 child: Container(
-                    padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 3.0),
-                    alignment: AlignmentDirectional.bottomCenter,
-                    child: ReusableText(textString: lastText, textWeight: FontWeight.bold, textColor: Color(0xFF197CEC), textSize: 10, textAligner: TextAlign.left,)),
+                    padding:  EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
+                    alignment: AlignmentDirectional.centerStart,
+                    child: ReusableText(textString: lastText, textWeight: FontWeight.bold, textColor: Color(0xFF197CEC), textSize: 10, textFamily: 'DM Sans')),
               ),
             ]
 

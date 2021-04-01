@@ -24,21 +24,21 @@ class ThirdBar extends StatelessWidget {
 
           children: [
             Expanded(
-              child: Padding(
+              child: Container(
                 padding: EdgeInsets.fromLTRB(12, 12, 6, 12),
                   child: HomePageOptions(firstText: 'Fund', secondText: 'Account', lastText: 'Fund your account',)),
             ),
 
             Expanded(
-              child: Padding(
+              child: Container(
                   padding: EdgeInsets.fromLTRB(6, 12, 6, 12,),
                   child: HomePageOptions( firstText: 'Create', secondText: 'Account', lastText: 'Manage your cards',)),
             ),
 
             Expanded(
-              child: Padding(
+              child: Container(
                   padding: EdgeInsets.fromLTRB(6, 12, 12, 12),
-                  child: HomePageOptions( firstText: 'Start', secondText: 'Saving', lastText: 'Setup savings',)),
+                  child: HomePageOptions( firstText: 'Start', secondText: 'Saving', lastText: 'Setup savings plan',)),
             ),
           ],
 

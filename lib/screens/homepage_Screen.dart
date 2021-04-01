@@ -40,80 +40,90 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+
                 children: [
 
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 0.0),
-                      child: UpperBar(),
-                    ),),
-
-                  Expanded(
-                    child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 21),
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-
-                            Expanded(
-                              child: Container(
-                                height: 200,
-                                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
-                                child: SecondBar(colour: Color(0xFF005CEE), accountBalance: '320,000.00', currency: 'NGN'),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                height: 140,
-                                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
-                                child: SecondBar(colour: Colors.black, accountBalance: '50,000.00', currency: 'AED'),
-                              ),
-                            ),
-                          ],
-                        )),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 0.0),
+                    child: UpperBar(),
                   ),
+
+                  Container(
+                      height: 135,
+                      padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 21),
+                      child: ListView(
+                        padding: EdgeInsets.all(0.0),
+                        scrollDirection: Axis.horizontal,
+                        children: [
+
+                          Container(
+                            height: 135,
+                            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
+                            child: SecondBar(colour: Color(0xFF005CEE), accountBalance: '320,000.00', currency: 'NGN'),
+                          ),
+                          Container(
+                            height: 135,
+                            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
+                            child: SecondBar(colour: Colors.black, accountBalance: '50,000.00', currency: 'AED'),
+                          ),
+                        ],
+                      )),
 
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
                     child: Expanded(child: ThirdBar()),
                   ),
 
+
+
                   Expanded(
                     child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 22.0, vertical: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      height: 230,
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: Column(
                         children: [
-                          ReusableText(textString: 'Recent Transactions',
-                              textColor: Color(0xFF4F4F4F),
-                              textSize: 14,
-                              textWeight: FontWeight.bold, textFamily: 'Nunito',),
 
-                          ReusableText(textString: 'view all',
-                              textColor: Color(0xFF878787),
-                              textSize: 12,
-                              textWeight: FontWeight.bold, textFamily: 'DM Sans',),
-                        ],
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 22.0, vertical: 10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ReusableText(textString: 'Recent Transactions',
+                                  textColor: Color(0xFF4F4F4F),
+                                  textSize: 14,
+                                  textWeight: FontWeight.bold, textFamily: 'Nunito',),
+
+                                ReusableText(textString: 'view all',
+                                  textColor: Color(0xFF878787),
+                                  textSize: 12,
+                                  textWeight: FontWeight.bold, textFamily: 'DM Sans',),
+                              ],
+                            ),
+                          ),
+
+                    Expanded(
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 0.0, vertical: 5),
+                        height: 200,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Color(0xFF828282))
+                        ),
+                        child: Center(
+                          child: ListView.separated(
+                              itemCount: transactionList.length,
+                              separatorBuilder: (BuildContext context,
+                                  int index) => const Divider(),
+                              itemBuilder: (BuildContext context, int index) {
+                                return transactionList[index];
+                              }
+
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-                      height: 187,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black26)
-                      ),
-                      child: ListView.separated(
-                          itemCount: transactionList.length,
-                          separatorBuilder: (BuildContext context,
-                              int index) => const Divider(),
-                          itemBuilder: (BuildContext context, int index) {
-                            return transactionList[index];
-                          }
-
+                        ],
                       ),
                     ),
                   ),

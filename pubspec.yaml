@@ -43,11 +43,11 @@ flutter:
   fonts:
     - family: Nunito
       fonts:
-        - asset: assets/fonts/Nunito/Nunito-Bold.ttf
-        - asset: assets/fonts/Nunito/Nunito-Light.ttf
-        - asset: assets/fonts/Nunito/Nunito-ExtraLight.ttf
-        - asset: assets/fonts/Nunito/Nunito-ExtraBold.ttf
-        - asset: assets/fonts/Nunito/Nunito-SemiBold.ttf
+        - asset: fonts/Nunito-Bold.ttf
+        - asset: fonts/Nunito-Light.ttf
+        - asset: fonts/Nunito-ExtraLight.ttf
+        - asset: fonts/Nunito-ExtraBold.ttf
+        - asset: fonts/Nunito-SemiBold.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

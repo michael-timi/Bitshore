@@ -24,7 +24,7 @@ class TransactionItems extends StatelessWidget {
 
               children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(10),
                       height: 36,
                      width: 36,
                      decoration: BoxDecoration(
@@ -34,16 +34,19 @@ class TransactionItems extends StatelessWidget {
                     ),
 
                 Container(
-                    padding: EdgeInsets.all(5),
+                    padding: EdgeInsets.all(10),
                     alignment: AlignmentDirectional.centerStart,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+
                         children: [
 
                           ReusableText(textSize: 12,
                               textString: '$firstString',
                               textColor: Color(0xFF262626),
                               textWeight: FontWeight.bold, textFamily: 'DM Sans',),
+
+                          SizedBox(height: 5),
 
                           ReusableText(textSize: 10,
                               textString: '$secondString',
@@ -65,3 +68,4 @@ class TransactionItems extends StatelessWidget {
     );
   }
 }
+

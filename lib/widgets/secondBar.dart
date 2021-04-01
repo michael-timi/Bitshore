@@ -19,7 +19,7 @@ class SecondBar extends StatelessWidget {
           color: colour,
           borderRadius: BorderRadius.circular(10.0),
           image: DecorationImage(image: AssetImage('assets/images/secondBarMask.png'),
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
         ),
         ),
 
@@ -33,7 +33,7 @@ class SecondBar extends StatelessWidget {
 
                   ReusableText(textString: 'Account Balance', textSize: 14, textColor: Colors.white, textFamily: 'DM Sans', textWeight: FontWeight.bold),
 
-                  SizedBox(width: 40),
+                  SizedBox(width: 35),
 
                   IconButton(
                     iconSize: 15,
@@ -58,7 +58,6 @@ class SecondBar extends StatelessWidget {
                 alignment: AlignmentDirectional.bottomEnd,
                 child: ReusableText(textString: '$currency', textSize: 12, textColor: Colors.white, textWeight:FontWeight.bold, textFamily: 'DM Sans',)),
 
-            SizedBox(height: 10),
 
           ],
         )
