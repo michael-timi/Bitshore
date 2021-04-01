@@ -1,7 +1,5 @@
-import 'package:bitshore/screens/homepage_Screen.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
-import 'onBoardingScreen_five.dart';
 
 class OnBoardingScreenFour extends StatelessWidget {
 
@@ -31,7 +29,7 @@ class OnBoardingScreenFour extends StatelessWidget {
                   ),
                 ),
 
-                Image.asset('assets/images/onBoardingFour.png',  height: 350, ),
+                Image.asset('onBoardingFour.png',  height: 350, ),
 
                 ReusableText(textString:'Savings and Exchange', textColor: Color(0xFF005CEE), textSize: 25, textWeight: FontWeight.bold, textAligner: TextAlign.left),
                 ReusableText(textString: 'Save and exchange your funds in the most recognised and valuable currencies all over the world',
@@ -47,7 +45,7 @@ class OnBoardingScreenFour extends StatelessWidget {
                       ),
                       elevation: 5.0,
                       onPressed: (){
-                       Navigator.pushNamed(context, HomePage.id );
+                       // Navigator.pushNamed(context, OnBoardingScreenFour.id);
                       }),
                 )
               ]
