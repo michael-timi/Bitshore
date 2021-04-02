@@ -1,3 +1,4 @@
+import 'package:bitshore/screens/page/homePage.dart';
 import 'package:bitshore/screens/page/homepage_Screen.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
@@ -7,6 +8,7 @@ import 'package:bitshore/screens/page/loginPage.dart';
 import 'package:bitshore/screens/page/otpPage.dart';
 import 'package:bitshore/screens/page/signupPage.dart';
 import 'package:bitshore/screens/page/welcomePage.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/page/exchangePage.dart';
 import 'package:bitshore/screens/page/profilePage.dart';
@@ -15,15 +17,21 @@ import 'package:flutter/material.dart';
 import 'screens/page/fundTransferPage.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
+  );
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
         title: 'Bitshore',
         theme: ThemeData(
+          primaryColor: Color(0xff005CEE),
           textTheme:
               GoogleFonts.nunitoSansTextTheme(Theme.of(context).textTheme),
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -35,6 +43,7 @@ class MyApp extends StatelessWidget {
           OnBoardingScreenThree.id: (context) => OnBoardingScreenThree(),
           OnBoardingScreenThree.id: (context) => OnBoardingScreenFour(),
           WelcomePage.id: (context) => WelcomePage(),
+          Homepage.id: (context) => Homepage(),
           SignUpPage.id: (context) => SignUpPage(),
           LoginPage.id: (context) => LoginPage(),
           OtpPage.id: (context) => OtpPage(),
