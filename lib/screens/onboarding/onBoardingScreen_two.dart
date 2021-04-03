@@ -1,6 +1,7 @@
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'onBoardingScreen_three.dart';
 
@@ -18,10 +19,12 @@ class OnBoardingScreenTwo extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
+                      width: 47,
+                      height: 18,
                       alignment: AlignmentDirectional.topStart,
                       child: Row(children: [
                         ReusableText(
-                            textString: 'skip', textColor: Colors.black),
+                            textString: 'skip', textColor: Colors.black, textSize: 14, textFamily: 'DM Sans',),
                         Icon(Icons.arrow_forward_ios_rounded,
                             color: Colors.black, size: 10),
                       ]),
@@ -30,7 +33,7 @@ class OnBoardingScreenTwo extends StatelessWidget {
                     ReusableText(
                       textString: 'Secure Transactions',
                       textColor: Color(0xFF005CEE),
-                      textSize: 25,
+                      textSize: 24,
                       textWeight: FontWeight.bold,
                       textAligner: TextAlign.left,
                     ),
@@ -38,9 +41,12 @@ class OnBoardingScreenTwo extends StatelessWidget {
                       textString:
                           'We provide seamless and secure transfers, payment, savings, currency exchanges all over the globe ',
                       textColor: Colors.black54,
-                      textSize: 18,
+                      textSize: 14,
+                      textFamily: 'DM Sans',
                     ),
                     Container(
+                      width: 66,
+                      height: 45,
                       alignment: AlignmentDirectional.bottomEnd,
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: FloatingActionButton(
@@ -48,7 +54,7 @@ class OnBoardingScreenTwo extends StatelessWidget {
                           child: ReusableText(
                               textString: 'Next',
                               textColor: Colors.white,
-                              textSize: 15),
+                              textSize: 15, textFamily: 'DM Sans',),
                           shape: RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10.0))),

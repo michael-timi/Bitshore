@@ -3,8 +3,8 @@ import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_two.dart';
-import 'package:bitshore/screens/page/loginPage.dart';
-import 'package:bitshore/screens/page/otpPage.dart';
+//import 'package:bitshore/screens/page/loginPage.dart';
+//import 'package:bitshore/screens/page/otpPage.dart';
 import 'package:bitshore/screens/page/signupPage.dart';
 import 'package:bitshore/screens/page/welcomePage.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
           OnBoardingScreenThree.id: (context) => OnBoardingScreenFour(),
           WelcomePage.id: (context) => WelcomePage(),
           SignUpPage.id: (context) => SignUpPage(),
-          LoginPage.id: (context) => LoginPage(),
-          OtpPage.id: (context) => OtpPage(),
+         // LoginPage.id: (context) => LoginPage(),
+         // OtpPage.id: (context) => OtpPage(),
           HomePage.id: (context) => HomePage(),
           ProfilePage.id: (context) => ProfilePage(),
           SavingsPage.id: (context) => SavingsPage(),
