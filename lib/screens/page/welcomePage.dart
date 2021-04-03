@@ -1,8 +1,8 @@
-import 'package:bitshore/screens/page/homepage_Screen.dart';
-//import 'package:bitshore/screens/page/loginPage.dart';
+import 'package:bitshore/screens/page/homePage.dart';
+import 'package:bitshore/screens/page/loginPage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
-//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class WelcomePage extends StatefulWidget {
   static String id = 'welcomepage';
@@ -154,8 +154,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                               // builder: (context) => LoginPage()
-                            ),
+                                builder: (context) => LoginPage()),
                           );
                         },
                       ),
@@ -201,7 +200,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
+                        MaterialPageRoute(builder: (context) => Homepage()),
                       );
                     },
                   ),
@@ -243,9 +242,8 @@ class _WelcomePageState extends State<WelcomePage> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                         // icon: Icon( FontAwesomeIcons.times,
-                             // color: Colors.black)
-                        ),
+                          icon: Icon(FontAwesomeIcons.times,
+                              color: Colors.black)),
                     ],
                   ),
                   SizedBox(height: 10),
