@@ -18,7 +18,7 @@ class SecondBar extends StatelessWidget {
           color: colour,
           borderRadius: BorderRadius.circular(10.0),
           image: DecorationImage(
-            image: AssetImage('assets/images/secondBarMask.png'),
+            image: AssetImage('assets/images/secondCard.png'),
             fit: BoxFit.cover,
           ),
         ),

@@ -38,6 +38,7 @@ class _OtpPageState extends State<OtpPage> {
                 padding: const EdgeInsets.only(left: 24.0, right: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ReusableText(
                         textString: 'Verify OTP',
@@ -50,80 +51,82 @@ class _OtpPageState extends State<OtpPage> {
                         textColor: Color(0xff878787),
                         textSize: 14),
                     SizedBox(height: 60),
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                              height: 60,
-                              width: 60,
-                              decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
-                              child: Center(
-                                  child: Text(
-                                '*',
-                                style: TextStyle(
-                                    color: Color(0xff878787),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ))),
-                          SizedBox(width: 20),
-                          Container(
-                              height: 60,
-                              width: 60,
-                              decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
-                              child: Center(
-                                  child: Text(
-                                '*',
-                                style: TextStyle(
-                                    color: Color(0xff878787),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ))),
-                          SizedBox(width: 20),
-                          Container(
-                              height: 60,
-                              width: 60,
-                              decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
-                              child: Center(
-                                  child: Text(
-                                '*',
-                                style: TextStyle(
-                                    color: Color(0xff878787),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ))),
-                          SizedBox(width: 20),
-                          Container(
-                              height: 60,
-                              width: 60,
-                              decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
-                              child: Center(
-                                  child: Text(
-                                '*',
-                                style: TextStyle(
-                                    color: Color(0xff878787),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ))),
-                          SizedBox(width: 20),
-                          Container(
-                              height: 60,
-                              width: 60,
-                              decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
-                              child: Center(
-                                  child: Text(
-                                '*',
-                                style: TextStyle(
-                                    color: Color(0xff878787),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ))),
-                        ],
+                    Center(
+                      child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                height: 60,
+                                width: 60,
+                                decoration:
+                                    BoxDecoration(color: Color(0xffC4C4C4)),
+                                child: Center(
+                                    child: Text(
+                                  '*',
+                                  style: TextStyle(
+                                      color: Color(0xff878787),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ))),
+                            SizedBox(width: 20),
+                            Container(
+                                height: 60,
+                                width: 60,
+                                decoration:
+                                    BoxDecoration(color: Color(0xffC4C4C4)),
+                                child: Center(
+                                    child: Text(
+                                  '*',
+                                  style: TextStyle(
+                                      color: Color(0xff878787),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ))),
+                            SizedBox(width: 20),
+                            Container(
+                                height: 60,
+                                width: 60,
+                                decoration:
+                                    BoxDecoration(color: Color(0xffC4C4C4)),
+                                child: Center(
+                                    child: Text(
+                                  '*',
+                                  style: TextStyle(
+                                      color: Color(0xff878787),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ))),
+                            SizedBox(width: 20),
+                            Container(
+                                height: 60,
+                                width: 60,
+                                decoration:
+                                    BoxDecoration(color: Color(0xffC4C4C4)),
+                                child: Center(
+                                    child: Text(
+                                  '*',
+                                  style: TextStyle(
+                                      color: Color(0xff878787),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ))),
+                            SizedBox(width: 20),
+                            Container(
+                                height: 60,
+                                width: 60,
+                                decoration:
+                                    BoxDecoration(color: Color(0xffC4C4C4)),
+                                child: Center(
+                                    child: Text(
+                                  '*',
+                                  style: TextStyle(
+                                      color: Color(0xff878787),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ))),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 40),

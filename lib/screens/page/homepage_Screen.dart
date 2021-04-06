@@ -8,7 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  static String id = 'homepage';
+  static String id = 'homePage';
 
   @override
   _HomePageState createState() => _HomePageState();

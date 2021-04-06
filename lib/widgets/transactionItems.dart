@@ -20,12 +20,12 @@ class TransactionItems extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   height: 36,
                   width: 36,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.0),
-                      border: Border.all(color: Color(0xFF30459D))),
+                      border: Border.all(color: Color(0xFF878787))),
                 ),
                 Container(
                     padding: EdgeInsets.all(10),

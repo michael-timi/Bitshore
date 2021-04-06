@@ -1,5 +1,5 @@
-//import 'package:bitshore/screens/page/loginPage.dart';
-//import 'package:bitshore/screens/page/otpPage.dart';
+import 'package:bitshore/screens/page/loginPage.dart';
+import 'package:bitshore/screens/page/otpPage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 
@@ -317,7 +317,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      //builder: (context) => LoginPage()
+                                      builder: (context) => LoginPage()
                                     ),
                                 );
                               },
@@ -341,11 +341,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                     // builder: (context) => OtpPage()
+                                     builder: (context) => OtpPage()
                                     ),
                                 );
                               },
-                            )
+                            ),
                           ],
                         )),
                   ],

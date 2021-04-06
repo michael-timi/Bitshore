@@ -1,9 +1,12 @@
+import 'package:bitshore/screens/homepage_Screen.dart';
 import 'package:bitshore/screens/page/homePage.dart';
-import 'package:bitshore/screens/page/homepage_Screen.dart';
+//import 'package:bitshore/screens/page/homepage_Screen.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_two.dart';
+import 'package:bitshore/screens/page/loginPage.dart';
+import 'package:bitshore/screens/page/otpPage.dart';
 //import 'package:bitshore/screens/page/loginPage.dart';
 //import 'package:bitshore/screens/page/otpPage.dart';
 import 'package:bitshore/screens/page/signupPage.dart';
@@ -36,17 +39,17 @@ class MyApp extends StatelessWidget {
               GoogleFonts.nunitoSansTextTheme(Theme.of(context).textTheme),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: WelcomePage(),
+        home: HomePage(),
         routes: {
           OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
           OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),
           OnBoardingScreenThree.id: (context) => OnBoardingScreenThree(),
-          OnBoardingScreenThree.id: (context) => OnBoardingScreenFour(),
+          OnBoardingScreenFour.id: (context) => OnBoardingScreenFour(),
           WelcomePage.id: (context) => WelcomePage(),
-          Homepage.id: (context) => Homepage(),
+          HomePage.id: (context) => HomePage(),
           SignUpPage.id: (context) => SignUpPage(),
-         // LoginPage.id: (context) => LoginPage(),
-         // OtpPage.id: (context) => OtpPage(),
+          LoginPage.id: (context) => LoginPage(),
+          OtpPage.id: (context) => OtpPage(),
           HomePage.id: (context) => HomePage(),
           ProfilePage.id: (context) => ProfilePage(),
           SavingsPage.id: (context) => SavingsPage(),

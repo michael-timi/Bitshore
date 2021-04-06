@@ -1,4 +1,5 @@
 import 'package:bitshore/screens/page/signupPage.dart';
+import 'package:bitshore/screens/page/welcomePage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -277,7 +278,7 @@ class _LoginPageState extends State<LoginPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Homepage()),
+                                      builder: (context) => WelcomePage()),
                                 );
                               },
                             )

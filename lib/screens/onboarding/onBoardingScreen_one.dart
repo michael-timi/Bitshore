@@ -33,13 +33,17 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
             children: [
               Image.asset('assets/images/bitshoreLogo2.png',
                   color: Colors.white, height: 29, width: 173),
-              ReusableText(
-                  textString:
-                      'Bitshore is your first bank for Dubai and Nigeria! We are here to give you the best banking experience.',
-                  textColor: Colors.white,
-                  textSize: 14,
-                  textAligner: TextAlign.center, textFamily: 'DM Sans'),
-              Image.asset('assets/images/onBoardingOne.png', height: 372.6, width: 500),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 55),
+                child: ReusableText(
+                    textString:
+                        'Bitshore is your first bank for Dubai and Nigeria! We are here to give you the best banking experience.',
+                    textColor: Colors.white,
+                    textSize: 14,
+                    textAligner: TextAlign.center, textFamily: 'DM Sans'),
+              ),
+              Image.asset('assets/images/onBoardingOne.png', height: 372.6, width: 500
+              ),
               Container(
                 height: 21,
                     width: 98,

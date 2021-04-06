@@ -5,7 +5,7 @@ import 'package:bitshore/widgets/transactionItems.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
-  static String id = 'homepage';
+  static String id = 'homePage';
   @override
   _HomepageState createState() => _HomepageState();
 }
@@ -172,19 +172,17 @@ class _HomepageState extends State<Homepage> {
                       borderRadius: BorderRadius.circular(5)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Expanded(
-                      child: GridView.count(crossAxisCount: 3, children: [
-                        Menu1(
-                            firstText: 'Fund Account',
-                            lastText: 'Fund your account'),
-                        Menu1(
-                            firstText: 'Create Account',
-                            lastText: 'Manage your cards'),
-                        Menu2(
-                            firstText: 'Start   Saving',
-                            lastText: 'Setup savings plan'),
-                      ]),
-                    ),
+                    child: GridView.count(crossAxisCount: 3, children: [
+                      Menu1(
+                          firstText: 'Fund Account',
+                          lastText: 'Fund your account'),
+                      Menu1(
+                          firstText: 'Create Account',
+                          lastText: 'Manage your cards'),
+                      Menu2(
+                          firstText: 'Start   Saving',
+                          lastText: 'Setup savings plan'),
+                    ]),
                   ),
                 ),
                 SizedBox(height: size.height * 0.02),
