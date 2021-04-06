@@ -1,4 +1,4 @@
-import 'package:bitshore/screens/page/homepage_Screen.dart';
+import 'package:bitshore/screens/page/homePage.dart';
 import 'package:bitshore/screens/page/loginPage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
@@ -200,7 +200,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
+                        MaterialPageRoute(builder: (context) => Homepage()),
                       );
                     },
                   ),

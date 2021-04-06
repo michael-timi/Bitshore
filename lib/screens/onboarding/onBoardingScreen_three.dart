@@ -19,31 +19,44 @@ class OnBoardingScreenThree extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
 
-                    Container(
-                      alignment: AlignmentDirectional.topStart,
-                      child: Row(
-                          children: [
-                            ReusableText(textString: 'skip', textColor: Colors.black),
-                            Icon(Icons.arrow_forward_ios_rounded, color: Colors.black, size: 10),
-                          ]
+                    Expanded(
+                      child: Container(
+                        width: 47,
+                        height: 18,
+                        alignment: AlignmentDirectional.topStart,
+                        child: Row(
+                            children: [
+                              ReusableText(textString: 'skip', textColor: Colors.black, textSize: 14, textFamily: 'DM Sans',),
+                              Icon(Icons.arrow_forward_ios_rounded, color: Colors.black, size: 10),
+                            ]
+                        ),
                       ),
                     ),
 
                     Image.asset('assets/images/onBoardingThree.png'),
 
-                    ReusableText(textString:'Multiple Virtual Cards', textColor: Color(0xFF005CEE), textSize: 25, textWeight: FontWeight.bold, textAligner: TextAlign.left,),
-                    ReusableText(textString: 'Generate several cards to transact in several currencies all over the world',
-                      textColor: Colors.black54, textSize: 18,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ReusableText(textString:'Multiple Virtual Cards', textColor:Color(0xFF263238), textSize: 24, textWeight: FontWeight.bold, textAligner: TextAlign.left,),
+                        SizedBox(height: 20),
+                        ReusableText(textString: 'Generate several cards to transact in several currencies all over the world',
+                            textColor: Color(0xFF404040), textSize: 14, textFamily: 'DM Sans', textWeight: FontWeight.bold),
+
+                      ],
+                    ),
+
 
                     Container(
+                      width: 66,
+                      height: 45,
                       alignment: AlignmentDirectional.bottomEnd,
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: FloatingActionButton(backgroundColor: Color(0xFF005CEE),
-                          child: ReusableText(textString: 'Next', textColor: Colors.white, textSize: 15 ),
+                      //padding: EdgeInsets.symmetric(vertical: 20),
+                      child: FloatingActionButton(backgroundColor:Color(0xFF003FA4),
+                          child: ReusableText(textString: 'Next', textColor: Colors.white, textSize: 15, textFamily: 'DM Sans'),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(10.0))
                           ),
-                          elevation: 5.0,
                           onPressed: (){
                             Navigator.pushNamed(context, OnBoardingScreenFour.id);
                           }),

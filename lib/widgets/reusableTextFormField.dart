@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ReusableTextFormField extends StatefulWidget {
-
   Function onPasswordReceived;
 
   ReusableTextFormField({this.onPasswordReceived});
@@ -11,7 +11,6 @@ class ReusableTextFormField extends StatefulWidget {
 }
 
 class _ReusableTextFormFieldState extends State<ReusableTextFormField> {
-
   bool _obscureText = true;
 
   get onPasswordReceived => onPasswordReceived;
@@ -19,31 +18,26 @@ class _ReusableTextFormFieldState extends State<ReusableTextFormField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child:
-      TextFormField(
+      child: TextFormField(
         onFieldSubmitted: onPasswordReceived,
         keyboardType: TextInputType.text,
-        obscureText: _obscureText,//This will obscure text dynamically
+        obscureText: _obscureText, //This will obscure text dynamically
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
             borderSide: BorderSide(width: 1.5),
           ),
-
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black26, width: 1.0 ),
+            borderSide: BorderSide(color: Colors.black26, width: 1.0),
             borderRadius: BorderRadius.circular(5.0),
           ),
-
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black26, width: 2.0 ),
+            borderSide: BorderSide(color: Colors.black26, width: 2.0),
             borderRadius: BorderRadius.circular(5.0),
           ),
           suffixIcon: IconButton(
             icon: Icon(
-              _obscureText
-                  ? Icons.visibility
-                  : Icons.visibility_off,
+              _obscureText ? Icons.visibility : Icons.visibility_off,
               color: Colors.black45,
             ),
             onPressed: () {

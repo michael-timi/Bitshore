@@ -7,7 +7,7 @@ class ThirdBar extends StatelessWidget {
     return Container(
 
      height: 106,
-      width: 345,
+      width: 380,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -38,7 +38,7 @@ class ThirdBar extends StatelessWidget {
             Expanded(
               child: Container(
                   padding: EdgeInsets.fromLTRB(6, 12, 12, 12),
-                  child: HomePageOptions( firstText: 'Start', secondText: 'Saving', lastText: 'Setup savings plan',)),
+                  child: HomePageOptions( firstText: 'Start', secondText: 'Saving', lastText: 'Setup a savings plan',)),
             ),
           ],
 
