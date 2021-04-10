@@ -21,7 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: SafeArea(
@@ -29,9 +29,9 @@ class _SignUpPageState extends State<SignUpPage> {
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: [
-              SizedBox(height: height * 0.1),
+              SizedBox(height: size.height * 0.08),
               Container(
-                height: height / 4,
+                height: size.height / 4,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/signIn.png'),
@@ -325,7 +325,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             SizedBox(height: 20),
                             InkWell(
                               child: Container(
-                                height: height * 0.05,
+                                height: size.height * 0.05,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
                                     color: Color(0xff003FA4)),
@@ -346,6 +346,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 );
                               },
                             ),
+                            SizedBox(height: 20),
                           ],
                         )),
                   ],

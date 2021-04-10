@@ -1,8 +1,10 @@
-import 'package:bitshore/screens/page/homePage.dart';
+
 import 'package:bitshore/screens/page/loginPage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'homepage_Screen.dart';
 
 class WelcomePage extends StatefulWidget {
   static String id = 'welcomepage';
@@ -200,7 +202,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Homepage()),
+                        MaterialPageRoute(builder: (context) => HomePage()),
                       );
                     },
                   ),
@@ -246,7 +248,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               color: Colors.black)),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   Text(
                     'Fingerprint access',
                     style: TextStyle(
@@ -259,21 +261,21 @@ class _WelcomePageState extends State<WelcomePage> {
                   SizedBox(height: 50),
                   Center(
                       child: Column(
-                    children: [
-                      Container(
-                        height: 62,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/fingerprint.png'),
+                        children: [
+                          Container(
+                            height: 62,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/fingerprint.png'),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      SizedBox(height: 30),
-                      Text('Touch the fingerprint sensor',
-                          style: TextStyle(
-                              color: Color(0xff6F6F6F), fontSize: 16)),
-                    ],
-                  )),
+                          SizedBox(height: 20),
+                          Text('Touch the fingerprint sensor',
+                              style: TextStyle(
+                                  color: Color(0xff6F6F6F), fontSize: 16)),
+                        ],
+                      )),
                 ],
               ),
             ),

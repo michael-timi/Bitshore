@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeCard extends StatelessWidget {
   const HomeCard(
@@ -17,7 +18,7 @@ class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height * 0.15,
+      height: size.height * 0.18,
       width: size.width * 0.75,
       decoration: BoxDecoration(
         color: colour,
@@ -32,24 +33,32 @@ class HomeCard extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 32, right: 32, top: 24),
+        padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
         child: Column(
           children: [
-            SizedBox(height: size.height * 0.01),
+            Padding(
+              padding: const EdgeInsets.only(right:24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(FontAwesomeIcons.eyeSlash,  color: Colors.white, size: size.width * 0.03),
+                ],
+              ),
+            ),
             Text(
               'Account Balance',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 14,
+                  fontSize: size.width * 0.035,
                   fontWeight: FontWeight.w600),
             ),
-            SizedBox(height: size.height * 0.01),
+
             Text(
               accountBalance,
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
+                  fontSize: size.width * 0.08,
+                  fontWeight: FontWeight.bold, fontFamily: ''),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -58,7 +67,7 @@ class HomeCard extends StatelessWidget {
                   currency,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 12,
+                      fontSize: size.width * 0.04,
                       fontWeight: FontWeight.w600),
                 ),
               ],

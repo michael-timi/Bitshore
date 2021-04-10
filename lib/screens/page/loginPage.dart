@@ -250,11 +250,7 @@ class _LoginPageState extends State<LoginPage> {
                                     ],
                                   ))),
                                   onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => SignUpPage()),
-                                    );
+                                    Navigator.pop(context);
                                   }),
                             ),
                             SizedBox(height: 20),
@@ -325,7 +321,7 @@ class _LoginPageState extends State<LoginPage> {
                               color: Colors.black)),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   Text(
                     'Fingerprint access',
                     style: TextStyle(
@@ -347,7 +343,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 20),
                       Text('Touch the fingerprint sensor',
                           style: TextStyle(
                               color: Color(0xff6F6F6F), fontSize: 16)),
