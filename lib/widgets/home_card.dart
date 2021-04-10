@@ -17,8 +17,8 @@ class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height * 0.2,
-      width: size.width * 0.8,
+      height: size.height * 0.15,
+      width: size.width * 0.75,
       decoration: BoxDecoration(
         color: colour,
         borderRadius: BorderRadius.circular(14),
@@ -32,15 +32,15 @@ class HomeCard extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
+        padding: const EdgeInsets.only(left: 32, right: 32, top: 24),
         child: Column(
           children: [
-            SizedBox(height: size.height * 0.03),
+            SizedBox(height: size.height * 0.01),
             Text(
               'Account Balance',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
+                  fontSize: 14,
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(height: size.height * 0.01),
@@ -48,7 +48,7 @@ class HomeCard extends StatelessWidget {
               accountBalance,
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 36,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
             Row(
@@ -58,7 +58,7 @@ class HomeCard extends StatelessWidget {
                   currency,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 12,
                       fontWeight: FontWeight.w600),
                 ),
               ],

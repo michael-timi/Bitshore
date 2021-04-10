@@ -16,8 +16,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   country_pickers: ^2.0.0
   flutter_svg: ^0.19.3
-  google_fonts:
-  font_awesome_flutter:
+  google_fonts: ^2.0.0
+  carousel_pro: ^1.0.0
+  carousel_slider: ^3.0.0
+  font_awesome_flutter: ^9.0.0
 
 dev_dependencies:
   flutter_test:

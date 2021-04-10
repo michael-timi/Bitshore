@@ -2,10 +2,11 @@ import 'package:bitshore/widgets/bottomNavBar.dart';
 import 'package:bitshore/widgets/home_card.dart';
 import 'package:bitshore/widgets/home_menu.dart';
 import 'package:bitshore/widgets/transactionItems.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
-  static String id = 'homePage';
+  static String id = 'homepage';
   @override
   _HomepageState createState() => _HomepageState();
 }
@@ -46,7 +47,7 @@ class _HomepageState extends State<Homepage> {
       body: Stack(
         children: [
           Container(
-            height: size.height * 0.5,
+            height: size.height * 0.4,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -68,46 +69,49 @@ class _HomepageState extends State<Homepage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            child: Text(
-                              'Welcome back',
-                              style: TextStyle(
-                                  color: Color(0xff828282),
-                                  fontSize: size.width * 0.04,
-                                  fontWeight: FontWeight.w700),
+                Padding(
+                  padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Text(
+                                'Welcome back',
+                                style: TextStyle(
+                                    color: Color(0xff828282),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700),
+                              ),
                             ),
-                          ),
-                          Container(
-                            child: Text(
-                              'Lagbaja Tamedo',
-                              style: TextStyle(
-                                  color: Color(0xff343C6B),
-                                  fontSize: size.width * 0.060,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          )
-                        ],
+                            Container(
+                              child: Text(
+                                'Lagbaja Tamedo',
+                                style: TextStyle(
+                                    color: Color(0xff343C6B),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Container(
-                      child: CircleAvatar(
-                          radius: size.width * 0.060,
-                          backgroundImage:
-                              AssetImage('assets/images/id_image.png')),
-                    ),
-                  ],
+                      Container(
+                        child: CircleAvatar(
+                            radius: size.width * 0.0450,
+                            backgroundImage:
+                                AssetImage('assets/images/id_image.png')),
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: size.height * 0.04),
+                SizedBox(height: size.height * 0.02),
                 Container(
-                  height: size.height * 0.2,
+                  height: size.height * 0.16,
                   width: size.width,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
@@ -133,59 +137,66 @@ class _HomepageState extends State<Homepage> {
                     ],
                   ),
                 ),
-                SizedBox(height: size.height * 0.01),
-                Row(
-                  children: [
-                    Container(
-                      height: 8,
-                      width: 20,
-                      decoration: BoxDecoration(
-                          color: Color(0xff003FA4),
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                    SizedBox(width: 3),
-                    Container(
-                      height: 8,
-                      width: 8,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Color(0xff005CEE))),
-                    ),
-                    SizedBox(width: 3),
-                    Container(
-                      height: 8,
-                      width: 8,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Color(0xff005CEE))),
-                    ),
-                  ],
-                ),
                 SizedBox(height: size.height * 0.02),
+                Padding(
+                  padding: const EdgeInsets.only(left:8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 8,
+                        width: 20,
+                        decoration: BoxDecoration(
+                            color: Color(0xff003FA4),
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                      SizedBox(width: 3),
+                      Container(
+                        height: 8,
+                        width: 8,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Color(0xff005CEE))),
+                      ),
+                      SizedBox(width: 3),
+                      Container(
+                        height: 8,
+                        width: 8,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Color(0xff005CEE))),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: size.height * 0.03),
                 Container(
-                  height: size.height * 0.16,
+                  height: size.height * 0.13,
                   width: size.width * 0.9,
                   decoration: BoxDecoration(
                       color: Color(0xff005CEE),
                       borderRadius: BorderRadius.circular(5)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: GridView.count(crossAxisCount: 3, children: [
-                      Menu1(
-                          firstText: 'Fund Account',
-                          lastText: 'Fund your account'),
-                      Menu1(
-                          firstText: 'Create Account',
-                          lastText: 'Manage your cards'),
-                      Menu2(
-                          firstText: 'Start   Saving',
-                          lastText: 'Setup savings plan'),
-                    ]),
+
+                    child: Row(children: [Expanded(child: Menu(
+                        firstText: 'Fund',
+                           secondText: 'Account',
+                           lastText: 'Fund your account')),
+                      SizedBox(width: 12),
+                      Expanded(child: Menu(
+                          firstText: 'Create',
+                          secondText: 'Account',
+                          lastText: 'Manage your account')),
+                      SizedBox(width: 12),
+                      Expanded(child: Menu(
+                          firstText: 'Start',
+                          secondText: 'Saving',
+                          lastText: 'Set savings plan'))]),
                   ),
                 ),
-                SizedBox(height: size.height * 0.02),
+                SizedBox(height: size.height * 0.04),
                 Container(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -195,13 +206,13 @@ class _HomepageState extends State<Homepage> {
                         style: TextStyle(
                             color: Color(0xff4F4F4F),
                             fontWeight: FontWeight.bold,
-                            fontSize: 18),
+                            fontSize: 14),
                       ),
                       Text(
                         'View all',
                         style: TextStyle(
                           color: Color(0xff878787),
-                          fontSize: 14,
+                          fontSize: 12,
                           fontWeight: FontWeight.bold,
                         ),
                       )
