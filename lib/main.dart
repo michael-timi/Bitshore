@@ -1,4 +1,5 @@
 import 'package:bitshore/screens/homepage_Screen.dart';
+import 'package:bitshore/screens/page/addCard_Screen.dart';
 import 'package:bitshore/screens/page/homePage.dart';
 //import 'package:bitshore/screens/page/homepage_Screen.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
               GoogleFonts.nunitoSansTextTheme(Theme.of(context).textTheme),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: HomePage(),
+        home: AddCardScreen(),
         routes: {
           OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
           OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
           SavingsPage.id: (context) => SavingsPage(),
           TransferPage.id: (context) => TransferPage(),
           ExchangePage.id: (context) => ExchangePage(),
+          AddCardScreen.id: (context) => AddCardScreen(),
         });
   }
 }

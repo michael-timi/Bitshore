@@ -3,8 +3,6 @@ import 'package:bitshore/screens/page/welcomePage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'homePage.dart';
-import 'homepage_Screen.dart';
 
 class LoginPage extends StatefulWidget {
   static String id = 'loginpage';
