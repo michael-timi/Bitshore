@@ -1,5 +1,5 @@
 import 'package:bitshore/widgets/reusableText.dart';
-import 'package:bitshore/widgets/reusableTextField.dart';
+import 'package:bitshore/widgets/myReusableTextFormField.dart';
 import 'package:bitshore/widgets/reusableTextFormField.dart';
 import 'package:country_pickers/country.dart';
 import 'package:flutter/material.dart';

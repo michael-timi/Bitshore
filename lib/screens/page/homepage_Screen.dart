@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     transactionList.add(
       TransactionItems(
         firstString: 'Supermarket transfer',
-        secondString: '012:06 AM',
+        secondString: '12:06 AM',
         lastString: 'NGN 25000.00',
       ),
     );
@@ -51,77 +51,68 @@ class _HomePageState extends State<HomePage> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Expanded(
-                    child: UpperBar(),
-                  ),
-                  Expanded(
-                      child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Container(
-                        height: 120,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 5.0),
-                              child: SecondBar(
-                                  colour: Color(0xFF197CEC),
-                                  accountBalance: '320,000',
-                                  currency: 'NGN'),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 5.0),
-                              child: SecondBar(
-                                  colour: Colors.black,
-                                  accountBalance: '50,000',
-                                  currency: 'AED'),
-                            ),
-                          ],
-                        )),
-                  )),
-                  Expanded(
-                      child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: ThirdBar(),
-                  )),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20.0, vertical: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  UpperBar(),
+
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                      height: 150,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
                         children: [
-                          ReusableText(
-                              textString: 'Recent Transactions',
-                              textColor: Colors.black54,
-                              textSize: 12,
-                              textWeight: FontWeight.bold),
-                          ReusableText(
-                              textString: 'view all',
-                              textColor: Colors.black45,
-                              textSize: 10,
-                              textWeight: FontWeight.bold),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 5.0),
+                            child: SecondBar(
+                                colour: Color(0xFF005CEE),
+                                accountBalance: '320,000.00',
+                                currency: 'NGN'),
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 5.0),
+                            child: SecondBar(
+                                colour: Colors.black,
+                                accountBalance: '50,000.00',
+                                currency: 'AED'),
+                          ),
                         ],
-                      ),
+                      )),
+
+                  ThirdBar(),
+
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20.0, vertical: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ReusableText(
+                            textString: 'Recent Transactions',
+                            textColor: Colors.black54,
+                            textSize: 12,
+                            textWeight: FontWeight.bold),
+                        ReusableText(
+                            textString: 'view all',
+                            textColor: Colors.black45,
+                            textSize: 10,
+                            textWeight: FontWeight.bold),
+                      ],
                     ),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black26)),
-                      child: ListView.separated(
-                          itemCount: transactionList.length,
-                          separatorBuilder: (BuildContext context, int index) =>
-                              const Divider(),
-                          itemBuilder: (BuildContext context, int index) {
-                            return transactionList[index];
-                          }),
-                    ),
+                  Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black26)),
+                    child: ListView.separated(
+                        itemCount: transactionList.length,
+                        separatorBuilder: (BuildContext context, int index) =>
+                            const Divider(),
+                        itemBuilder: (BuildContext context, int index) {
+                          return transactionList[index];
+                        }),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 10),
                 ]),
           ),
         ),

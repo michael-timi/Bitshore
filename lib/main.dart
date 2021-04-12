@@ -1,4 +1,5 @@
 import 'package:bitshore/screens/page/homePage.dart';
+import 'package:bitshore/screens/page/homePage_Screen.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
               GoogleFonts.nunitoSansTextTheme(Theme.of(context).textTheme),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Homepage(),
+        home:OnBoardingScreenOne(),
         routes: {
           OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
           OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
           SavingsPage.id: (context) => SavingsPage(),
           TransferPage.id: (context) => TransferPage(),
           ExchangePage.id: (context) => ExchangePage(),
+          Homepage.id: (context) => Homepage(),
         });
   }
 }

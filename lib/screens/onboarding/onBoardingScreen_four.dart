@@ -11,7 +11,7 @@ class OnBoardingScreenFour extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30.0),
+        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
 
         child: SafeArea(
           child: Column(
@@ -23,6 +23,7 @@ class OnBoardingScreenFour extends StatelessWidget {
                 Container(
                   width: 47,
                   height: 18,
+                 // padding: EdgeInsets.symmetric(vertical: 20),
                   alignment: AlignmentDirectional.topStart,
                   child: Row(
 
@@ -48,21 +49,19 @@ class OnBoardingScreenFour extends StatelessWidget {
                 ),
 
 
-                Expanded(
-                  child: Container(
-                    width: 66,
-                    height: 45,
-                    alignment: AlignmentDirectional.bottomEnd,
-                    //padding: EdgeInsets.symmetric(vertical: 20),
-                    child: FloatingActionButton(backgroundColor: Color(0xFF003FA4),
-                        child: ReusableText(textString: 'Next', textColor: Colors.white, textSize: 15, textFamily: 'DM Sans'),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        onPressed: (){
-                         Navigator.pushNamed(context, SignUpPage.id);
-                        }),
-                  ),
+                Container(
+                  width: 66,
+                  height: 45,
+                  alignment: AlignmentDirectional.bottomEnd,
+                 // padding: EdgeInsets.fromLTRB(10, 10, 10,20),
+                  child: FloatingActionButton(backgroundColor: Color(0xFF003FA4),
+                      child: ReusableText(textString: 'Next', textColor: Colors.white, textSize: 15, textFamily: 'DM Sans'),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0))
+                      ),
+                      onPressed: (){
+                       Navigator.pushNamed(context, SignUpPage.id);
+                      }),
                 )
               ]
           ),

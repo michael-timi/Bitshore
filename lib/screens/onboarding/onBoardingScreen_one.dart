@@ -31,9 +31,9 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset('assets/images/bitshoreLogo2.png',
-                  color: Colors.white, height: 29, width: 173),
-              Padding(
+              //Image.asset('assets/images/bitshoreLogo2.png',
+                  //color: Colors.white, height: 29, width: 173),
+             /* Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 55),
                 child: ReusableText(
                     textString:
@@ -42,6 +42,7 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
                     textSize: 14,
                     textAligner: TextAlign.center, textFamily: 'DM Sans'),
               ),
+              */
               Image.asset('assets/images/onBoardingOne.png', height: 372.6, width: 500
               ),
               Container(

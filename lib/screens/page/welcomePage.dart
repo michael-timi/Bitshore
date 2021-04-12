@@ -1,3 +1,4 @@
+import 'package:bitshore/screens/page/addCard_Screen.dart';
 import 'package:bitshore/screens/page/homePage.dart';
 import 'package:bitshore/screens/page/loginPage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
@@ -200,7 +201,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Homepage()),
+                        MaterialPageRoute(builder: (context) => AddCardScreen()),
                       );
                     },
                   ),

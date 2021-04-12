@@ -35,7 +35,7 @@ class SecondBar extends StatelessWidget {
                       textColor: Colors.white,
                       textFamily: 'DM Sans',
                       textWeight: FontWeight.bold),
-                  SizedBox(width: 35),
+                  SizedBox(width: 30),
                   IconButton(
                     iconSize: 15,
                     icon: Icon(Icons.visibility_off_outlined,

@@ -17,24 +17,25 @@ class OnBoardingScreenTwo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Expanded(
-                      child: Container(
-                        width: 47,
-                        height: 18,
-                        alignment: AlignmentDirectional.topStart,
-                        child: Row(children: [
-                          ReusableText(
-                            textString: 'skip',
-                            textColor: Colors.black,
-                            textSize: 14,
-                            textFamily: 'DM Sans',
-                          ),
-                          Icon(Icons.arrow_forward_ios_rounded,
-                              color: Colors.black, size: 10),
-                        ]),
-                      ),
+
+                    Container(
+                     // padding: EdgeInsets.symmetric(vertical: 20),
+                      width: 47,
+                      height: 18,
+                      alignment: AlignmentDirectional.topStart,
+                      child: Row(children: [
+                        ReusableText(
+                          textString: 'skip',
+                          textColor: Colors.black,
+                          textSize: 14,
+                          textFamily: 'DM Sans',
+                        ),
+                        Icon(Icons.arrow_forward_ios_rounded,
+                            color: Colors.black, size: 10),
+                      ]),
                     ),
                     Image.asset('assets/images/onBoardingTwo.png'),
+
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -45,7 +46,7 @@ class OnBoardingScreenTwo extends StatelessWidget {
                           textWeight: FontWeight.bold,
                           textAligner: TextAlign.left,
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 10),
                         ReusableText(
                             textString:
                                 'We provide seamless and secure transfers, payment, savings, currency exchanges all over the globe ',
@@ -59,7 +60,7 @@ class OnBoardingScreenTwo extends StatelessWidget {
                       width: 66,
                       height: 45,
                       alignment: AlignmentDirectional.bottomEnd,
-                      //padding: EdgeInsets.symmetric(vertical: 20),
+                      //padding: EdgeInsets.fromLTRB(10, 10, 10,20),
                       child: FloatingActionButton(
                           backgroundColor: Color(0xFF003FA4),
                           child: ReusableText(
