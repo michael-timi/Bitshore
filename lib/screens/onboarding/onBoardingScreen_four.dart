@@ -7,42 +7,32 @@ class OnBoardingScreenFour extends StatelessWidget {
 
   static String id = 'onBoardingScreenFour';
 
+  @override
   Widget build(BuildContext context) {
-    @override
     var size = MediaQuery.of(context).size;
-
     return Scaffold(
-      body: Container(
-
-        height: size.height,
-        width: size.width,
-
-        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
-
-        child: SafeArea(
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(32),
           child: Column(
-
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
 
-                Container(
-                  width: 47,
-                  height: 18,
-                 // padding: EdgeInsets.symmetric(vertical: 20),
-                  alignment: AlignmentDirectional.topStart,
-                  child: Row(
-
-                      children: [
-                        ReusableText(textString: 'skip', textColor: Colors.black, textSize: 14, textFamily: 'DM Sans',),
-                        Icon(Icons.arrow_forward_ios_rounded, color: Colors.black, size: 10),
-                      ]
-                  ),
+                Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: Row(children: [
+                        ReusableText(
+                          textString: 'skip', textColor: Colors.black, textSize: 14, textFamily: 'DM Sans',),
+                        Icon(Icons.arrow_forward_ios_rounded,
+                            color: Colors.black, size: 10),
+                      ]),
+                    ),
+                  ],
                 ),
-
-                Image.asset('assets/images/onBoardingFour.png', height: 350
-                ),
-
+                SizedBox(height: size.height * 0.2),
+                Image.asset('assets/images/onBoardingFour.png'),
+                SizedBox(height: size.height * 0.2),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -50,29 +40,63 @@ class OnBoardingScreenFour extends StatelessWidget {
                     SizedBox(height: 20),
                     ReusableText(textString: 'Save and exchange your funds in the most recognised and valuable currencies all over the world',
                         textColor: Color(0xFF404040), textSize: 14, textFamily: 'DM Sans', textWeight: FontWeight.bold),
-
                   ],
                 ),
-
-
+                SizedBox(height: size.height * 0.05),
                 Container(
-                  width: 66,
-                  height: 45,
                   alignment: AlignmentDirectional.bottomEnd,
-                 // padding: EdgeInsets.fromLTRB(10, 10, 10,20),
-                  child: FloatingActionButton(backgroundColor: Color(0xFF003FA4),
-                      child: ReusableText(textString: 'Next', textColor: Colors.white, textSize: 15, textFamily: 'DM Sans'),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0))
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            height: 8,
+                            width: 8,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),  border: Border.all(color: Color(0xff005CEE))),
+                          ),
+                          SizedBox(width: 3),
+                          Container(
+                            height: 8,
+                            width: 8,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Color(0xff005CEE))),
+                          ),
+                          SizedBox(width: 3),
+                          Container(
+                            height: 8,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: Color(0xff003FA4),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ],
                       ),
-                      onPressed: (){
-                       Navigator.pushNamed(context, SignUpPage.id);
-                      }),
+                      FloatingActionButton(
+                          backgroundColor: Color(0xFF003FA4),
+                          child: ReusableText(
+                            textString: 'Next',
+                            textColor: Colors.white,
+                            textSize: 15, textFamily: 'DM Sans',),
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(10.0))),
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, SignUpPage.id);
+                          }),
+                    ],
+                  ),
                 )
               ]
           ),
-
         ),
+
       ),
     );
   }

@@ -1,8 +1,7 @@
 import 'package:bitshore/utils/constant.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
-
-import 'homePage.dart';
+import 'homepage_Screen.dart';
 
 class OtpPage extends StatefulWidget {
   static String id = 'otppage';
@@ -55,75 +54,85 @@ class _OtpPageState extends State<OtpPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                                height: 60,
-                                width: 60,
-                                decoration:
-                                    BoxDecoration(color: Color(0xffC4C4C4)),
-                                child: Center(
-                                    child: Text(
-                                  '*',
-                                  style: TextStyle(
-                                      color: Color(0xff878787),
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ))),
+                            Expanded(
+                              child: Container(
+                                  height: 60,
+                                  width: 60,
+                                  decoration:
+                                      BoxDecoration(color: Color(0xffC4C4C4)),
+                                  child: Center(
+                                      child: Text(
+                                    '*',
+                                    style: TextStyle(
+                                        color: Color(0xff878787),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ))),
+                            ),
                             SizedBox(width: 20),
-                            Container(
-                                height: 60,
-                                width: 60,
-                                decoration:
-                                    BoxDecoration(color: Color(0xffC4C4C4)),
-                                child: Center(
-                                    child: Text(
-                                  '*',
-                                  style: TextStyle(
-                                      color: Color(0xff878787),
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ))),
+                            Expanded(
+                              child: Container(
+                                  height: 60,
+                                  width: 60,
+                                  decoration:
+                                  BoxDecoration(color: Color(0xffC4C4C4)),
+                                  child: Center(
+                                      child: Text(
+                                        '*',
+                                        style: TextStyle(
+                                            color: Color(0xff878787),
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ))),
+                            ),
                             SizedBox(width: 20),
-                            Container(
-                                height: 60,
-                                width: 60,
-                                decoration:
-                                    BoxDecoration(color: Color(0xffC4C4C4)),
-                                child: Center(
-                                    child: Text(
-                                  '*',
-                                  style: TextStyle(
-                                      color: Color(0xff878787),
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ))),
+                            Expanded(
+                              child: Container(
+                                  height: 60,
+                                  width: 60,
+                                  decoration:
+                                  BoxDecoration(color: Color(0xffC4C4C4)),
+                                  child: Center(
+                                      child: Text(
+                                        '*',
+                                        style: TextStyle(
+                                            color: Color(0xff878787),
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ))),
+                            ),
                             SizedBox(width: 20),
-                            Container(
-                                height: 60,
-                                width: 60,
-                                decoration:
-                                    BoxDecoration(color: Color(0xffC4C4C4)),
-                                child: Center(
-                                    child: Text(
-                                  '*',
-                                  style: TextStyle(
-                                      color: Color(0xff878787),
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ))),
+                            Expanded(
+                              child: Container(
+                                  height: 60,
+                                  width: 60,
+                                  decoration:
+                                  BoxDecoration(color: Color(0xffC4C4C4)),
+                                  child: Center(
+                                      child: Text(
+                                        '*',
+                                        style: TextStyle(
+                                            color: Color(0xff878787),
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ))),
+                            ),
                             SizedBox(width: 20),
-                            Container(
-                                height: 60,
-                                width: 60,
-                                decoration:
-                                    BoxDecoration(color: Color(0xffC4C4C4)),
-                                child: Center(
-                                    child: Text(
-                                  '*',
-                                  style: TextStyle(
-                                      color: Color(0xff878787),
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ))),
+                            Expanded(
+                              child: Container(
+                                  height: 60,
+                                  width: 60,
+                                  decoration:
+                                  BoxDecoration(color: Color(0xffC4C4C4)),
+                                  child: Center(
+                                      child: Text(
+                                        '*',
+                                        style: TextStyle(
+                                            color: Color(0xff878787),
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ))),
+                            ),
                           ],
                         ),
                       ),
@@ -154,7 +163,7 @@ class _OtpPageState extends State<OtpPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Homepage()),
+                                  builder: (context) => HomePage()),
                             );
                           }),
                     ),
