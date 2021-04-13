@@ -48,7 +48,7 @@ class AddCardScreen extends StatelessWidget {
                     width: 333,
                     height: 175,
                     decoration: BoxDecoration(
-                      color: Color(0xFF979797),
+                      color: Color(0xFF404040),
                       borderRadius: BorderRadius.circular(13.0),
 
                       image: DecorationImage(

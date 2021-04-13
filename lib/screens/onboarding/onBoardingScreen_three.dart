@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'onBoardingScreen_four.dart';
@@ -6,10 +8,15 @@ class OnBoardingScreenThree extends StatelessWidget {
 
   static String id = 'onBoardingScreenThree';
 
-  @override
   Widget build(BuildContext context) {
+
+    @override
+    var size = MediaQuery.of(context).size;
+    
     return Scaffold(
         body: Container(
+          height: size.height,
+          width: size.width,
           padding: EdgeInsets.symmetric(horizontal: 30.0),
 
           child: SafeArea(

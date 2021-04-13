@@ -7,10 +7,16 @@ class OnBoardingScreenFour extends StatelessWidget {
 
   static String id = 'onBoardingScreenFour';
 
-  @override
   Widget build(BuildContext context) {
+    @override
+    var size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Container(
+
+        height: size.height,
+        width: size.width,
+
         padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
 
         child: SafeArea(
