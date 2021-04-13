@@ -1,3 +1,4 @@
+import 'package:bitshore/screens/page/signupPage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -18,27 +19,36 @@ class OnBoardingScreenTwo extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Container(
-                        alignment: Alignment.topLeft,
-                        child: Row(children: [
-                          ReusableText(
-                              textString: 'skip', textColor: Colors.black, textSize: 14, textFamily: 'DM Sans',),
-                          Icon(Icons.arrow_forward_ios_rounded,
-                              color: Colors.black, size: 10),
-                        ]),
+                      InkWell(
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          child: Row(children: [
+                            ReusableText(
+                                textString: 'skip', textColor: Colors.black, textSize: 14, textFamily: 'DM Sans',),
+                            Icon(Icons.arrow_forward_ios_rounded,
+                                color: Colors.black, size: 10),
+                          ]),
+                        ),
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignUpPage()),
+                          );
+                        },
                       ),
                     ],
                   ),
-SizedBox(height: size.height * 0.2),
+SizedBox(height: size.height * 0.18),
                   Image.asset('assets/images/onBoardingTwo.png'),
-                  SizedBox(height: size.height * 0.2),
+                  SizedBox(height: size.height * 0.18),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ReusableText(
                         textString: 'Secure Transactions',
-                        textColor: Color(0xFF263238),
-                        textSize: 24,
+                        textColor: Color(0xFF343C6B),
+                        textSize: size.height * 0.03,
                         textWeight: FontWeight.bold,
                         textAligner: TextAlign.left,
                       ),

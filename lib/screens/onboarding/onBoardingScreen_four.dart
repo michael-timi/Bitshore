@@ -19,24 +19,33 @@ class OnBoardingScreenFour extends StatelessWidget {
 
                 Column(
                   children: [
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Row(children: [
-                        ReusableText(
-                          textString: 'skip', textColor: Colors.black, textSize: 14, textFamily: 'DM Sans',),
-                        Icon(Icons.arrow_forward_ios_rounded,
-                            color: Colors.black, size: 10),
-                      ]),
+                    InkWell(
+                      child: Container(
+                        alignment: Alignment.topLeft,
+                        child: Row(children: [
+                          ReusableText(
+                            textString: 'skip', textColor: Colors.black, textSize: 14, textFamily: 'DM Sans',),
+                          Icon(Icons.arrow_forward_ios_rounded,
+                              color: Colors.black, size: 10),
+                        ]),
+                      ),
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpPage()),
+                        );
+                      },
                     ),
                   ],
                 ),
-                SizedBox(height: size.height * 0.2),
+                SizedBox(height: size.height * 0.18),
                 Image.asset('assets/images/onBoardingFour.png'),
-                SizedBox(height: size.height * 0.2),
+                SizedBox(height: size.height * 0.18),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ReusableText(textString:'Savings and Exchange', textColor: Color(0xFF263238), textSize: 24, textWeight: FontWeight.bold, textAligner: TextAlign.left),
+                    ReusableText(textString:'Savings and Exchange', textColor: Color(0xFF343C6B), textSize: size.height * 0.03, textWeight: FontWeight.bold, textAligner: TextAlign.left),
                     SizedBox(height: 20),
                     ReusableText(textString: 'Save and exchange your funds in the most recognised and valuable currencies all over the world',
                         textColor: Color(0xFF404040), textSize: 14, textFamily: 'DM Sans', textWeight: FontWeight.bold),

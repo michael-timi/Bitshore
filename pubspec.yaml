@@ -18,6 +18,8 @@ dependencies:
   flutter_svg: ^0.19.3
   google_fonts:
   font_awesome_flutter:
+  carousel_slider: ^3.0.0
+  getwidget: ^1.2.4
 
 dev_dependencies:
   flutter_test:

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class TransferPage extends StatelessWidget {
+class MorePage extends StatelessWidget {
 
-  static String id = 'transferPage';
+  static String id = 'morePage';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        title: Text ('Transfer Funds'),
+            title: Text ('More')
         )
     );
   }
