@@ -23,8 +23,14 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Container(
+
+        height: size.height,
+        width: size.width,
+
         color: Color(0xFF005CEE),
         child: SafeArea(
           child: Column(
@@ -42,6 +48,7 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
                     textSize: 14,
                     textAligner: TextAlign.center, textFamily: 'DM Sans'),
               ),
+
               Image.asset('assets/images/onBoardingOne.png', height: 372.6, width: 500
               ),
               Container(

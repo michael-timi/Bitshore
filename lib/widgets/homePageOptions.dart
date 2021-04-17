@@ -52,7 +52,7 @@ class HomePageOptions extends StatelessWidget {
                 child: Container(
                     padding:  EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     alignment: AlignmentDirectional.centerStart,
-                    child: ReusableText(textString: lastText, textWeight: FontWeight.bold, textColor: Color(0xff4672A6), textSize: 8, textFamily: 'DM Sans')),
+                    child: ReusableText(textString: lastText, textWeight: FontWeight.bold, textColor: Color(0xFF30459D), textSize: 8, textFamily: 'DM Sans')),
               ),
             ]
 

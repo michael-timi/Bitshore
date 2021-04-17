@@ -1,9 +1,11 @@
-import 'package:bitshore/widgets/plainTextFormField.dart';
 import 'package:bitshore/widgets/reusableText.dart';
-import 'package:bitshore/widgets/reusableTextField.dart';
+import 'package:bitshore/widgets/myReusableTextFormField.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'homepage_Screen.dart';
 
 class AddCardScreen extends StatelessWidget {
 
@@ -46,7 +48,7 @@ class AddCardScreen extends StatelessWidget {
                     width: 333,
                     height: 175,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: Color(0xFF404040),
                       borderRadius: BorderRadius.circular(13.0),
 
                       image: DecorationImage(
@@ -69,7 +71,7 @@ class AddCardScreen extends StatelessWidget {
                                     ReusableText(textString: '********', textFamily: 'DM Sans',
                                         textColor: Colors.white, textSize: 28, textWeight: FontWeight.bold),
 
-                                    Image.asset('assets/images/mastercard_logo.png'),
+                                    SvgPicture.asset('assets/images/mastercard_logo.svg'),
 
                                   ],
                                 ),
@@ -207,7 +209,8 @@ class AddCardScreen extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(),
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()
+                      ),
                       );
                     },
                   ),
