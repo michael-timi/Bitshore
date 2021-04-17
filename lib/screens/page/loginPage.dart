@@ -1,4 +1,3 @@
-import 'package:bitshore/screens/page/signupPage.dart';
 import 'package:bitshore/screens/page/welcomePage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   static String id = 'loginpage';
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: SafeArea(
@@ -27,16 +27,16 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: [
-              SizedBox(height: height * 0.1),
+              SizedBox(height: size.height * 0.08),
               Container(
-                height: height / 4,
+                height: size.height / 4,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/signIn.png'),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: size.height * 0.03),
               Padding(
                 padding: const EdgeInsets.only(left: 24.0, right: 24),
                 child: Column(
@@ -45,9 +45,9 @@ class _LoginPageState extends State<LoginPage> {
                     ReusableText(
                         textString: 'Login to proceed',
                         textColor: Color(0xff263238),
-                        textSize: 22,
+                        textSize: size.width * 0.05,
                         textWeight: FontWeight.bold),
-                    SizedBox(height: 50),
+                    SizedBox(height: size.height * 0.05),
                     Form(
                         key: _formKey,
                         child: Column(
@@ -63,9 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                                     .copyWith(color: Color(0xff263238)),
                               ),
                             ),
-                            SizedBox(
-                              height: 2,
-                            ),
+                            SizedBox(height: size.height * 0.005),
                             TextFormField(
                               controller: _emailController,
                               style: Theme.of(context)
@@ -83,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                                       .textTheme
                                       .caption
                                       .copyWith(
-                                          fontSize: 16,
+                                          fontSize: size.width * 0.035,
                                           fontWeight: FontWeight.w500,
                                           color: Color(0xff263238)),
                                   alignLabelWithHint: true,
@@ -112,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                                 return null;
                               },
                             ),
-                            SizedBox(height: 30),
+                            SizedBox(height: size.height * 0.02),
                             Padding(
                               padding: const EdgeInsets.only(left: 4),
                               child: Text(
@@ -123,9 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                                     .copyWith(color: Color(0xff263238)),
                               ),
                             ),
-                            SizedBox(
-                              height: 2,
-                            ),
+                            SizedBox(height: size.height * 0.01),
                             TextFormField(
                               controller: _passwordController,
                               style: Theme.of(context)
@@ -155,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                                       .textTheme
                                       .caption
                                       .copyWith(
-                                          fontSize: 16,
+                                          fontSize: size.width * 0.035,
                                           fontWeight: FontWeight.w500,
                                           color: Color(0xff263238)),
                                   alignLabelWithHint: true,
@@ -189,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                                 return null;
                               },
                             ),
-                            SizedBox(height: 30),
+                            SizedBox(height: size.height * 0.02),
                             Padding(
                               padding:
                                   const EdgeInsets.only(left: 8.0, right: 8.0),
@@ -227,7 +223,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ],
                               ))),
                             ),
-                            SizedBox(height: 60),
+                            SizedBox(height: size.height * 0.05),
                             Padding(
                               padding:
                                   const EdgeInsets.only(left: 8.0, right: 8.0),
@@ -253,10 +249,10 @@ class _LoginPageState extends State<LoginPage> {
                                     Navigator.pop(context);
                                   }),
                             ),
-                            SizedBox(height: 20),
+                            SizedBox(height: size.height * 0.05),
                             InkWell(
                               child: Container(
-                                height: height * 0.05,
+                                height: size.height * 0.05,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
                                     color: Color(0xff003FA4)),
@@ -264,7 +260,7 @@ class _LoginPageState extends State<LoginPage> {
                                   child: ReusableText(
                                       textString: 'Continue',
                                       textColor: Colors.white,
-                                      textSize: 18,
+                                      textSize: size.width * 0.04,
                                       textAligner: TextAlign.center),
                                 ),
                               ),
@@ -299,6 +295,7 @@ class _LoginPageState extends State<LoginPage> {
         context: context,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
         builder: (BuildContext bc) {
+          var size = MediaQuery.of(context).size;
           return Padding(
             padding: const EdgeInsets.all(16),
             child: Container(
@@ -306,7 +303,7 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20),
                       topLeft: Radius.circular(20))),
-              height: MediaQuery.of(context).size.height * 0.3,
+              height: size.height * 0.3,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -321,32 +318,35 @@ class _LoginPageState extends State<LoginPage> {
                               color: Colors.black)),
                     ],
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                  SizedBox(height: size.height * 0.01),
                   Text(
                     'Fingerprint access',
                     style: TextStyle(
                         color: Color(0xff263238),
                         fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                        fontSize: size.width * 0.035),
                   ),
                   Text('Unlock your account',
-                      style: TextStyle(color: Color(0xff6F6F6F), fontSize: 16)),
-                  SizedBox(height: 50),
+                      style: TextStyle(
+                          color: Color(0xff6F6F6F),
+                          fontSize: size.width * 0.03)),
+                  SizedBox(height: size.height * 0.04),
                   Center(
                       child: Column(
                     children: [
                       Container(
-                        height: 62,
+                        height: size.height * 0.1,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('assets/images/fingerprint.png'),
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: size.height * 0.01),
                       Text('Touch the fingerprint sensor',
                           style: TextStyle(
-                              color: Color(0xff6F6F6F), fontSize: 16)),
+                              color: Color(0xff6F6F6F),
+                              fontSize: size.width * 0.03)),
                     ],
                   )),
                 ],

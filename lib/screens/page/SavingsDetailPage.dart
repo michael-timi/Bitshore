@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bitshore/widgets/transactionHistroy.dart';
 
-class SingleSavings extends StatelessWidget {
+class SavingsDetailsPage extends StatelessWidget {
   static String id = 'singleSavingsPage';
 
   @override
@@ -15,13 +15,24 @@ class SingleSavings extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                alignment: Alignment.topCenter,
-                child: Text(
-                  'My Savings',
-                  style: TextStyle(
-                      color: Color(0xff343C6B),
-                      fontSize: size.width * 0.05,
-                      fontWeight: FontWeight.bold),
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  children: [
+                    InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+                   Spacer(),
+                    Text(
+                      'My Savings',
+                      style: TextStyle(
+                          color: Color(0xff343C6B),
+                          fontSize: size.width * 0.05,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Spacer()
+                  ],
                 ),
               ),
               SizedBox(height: size.height * 0.02),

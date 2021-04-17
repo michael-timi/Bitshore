@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class SavingsDetails extends StatelessWidget {
   SavingsDetails(
       {@required this.size,
@@ -14,8 +13,8 @@ class SavingsDetails extends StatelessWidget {
 
   final Size size;
   final Color color1, color2;
-  final String total, current, name, details, days, percent;
-
+  final String total, current, name, details, days;
+  final int percent;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,18 +30,20 @@ class SavingsDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+
             Padding(
               padding: EdgeInsets.symmetric(vertical: 12),
-              child: Expanded(
-                child: Container(
-                    width: size.width * 0.01,
-                    decoration: BoxDecoration(
-                      color: color2,
-                      borderRadius: BorderRadius.circular(5),
-                    )),
-              ),
+              child: Container(
+                  width: size.width * 0.01,
+                  decoration: BoxDecoration(
+                    color: color2,
+                    borderRadius: BorderRadius.circular(5),
+                  )),
             ),
+
+            //Details
             Expanded(
+              flex: 1,
               child: Container(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,6 +109,7 @@ class SavingsDetails extends StatelessWidget {
                       ),
                     ),
                     Expanded(
+                      flex: 1,
                       child: Container(
                         alignment: Alignment.centerRight,
                         child: Padding(
@@ -121,10 +123,10 @@ class SavingsDetails extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 border: Border.all(color: color1, width: 4.0)),
                             child: Center(
-                                child: Text(percent,
+                                child: Text(percent.toString()+'%',
                                     style: TextStyle(
                                         color: color2,
-                                        fontSize: size.width * 0.04,
+                                        fontSize: size.width * 0.03,
                                         fontWeight: FontWeight.bold))),
                           ),
                         ),
@@ -134,6 +136,7 @@ class SavingsDetails extends StatelessWidget {
                 ),
               ),
             ),
+
           ],
         ),
       ),

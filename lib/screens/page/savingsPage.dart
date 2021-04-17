@@ -1,10 +1,16 @@
+import 'package:bitshore/screens/page/newGoalPage.dart';
 import 'package:flutter/material.dart';
 import 'package:bitshore/widgets/savingsDetails.dart';
-import 'package:bitshore/screens/page/singleSaving.dart';
+import 'package:bitshore/screens/page/SavingsDetailPage.dart';
 
-class SavingsPage extends StatelessWidget {
+class SavingsPage extends StatefulWidget {
   static String id = 'savingsPage';
 
+  @override
+  _SavingsPageState createState() => _SavingsPageState();
+}
+
+class _SavingsPageState extends State<SavingsPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -70,30 +76,37 @@ class SavingsPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: size.height * 0.02),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Color(0xff003FA4),width: 1)
+              InkWell(
+                child: Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border:
+                                Border.all(color: Color(0xff003FA4), width: 1)),
+                        child: Icon(Icons.add,
+                            color: Color(0xff003FA4), size: size.width * 0.04),
                       ),
-                      child: Icon(
-                        Icons.add,
-                        color: Color(0xff003FA4),size: size.width * 0.04
-                      ),
-                    ),
-                    SizedBox(width: 4),
-                    Text(
-                      'Add a new goal',
-                      style: TextStyle(
-                          color: Color(0xff003FA4),
-                          fontSize: size.width * 0.035,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
+                      SizedBox(width: 4),
+                      Text(
+                        'Add a new goal',
+                        style: TextStyle(
+                            color: Color(0xff003FA4),
+                            fontSize: size.width * 0.035,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NewGoalPage()),
+                  );
+                },
               ),
               SizedBox(height: size.height * 0.02),
               Container(
@@ -118,12 +131,13 @@ class SavingsPage extends StatelessWidget {
                   name: 'Wife`s car',
                   details: 'FLEXI-SAVED',
                   days: '35days',
-                  percent: '31%',
+                  percent: 35,
                 ),
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SingleSavings()),
+                    MaterialPageRoute(
+                        builder: (context) => SavingsDetailsPage()),
                   );
                 },
               ),
@@ -137,7 +151,7 @@ class SavingsPage extends StatelessWidget {
                 name: 'Tuition',
                 details: 'FIXED-SAVED',
                 days: '15days',
-                percent: '10%',
+                percent: 10,
               ),
               SizedBox(height: size.height * 0.02),
               SavingsDetails(
@@ -149,8 +163,9 @@ class SavingsPage extends StatelessWidget {
                 name: 'Family Treat',
                 details: 'FIXED-SAVED',
                 days: '15days',
-                percent: '37%',
+                percent: 37,
               ),
+
             ],
           ),
         ),

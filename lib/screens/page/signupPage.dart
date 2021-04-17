@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
   static String id = 'signuppage';
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
@@ -38,7 +39,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: size.height * 0.03),
               Padding(
                 padding: const EdgeInsets.only(left: 24.0, right: 24),
                 child: Column(
@@ -47,9 +48,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     ReusableText(
                         textString: 'Create an account',
                         textColor: Color(0xff263238),
-                        textSize: 22,
+                        textSize: size.width * 0.05,
                         textWeight: FontWeight.bold),
-                    SizedBox(height: 50),
+                    SizedBox(height: size.height * 0.05),
                     Form(
                         key: _formKey,
                         child: Column(
@@ -65,9 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     .copyWith(color: Color(0xff263238)),
                               ),
                             ),
-                            SizedBox(
-                              height: 2,
-                            ),
+                            SizedBox(height: size.height * 0.005),
                             TextFormField(
                               controller: _emailController,
                               style: Theme.of(context)
@@ -85,7 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                       .textTheme
                                       .caption
                                       .copyWith(
-                                          fontSize: 16,
+                                          fontSize: size.width * 0.035,
                                           fontWeight: FontWeight.w500,
                                           color: Color(0xff263238)),
                                   alignLabelWithHint: true,
@@ -114,7 +113,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 return null;
                               },
                             ),
-                            SizedBox(height: 30),
+                            SizedBox(height: size.height * 0.02),
                             Padding(
                               padding: const EdgeInsets.only(left: 4),
                               child: Text(
@@ -125,9 +124,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     .copyWith(color: Color(0xff263238)),
                               ),
                             ),
-                            SizedBox(
-                              height: 2,
-                            ),
+                            SizedBox(height: size.height * 0.01),
                             TextFormField(
                               controller: _passwordController,
                               style: Theme.of(context)
@@ -157,7 +154,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                       .textTheme
                                       .caption
                                       .copyWith(
-                                          fontSize: 16,
+                                          fontSize: size.width * 0.035,
                                           fontWeight: FontWeight.w500,
                                           color: Color(0xff263238)),
                                   alignLabelWithHint: true,
@@ -191,7 +188,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 return null;
                               },
                             ),
-                            SizedBox(height: 30),
+                            SizedBox(height: size.height * 0.02),
                             Padding(
                               padding: const EdgeInsets.only(left: 4),
                               child: Text(
@@ -230,7 +227,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                         }).toList(),
                                       ),
                                     )),
-                                SizedBox(width: 10),
+                                SizedBox(width: size.width * 0.02),
                                 Flexible(
                                   flex: 2,
                                   child: TextFormField(
@@ -250,7 +247,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                             .textTheme
                                             .caption
                                             .copyWith(
-                                                fontSize: 16,
+                                                fontSize: size.width * 0.035,
                                                 fontWeight: FontWeight.w500,
                                                 color: Color(0xff263238)),
                                         alignLabelWithHint: true,
@@ -287,10 +284,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 ),
                               ],
                             ),
-                            SizedBox(
-                              height: 2,
-                            ),
-                            SizedBox(height: 60),
+                            SizedBox(height: size.height * 0.05),
                             InkWell(
                               child: Padding(
                                 padding: const EdgeInsets.only(
@@ -317,12 +311,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => LoginPage()
-                                    ),
+                                      builder: (context) => LoginPage()),
                                 );
                               },
                             ),
-                            SizedBox(height: 20),
+                            SizedBox(height: size.height * 0.02),
                             InkWell(
                               child: Container(
                                 height: size.height * 0.05,
@@ -333,7 +326,8 @@ class _SignUpPageState extends State<SignUpPage> {
                                   child: ReusableText(
                                       textString: 'Continue',
                                       textColor: Colors.white,
-                                      textSize: 18,
+                                      textSize: size.width * 0.04,
+                                      textWeight: FontWeight.bold,
                                       textAligner: TextAlign.center),
                                 ),
                               ),
@@ -341,12 +335,10 @@ class _SignUpPageState extends State<SignUpPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    // builder: (context) => OtpPage()
-                                    ),
+                                      builder: (context) => OtpPage()),
                                 );
                               },
                             ),
-                            SizedBox(height: 20),
                           ],
                         )),
                   ],
