@@ -1,48 +1,68 @@
 import 'package:flutter/material.dart';
 
-class ReusableTextField extends StatelessWidget {
+// ignore: must_be_immutable
+class ReusableTextField extends StatefulWidget {
+  ReusableTextField(
+      {this.hintOfTextField,
+      this.hidePassword,
+      this.onChangedValue,
+      this.keyType,
+      this.boxWidth, this.controller});
 
-  ReusableTextField({ this.hintOfTextField,  this.hidePassword, this.onChangedValue, this.keyType, this.boxWidth});
-
- final String hintOfTextField;
- final Function onChangedValue;
- final bool hidePassword;
- final TextInputType keyType;
- final double boxWidth;
+  String hintOfTextField;
+  Function onChangedValue;
+  bool hidePassword, isValid;
+  TextInputType keyType;
+  double boxWidth;
+  TextEditingController controller;
 
   @override
+  _ReusableTextFieldState createState() => _ReusableTextFieldState();
+}
+
+class _ReusableTextFieldState extends State<ReusableTextField> {
+  @override
   Widget build(BuildContext context) {
-
+    var size = MediaQuery.of(context).size;
     return Container(
-      width: boxWidth,
+      width: size.width,
       child: TextFormField(
-        keyboardType: keyType,
-        //textAlign: TextAlign.center,
-          obscureText: hidePassword,
-          onChanged: onChangedValue,
-          decoration: InputDecoration(
-            hintText: hintOfTextField,
-            fillColor: Color(0xFFC4C4C4),
+        controller: widget.controller,
+        keyboardType: widget.keyType,
+        obscureText: widget.hidePassword,
+        onChanged: widget.onChangedValue,
+        decoration: InputDecoration(
+            alignLabelWithHint: true,
+            labelStyle: Theme.of(context).textTheme.caption.copyWith(
+                fontSize: size.width * 0.035,
+                fontWeight: FontWeight.w500,
+                color: Color(0xff263238)),
+            hintText: widget.hintOfTextField,
+            fillColor: Color.fromRGBO(243, 246, 250, 1),
             filled: true,
-            contentPadding:
-            EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+            errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(1),
+                borderSide: BorderSide(color: Colors.red)),
+            contentPadding: const EdgeInsets.all(10),
             border: OutlineInputBorder(
-             borderRadius: BorderRadius.circular(5.0),
-              borderSide: BorderSide(width: 0.0),
-            ),
-
+                borderRadius: BorderRadius.circular(1),
+                borderSide: BorderSide.none),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black26, width: 0.0),
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black26, width: 0.0 ),
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-          ),
-        ),
+                borderRadius: BorderRadius.circular(1),
+                borderSide: BorderSide.none)),
+        onFieldSubmitted: (String value) {
+          if (value.isEmpty) {
+            widget.isValid = false;
+          }
+          setState(() {});
+        },
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Password field cannot be Empty.';
+          }
+          return null;
+        },
+      ),
     );
-
   }
 }

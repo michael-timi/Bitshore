@@ -1,20 +1,19 @@
+import 'package:bitshore/screens/page/pageNav.dart';
 import 'package:bitshore/utils/constant.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
-import 'homepage_Screen.dart';
 
 class OtpPage extends StatefulWidget {
   static String id = 'otppage';
+
   @override
   _OtpPageState createState() => _OtpPageState();
 }
 
 class _OtpPageState extends State<OtpPage> {
-  //static GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: SafeArea(
@@ -22,16 +21,16 @@ class _OtpPageState extends State<OtpPage> {
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: [
-              SizedBox(height: height * 0.1),
+              SizedBox(height: size.height * 0.08),
               Container(
-                height: height / 4,
+                height: size.height / 4,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/otp.png'),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: size.height * 0.03),
               Padding(
                 padding: const EdgeInsets.only(left: 24.0, right: 24),
                 child: Column(
@@ -41,14 +40,14 @@ class _OtpPageState extends State<OtpPage> {
                     ReusableText(
                         textString: 'Verify OTP',
                         textColor: Color(0xff263238),
-                        textSize: 22,
+                        textSize: size.width * 0.05,
                         textWeight: FontWeight.bold),
-                    SizedBox(height: 5),
+                    SizedBox(height: size.height * 0.008),
                     ReusableText(
                         textString: 'Check your emal address for an OTP',
                         textColor: Color(0xff878787),
-                        textSize: 14),
-                    SizedBox(height: 60),
+                        textSize: size.width * 0.03),
+                    SizedBox(height: size.height * 0.050),
                     Center(
                       child: Container(
                         child: Row(
@@ -56,8 +55,8 @@ class _OtpPageState extends State<OtpPage> {
                           children: [
                             Expanded(
                               child: Container(
-                                  height: 60,
-                                  width: 60,
+                                  height: size.height * 0.06,
+                                  width: size.height * 0.06,
                                   decoration:
                                       BoxDecoration(color: Color(0xffC4C4C4)),
                                   child: Center(
@@ -65,81 +64,81 @@ class _OtpPageState extends State<OtpPage> {
                                     '*',
                                     style: TextStyle(
                                         color: Color(0xff878787),
-                                        fontSize: 20,
+                                        fontSize: size.height * 0.02,
                                         fontWeight: FontWeight.bold),
                                   ))),
                             ),
-                            SizedBox(width: 20),
+                            SizedBox(width: size.width * 0.04),
                             Expanded(
                               child: Container(
-                                  height: 60,
-                                  width: 60,
+                                  height: size.height * 0.06,
+                                  width: size.height * 0.06,
                                   decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
+                                      BoxDecoration(color: Color(0xffC4C4C4)),
                                   child: Center(
                                       child: Text(
-                                        '*',
-                                        style: TextStyle(
-                                            color: Color(0xff878787),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ))),
+                                    '*',
+                                    style: TextStyle(
+                                        color: Color(0xff878787),
+                                        fontSize: size.height * 0.02,
+                                        fontWeight: FontWeight.bold),
+                                  ))),
                             ),
-                            SizedBox(width: 20),
+                            SizedBox(width: size.width * 0.04),
                             Expanded(
                               child: Container(
-                                  height: 60,
-                                  width: 60,
+                                  height: size.height * 0.06,
+                                  width: size.height * 0.06,
                                   decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
+                                      BoxDecoration(color: Color(0xffC4C4C4)),
                                   child: Center(
                                       child: Text(
-                                        '*',
-                                        style: TextStyle(
-                                            color: Color(0xff878787),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ))),
+                                    '*',
+                                    style: TextStyle(
+                                        color: Color(0xff878787),
+                                        fontSize: size.height * 0.02,
+                                        fontWeight: FontWeight.bold),
+                                  ))),
                             ),
-                            SizedBox(width: 20),
+                            SizedBox(width: size.width * 0.04),
                             Expanded(
                               child: Container(
-                                  height: 60,
-                                  width: 60,
+                                  height: size.height * 0.06,
+                                  width: size.height * 0.06,
                                   decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
+                                      BoxDecoration(color: Color(0xffC4C4C4)),
                                   child: Center(
                                       child: Text(
-                                        '*',
-                                        style: TextStyle(
-                                            color: Color(0xff878787),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ))),
+                                    '*',
+                                    style: TextStyle(
+                                        color: Color(0xff878787),
+                                        fontSize: size.height * 0.02,
+                                        fontWeight: FontWeight.bold),
+                                  ))),
                             ),
-                            SizedBox(width: 20),
+                            SizedBox(width: size.width * 0.04),
                             Expanded(
                               child: Container(
-                                  height: 60,
-                                  width: 60,
+                                  height: size.height * 0.06,
+                                  width: size.height * 0.06,
                                   decoration:
-                                  BoxDecoration(color: Color(0xffC4C4C4)),
+                                      BoxDecoration(color: Color(0xffC4C4C4)),
                                   child: Center(
                                       child: Text(
-                                        '*',
-                                        style: TextStyle(
-                                            color: Color(0xff878787),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ))),
+                                    '*',
+                                    style: TextStyle(
+                                        color: Color(0xff878787),
+                                        fontSize: size.height * 0.02,
+                                        fontWeight: FontWeight.bold),
+                                  ))),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: size.height * 0.04),
                     buildTimer(),
-                    SizedBox(height: 40),
+                    SizedBox(height: size.height * 0.04),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                       child: InkWell(
@@ -151,7 +150,7 @@ class _OtpPageState extends State<OtpPage> {
                                   style: TextStyle(
                                       color: Color(0xff828282),
                                       fontWeight: FontWeight.bold)),
-                              SizedBox(width: 5),
+                              SizedBox(width: size.width * 0.01),
                               Text('Resend now',
                                   style: TextStyle(
                                       color: Color(0xff003FA4),
@@ -163,7 +162,7 @@ class _OtpPageState extends State<OtpPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomePage()),
+                                  builder: (context) => BitshorePages()),
                             );
                           }),
                     ),

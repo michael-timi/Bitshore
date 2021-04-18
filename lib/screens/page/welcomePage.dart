@@ -1,10 +1,8 @@
-
 import 'package:bitshore/screens/page/loginPage.dart';
+import 'package:bitshore/screens/page/pageNav.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'homepage_Screen.dart';
 
 class WelcomePage extends StatefulWidget {
   static String id = 'welcomepage';
@@ -21,7 +19,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: SafeArea(
@@ -32,9 +30,9 @@ class _WelcomePageState extends State<WelcomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: height * 0.2),
+                SizedBox(height: size.height * 0.15),
                 Container(
-                  height: height / 4,
+                  height: size.height / 4,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
@@ -45,14 +43,14 @@ class _WelcomePageState extends State<WelcomePage> {
                 ReusableText(
                     textString: 'Welcome Back',
                     textColor: Color(0xff263238),
-                    textSize: 30,
+                    textSize: size.width * 0.05,
                     textWeight: FontWeight.bold,
                     textAligner: TextAlign.center),
-                SizedBox(height: 5),
+                SizedBox(height: size.height * 0.005),
                 ReusableText(
                     textString: 'Enter your password',
                     textColor: Color(0xff263238),
-                    textSize: 18,
+                    textSize: size.height * 0.015,
                     textAligner: TextAlign.center),
                 SizedBox(height: 30),
                 Padding(
@@ -72,9 +70,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                   .copyWith(color: Color(0xff263238)),
                             ),
                           ),
-                          SizedBox(
-                            height: 2,
-                          ),
+                          SizedBox(height: size.height * 0.01),
                           TextFormField(
                             controller: _passwordController,
                             style: Theme.of(context)
@@ -104,7 +100,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                     .textTheme
                                     .caption
                                     .copyWith(
-                                        fontSize: 16,
+                                        fontSize: size.width * 0.035,
                                         fontWeight: FontWeight.w500,
                                         color: Color(0xff263238)),
                                 alignLabelWithHint: true,
@@ -140,7 +136,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         ],
                       )),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: size.height * 0.02),
                 Padding(
                   padding: const EdgeInsets.only(left: 28, right: 28),
                   child: Container(
@@ -168,7 +164,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 backgroundColor: Colors.white,
                                 backgroundImage: AssetImage(
                                     'assets/images/fingerprint.png')),
-                            SizedBox(width: 5),
+                            SizedBox(width: size.width * 0.01),
                             Text('Use fingerprint',
                                 style: TextStyle(
                                     color: Color(0xff003FA4),
@@ -182,12 +178,12 @@ class _WelcomePageState extends State<WelcomePage> {
                     ],
                   ))),
                 ),
-                SizedBox(height: 80),
+                SizedBox(height: size.height * 0.08),
                 Padding(
                   padding: const EdgeInsets.only(left: 24, right: 24),
                   child: InkWell(
                     child: Container(
-                      height: height * 0.05,
+                      height: size.height * 0.05,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           color: Color(0xff003FA4)),
@@ -195,14 +191,15 @@ class _WelcomePageState extends State<WelcomePage> {
                         child: ReusableText(
                             textString: 'Continue',
                             textColor: Colors.white,
-                            textSize: 18,
+                            textSize: size.width * 0.035,
+                            textWeight: FontWeight.bold,
                             textAligner: TextAlign.center),
                       ),
                     ),
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
+                        MaterialPageRoute(builder: (context) => BitshorePages()),
                       );
                     },
                   ),
@@ -226,6 +223,7 @@ class _WelcomePageState extends State<WelcomePage> {
         context: context,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
         builder: (BuildContext bc) {
+          var size = MediaQuery.of(context).size;
           return Padding(
             padding: const EdgeInsets.all(16),
             child: Container(
@@ -233,7 +231,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20),
                       topLeft: Radius.circular(20))),
-              height: MediaQuery.of(context).size.height * 0.3,
+              height: size.height * 0.3,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -248,34 +246,37 @@ class _WelcomePageState extends State<WelcomePage> {
                               color: Colors.black)),
                     ],
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                  SizedBox(height: size.height * 0.01),
                   Text(
                     'Fingerprint access',
                     style: TextStyle(
                         color: Color(0xff263238),
                         fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                        fontSize: size.width * 0.035),
                   ),
                   Text('Unlock your account',
-                      style: TextStyle(color: Color(0xff6F6F6F), fontSize: 16)),
-                  SizedBox(height: 50),
+                      style: TextStyle(
+                          color: Color(0xff6F6F6F),
+                          fontSize: size.width * 0.03)),
+                  SizedBox(height: size.height * 0.04),
                   Center(
                       child: Column(
-                        children: [
-                          Container(
-                            height: 62,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/fingerprint.png'),
-                              ),
-                            ),
+                    children: [
+                      Container(
+                        height: size.height * 0.1,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/fingerprint.png'),
                           ),
-                          SizedBox(height: 20),
-                          Text('Touch the fingerprint sensor',
-                              style: TextStyle(
-                                  color: Color(0xff6F6F6F), fontSize: 16)),
-                        ],
-                      )),
+                        ),
+                      ),
+                      SizedBox(height: size.height * 0.01),
+                      Text('Touch the fingerprint sensor',
+                          style: TextStyle(
+                              color: Color(0xff6F6F6F),
+                              fontSize: size.width * 0.03)),
+                    ],
+                  )),
                 ],
               ),
             ),
