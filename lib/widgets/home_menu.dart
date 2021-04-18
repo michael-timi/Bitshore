@@ -28,7 +28,7 @@ class HomeMenu extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 6),
+            SizedBox(height: size.height * 0.01),
             Text(
               firstText,
               style: TextStyle(
@@ -43,7 +43,7 @@ class HomeMenu extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Color(0xff30459D)),
             ),
-            SizedBox(height: 8),
+            SizedBox(height: size.height * 0.01),
             Text(
               lastText,
               style: TextStyle(

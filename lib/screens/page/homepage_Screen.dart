@@ -1,4 +1,5 @@
 import 'package:bitshore/models/homeCard.dart';
+import 'package:bitshore/screens/page/addCard_Screen.dart';
 import 'package:bitshore/widgets/home_card.dart';
 import 'package:bitshore/widgets/home_menu.dart';
 import 'package:bitshore/widgets/transactionItems.dart';
@@ -63,7 +64,6 @@ class _HomePageState extends State<HomePage> {
     }
 
     return Scaffold(
-      // bottomNavigationBar: BottomNavBar(),
       body: Stack(
         children: [
           Container(
@@ -143,33 +143,41 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: size.height * 0.02),
                 updateIndicators(),
                 SizedBox(height: size.height * 0.02),
-                Container(
-                  height: size.height * 0.15,
-                  width: size.width * 0.9,
-                  decoration: BoxDecoration(
-                      color: Color(0xff005CEE),
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      children: [
-                        HomeMenu(
-                            firstText: 'Fund',
-                            secondText: 'Account',
-                            lastText: 'Fund your account'),
-                        SizedBox(width: 12),
-                        HomeMenu(
-                            firstText: 'Create',
-                            secondText: 'Account',
-                            lastText: 'Manage your account'),
-                        SizedBox(width: 12),
-                        HomeMenu(
-                            firstText: 'Start',
-                            secondText: 'Saving',
-                            lastText: 'Setup a saving plan')
-                      ],
+                InkWell(
+                  child: Container(
+                    height: size.height * 0.15,
+                    width: size.width * 0.9,
+                    decoration: BoxDecoration(
+                        color: Color(0xff005CEE),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Row(
+                        children: [
+                          HomeMenu(
+                              firstText: 'Fund',
+                              secondText: 'Account',
+                              lastText: 'Fund your account'),
+                          SizedBox(width: 12),
+                          HomeMenu(
+                              firstText: 'Create',
+                              secondText: 'Account',
+                              lastText: 'Manage your account'),
+                          SizedBox(width: 12),
+                          HomeMenu(
+                              firstText: 'Start',
+                              secondText: 'Saving',
+                              lastText: 'Setup a saving plan')
+                        ],
+                      ),
                     ),
                   ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AddCardScreen()),
+                    );
+                  },
                 ),
                 SizedBox(height: size.height * 0.02),
                 Container(

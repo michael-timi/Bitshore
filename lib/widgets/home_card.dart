@@ -2,6 +2,7 @@ import 'package:bitshore/models/homeCard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+// ignore: must_be_immutable
 class HomeCard extends StatelessWidget {
   HomeCard({this.card});
 

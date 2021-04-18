@@ -108,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               onFieldSubmitted: (String value) {},
                               validator: (String value) {
                                 if (value.isEmpty) {
-                                  return 'Password field cannot be Empty.';
+                                  return 'Field cannot be Empty.';
                                 }
                                 return null;
                               },
