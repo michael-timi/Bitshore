@@ -14,11 +14,18 @@ class BankingPage extends StatefulWidget {
 
 class _BankingPageState extends State<BankingPage> {
 
-  bool _setContainerVisible = true;
+  bool _setBaseContainerVisible = true;
+  bool _setHomeContainerVisible = true;
 
-  void _toggleContainer() {
+  void _setBaseContainer() {
     setState(() {
-      _setContainerVisible = !_setContainerVisible;
+      _setBaseContainerVisible = !_setBaseContainerVisible;
+    });
+  }
+
+  void _setHomeContainer() {
+    setState(() {
+      _setHomeContainerVisible = !_setHomeContainerVisible;
     });
   }
 
@@ -114,51 +121,44 @@ class _BankingPageState extends State<BankingPage> {
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 0.0),
-                          child: ClipPath(
-                            clipper: ShapeBorderClipper(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(5.0),)
-                              )
-                            ),
-                            child: Container(
-                              height: 55,
-                              width: 345,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only( topLeft: Radius.circular(5.0) , topRight: Radius.circular(5.0),
-                                ),
-                                border: Border(
-                                  bottom: BorderSide(
-                                    width: 1, color: Color(0xFFC4C4C4),
-                                  )
-                                ),
-
-                                color: Colors.white,
+                          padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 2.0),
+                          child: Container(
+                            height: 55,
+                            width: 345,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only( topLeft: Radius.circular(5.0) , topRight: Radius.circular(5.0),
                               ),
+                             /* border: Border(
+                                bottom: BorderSide(
+                                  width: 1, color: Color(0xFFC4C4C4),
+                                )
+                              ),
+*/
+                              color: Colors.white,
+                            ),
 
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 1.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 1.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                                  children: [
-                                    ReusableText(textString: 'Base account',
-                                      textColor: Color(0xFF828282),
-                                      textSize: 14,
-                                      textWeight: FontWeight.w700,
-                                      textFamily: 'Nunito',
+                                children: [
+                                  ReusableText(textString: 'Base account',
+                                    textColor: Color(0xFF828282),
+                                    textSize: 14,
+                                    textWeight: FontWeight.w700,
+                                    textFamily: 'Nunito',
+                                  ),
+
+                                  IconButton(
+                                    icon: Icon( Icons.keyboard_arrow_down_rounded,
+                                      size: 16,
+                                      color: Color(0xFF878787),
                                     ),
+                                    onPressed: _setBaseContainer,
 
-                                    IconButton(
-                                      icon: Icon( Icons.keyboard_arrow_down_rounded,
-                                        size: 16,
-                                        color: Color(0xFF878787),
-                                      ),
-                                      onPressed: _toggleContainer,
-
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -166,173 +166,173 @@ class _BankingPageState extends State<BankingPage> {
 
 
                         Visibility(
-                          visible: _setContainerVisible,
+                          visible: _setBaseContainerVisible,
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 30),
-                            child: Container(
-                              height: 177,
-                              width: 345,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only( bottomLeft: Radius.circular(5.0) , bottomRight: Radius.circular(5.0),
+                            child: Material(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0) , bottomRight: Radius.circular(5.0),
                                 ),
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey,
-                                    offset: Offset(0.0, 2.0), //(x,y)
-                                    blurRadius: 6.0,
-                                  ),
-                                ],
                               ),
-
-
-                              child: Padding(
-                                padding: const EdgeInsets.fromLTRB(10, 20, 10, 35),
-
-                                child: Container(
-                                  height: 122,
-                                  width: 332,
-                                  decoration: BoxDecoration(
-                                    border: Border.all( width: 1.0,
-                                      color: Color.fromRGBO(196, 196, 196, 0.34),
-                                    ),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                    gradient: LinearGradient(
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight,
-                                        colors: [Color(0xFFEDEDED),  Color(0xFFECECEC)],
-                                        stops: [0.0, 0.5],
-                                        tileMode: TileMode.clamp
-                                    ),
+                              elevation: 1.0,
+                              child: Container(
+                                height: 177,
+                                width: 345,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only( bottomLeft: Radius.circular(5.0) , bottomRight: Radius.circular(5.0),
                                   ),
+                                  color: Colors.white,
+                                ),
 
-                                  child:
-                                  Column(
-                                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
 
-                                      Row(
-                                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(10, 20, 10, 35),
 
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10.0),
-                                            child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  ReusableText(textString: 'Nigerian Wallet 1',
-                                                    textColor: Color(0xFF4F4F4F),
-                                                    textSize: 20,
-                                                    textWeight: FontWeight.w700,
-                                                    textFamily: 'Nunito',
-                                                  ),
-
-                                                  SizedBox(height: 5),
-
-                                                  ReusableText(textString: 'name',
-                                                    textColor: Color(0xFFBDBDBD),
-                                                    textSize: 10,
-                                                    textWeight: FontWeight.w400,
-                                                    textFamily: 'Nunito',
-                                                  ),
-                                                ]
-                                            ),
-                                          ),
-
-                                          SizedBox(width: 60),
-                                          Padding(
-                                            padding: const EdgeInsets.all(2.0),
-                                            child: Container(
-                                              //alignment: AlignmentDirectional.topEnd,
-                                              height: 28,
-                                              width: 48,
-                                              decoration: BoxDecoration(
-                                                border: Border.all( width: 1.0,
-                                                  color: Color.fromRGBO(196, 196, 196, 0.34),
-                                                ),
-                                                //color: Color.fromRGBO(196, 196, 196, 0.34),
-                                                borderRadius: BorderRadius.circular(5.0),
-                                                gradient: LinearGradient(
-                                                    begin: Alignment.topLeft,
-                                                    end: Alignment.bottomRight,
-                                                    colors: [Color(0xFFEDEDED) ,  Color(0xFFECECEC)],
-                                                    stops: [0.0, 0.5],
-                                                  tileMode: TileMode.clamp
-                                                ),
-                                              ),
-
-                                              child:  Center(
-                                                child: ReusableText(textString: 'DIR',
-                                                  textColor: Color(0xFF4F4F4F),
-                                                  textSize: 14,
-                                                  textWeight: FontWeight.w700,
-                                                  textFamily: 'Nunito',
-                                                ),
-                                              ),
-
-                                            ),
-                                          ),
-                                        ],
+                                  child: Container(
+                                    height: 122,
+                                    width: 332,
+                                    decoration: BoxDecoration(
+                                      border: Border.all( width: 1.0,
+                                        color: Color.fromRGBO(196, 196, 196, 0.34),
                                       ),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      gradient: LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: [Color(0xFFEDEDED),  Color(0xFFECECEC)],
+                                          stops: [0.0, 0.5],
+                                          tileMode: TileMode.clamp
+                                      ),
+                                    ),
 
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
+                                    child:
+                                    Column(
+                                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+
+                                        Row(
+                                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
 
-                                            Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  ReusableText(textString: 'Lagbaja Tamedo',
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10.0),
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    ReusableText(textString: 'Nigerian Wallet 1',
+                                                      textColor: Color(0xFF4F4F4F),
+                                                      textSize: 20,
+                                                      textWeight: FontWeight.w700,
+                                                      textFamily: 'Nunito',
+                                                    ),
+
+                                                    SizedBox(height: 5),
+
+                                                    ReusableText(textString: 'name',
+                                                      textColor: Color(0xFFBDBDBD),
+                                                      textSize: 10,
+                                                      textWeight: FontWeight.w400,
+                                                      textFamily: 'Nunito',
+                                                    ),
+                                                  ]
+                                              ),
+                                            ),
+
+                                            SizedBox(width: 60),
+                                            Padding(
+                                              padding: const EdgeInsets.all(2.0),
+                                              child: Container(
+                                                //alignment: AlignmentDirectional.topEnd,
+                                                height: 28,
+                                                width: 48,
+                                                decoration: BoxDecoration(
+                                                  border: Border.all( width: 1.0,
+                                                    color: Color.fromRGBO(196, 196, 196, 0.34),
+                                                  ),
+                                                  //color: Color.fromRGBO(196, 196, 196, 0.34),
+                                                  borderRadius: BorderRadius.circular(5.0),
+                                                  gradient: LinearGradient(
+                                                      begin: Alignment.topLeft,
+                                                      end: Alignment.bottomRight,
+                                                      colors: [Color(0xFFEDEDED) ,  Color(0xFFECECEC)],
+                                                      stops: [0.0, 0.5],
+                                                    tileMode: TileMode.clamp
+                                                  ),
+                                                ),
+
+                                                child:  Center(
+                                                  child: ReusableText(textString: 'DIR',
                                                     textColor: Color(0xFF4F4F4F),
                                                     textSize: 14,
                                                     textWeight: FontWeight.w700,
                                                     textFamily: 'Nunito',
                                                   ),
+                                                ),
 
-                                                  SizedBox(height: 5),
-
-                                                  ReusableText(textString: 'owner',
-                                                    textColor: Color(0xFFBDBDBD),
-                                                    textSize: 10,
-                                                    textWeight: FontWeight.w400,
-                                                    textFamily: 'Nunito',
-                                                  ),
-
-                                                ]
+                                              ),
                                             ),
-
-                                            SizedBox(width: 40),
-
-                                            Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  ReusableText(textString: '12/01/2001',
-                                                    textColor: Color(0xFF4F4F4F),
-                                                    textSize: 14,
-                                                    textWeight: FontWeight.w700,
-                                                    textFamily: 'Nunito',
-                                                  ),
-
-                                                  SizedBox(height: 5),
-
-                                                  ReusableText(textString: 'created',
-                                                    textColor: Color(0xFFBDBDBD),
-                                                    textSize: 10,
-                                                    textWeight: FontWeight.w400,
-                                                    textFamily: 'Nunito',
-                                                  ),
-
-                                                ]
-                                            ),
-
                                           ],
                                         ),
-                                      )
-                                    ],
-                                  ),
 
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    ReusableText(textString: 'Lagbaja Tamedo',
+                                                      textColor: Color(0xFF4F4F4F),
+                                                      textSize: 14,
+                                                      textWeight: FontWeight.w700,
+                                                      textFamily: 'Nunito',
+                                                    ),
+
+                                                    SizedBox(height: 5),
+
+                                                    ReusableText(textString: 'owner',
+                                                      textColor: Color(0xFFBDBDBD),
+                                                      textSize: 10,
+                                                      textWeight: FontWeight.w400,
+                                                      textFamily: 'Nunito',
+                                                    ),
+
+                                                  ]
+                                              ),
+
+                                              SizedBox(width: 40),
+
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    ReusableText(textString: '12/01/2001',
+                                                      textColor: Color(0xFF4F4F4F),
+                                                      textSize: 14,
+                                                      textWeight: FontWeight.w700,
+                                                      textFamily: 'Nunito',
+                                                    ),
+
+                                                    SizedBox(height: 5),
+
+                                                    ReusableText(textString: 'created',
+                                                      textColor: Color(0xFFBDBDBD),
+                                                      textSize: 10,
+                                                      textWeight: FontWeight.w400,
+                                                      textFamily: 'Nunito',
+                                                    ),
+
+                                                  ]
+                                              ),
+
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
+
+                                  ),
                                 ),
                               ),
                             ),
@@ -344,56 +344,47 @@ class _BankingPageState extends State<BankingPage> {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 0.0),
+                padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 2.0),
 
-                child: ClipPath(
-                  clipper: ShapeBorderClipper(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5.0),)
-                      )
-                  ),
-
-                  child: Container(
-                    height: 55,
-                    width: 345,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only( topLeft: Radius.circular(5.0) , topRight: Radius.circular(5.0),
-                      ),
-
-                      border: Border(
-                          bottom: BorderSide(
-                            width: 1, color: Color(0xFFC4C4C4),
-                          )
-                      ),
-
-
-                      color: Colors.white,
+                child: Container(
+                  height: 55,
+                  width: 345,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only( topLeft: Radius.circular(5.0) , topRight: Radius.circular(5.0),
                     ),
 
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 1.0),
+                  /*  border: Border(
+                        bottom: BorderSide(
+                          width: 1, color: Color(0xFFC4C4C4),
+                        )
+                    ),*/
 
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    color: Colors.white,
+                  ),
 
-                        children: [
-                          ReusableText(textString: 'Home account',
-                            textColor: Color(0xFF828282),
-                            textSize: 14,
-                            textWeight: FontWeight.w700,
-                            textFamily: 'Nunito',
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 1.0),
+
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                      children: [
+                        ReusableText(textString: 'Home account',
+                          textColor: Color(0xFF828282),
+                          textSize: 14,
+                          textWeight: FontWeight.w700,
+                          textFamily: 'Nunito',
+                        ),
+
+                        IconButton(
+                          icon: Icon( Icons.keyboard_arrow_down_outlined,
+                            size: 16,
+                            color: Color(0xFF878787),
                           ),
+                          onPressed: _setHomeContainer,
 
-                          IconButton(
-                            icon: Icon( Icons.keyboard_arrow_down_outlined,
-                              size: 16,
-                              color: Color(0xFF878787),
-                            ),
-                            onPressed: _toggleContainer,
-
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -402,7 +393,7 @@ class _BankingPageState extends State<BankingPage> {
              // Divider(thickness: 1, color: Color(0xFFC4C4C4),),
 
               Visibility(
-                visible: _setContainerVisible,
+                visible: _setHomeContainerVisible,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Container(
@@ -461,7 +452,7 @@ class _BankingPageState extends State<BankingPage> {
                                       Row(
                                           children: [
 
-                                            SvgPicture.asset('assets/images/usdfag.svg', width: 26.0, height: 26.0 ),
+                                            SvgPicture.asset('assets/images/usdfag.svg', width: 26.0, height: 26.0),
 
                                             SizedBox(width: 8),
 
@@ -505,43 +496,46 @@ class _BankingPageState extends State<BankingPage> {
 
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 40.0),
-                  child: Container(
-                    width: 345,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only( bottomLeft: Radius.circular(5.0) , bottomRight: Radius.circular(5.0),
-                      ),
-                      color: Colors.white,
-
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(0.0, 2.0), //(x,y)
-                          blurRadius: 6.0,
+                  child: Material(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0) , bottomRight: Radius.circular(5.0),
                         ),
-                      ],
+                      ),
+
+                    elevation: 1.0,
+                    child: Container(
+                      width: 345,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only( bottomLeft: Radius.circular(5.0) , bottomRight: Radius.circular(5.0),
+                        ),
+                        color: Colors.white,
+                      ),
+
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.add_circle_outline_outlined),
+                              iconSize: 22,
+                              color: Colors.black,
+                              onPressed: (){
+
+                              },
+                            ),
+
+                            SizedBox(width: 6),
+
+                            ReusableText(textString: 'Create DOM account',
+                              textColor: Color(0xFF4F4F4F),
+                              textSize: 14,
+                              textWeight: FontWeight.w700,
+                              textFamily: 'Nunito',
+                            ),
+
+                          ],
+                        )
                     ),
-
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            icon: Icon(Icons.add_circle_outline_outlined),
-                            iconSize: 22,
-                            color: Colors.black,
-                          ),
-
-                          SizedBox(width: 6),
-
-                          ReusableText(textString: 'Create DOM account',
-                            textColor: Color(0xFF4F4F4F),
-                            textSize: 14,
-                            textWeight: FontWeight.w700,
-                            textFamily: 'Nunito',
-                          ),
-
-                        ],
-                      )
                   ),
                 )
 
