@@ -13,7 +13,7 @@ class SecondBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 135,
-        width: 293,
+        width: 310,
         decoration: BoxDecoration(
           color: colour,
           borderRadius: BorderRadius.circular(10.0),
@@ -23,37 +23,28 @@ class SecondBar extends StatelessWidget {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: 20),
             Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  ReusableText(
-                      textString: 'Account Balance',
-                      textSize: 14,
-                      textColor: Colors.white,
-                      textFamily: 'DM Sans',
-                      textWeight: FontWeight.bold),
-                  SizedBox(width: 30),
-                  IconButton(
-                    iconSize: 15,
-                    icon: Icon(Icons.visibility_off_outlined,
-                        color: Colors.white),
-                    color: Colors.white,
-                    onPressed: () {},
-                  ),
-                  SizedBox(width: 15),
-                ],
-              ),
+              child: ReusableText(
+                  textString: 'Bitshore new card',
+                  textSize: 14,
+                  textColor: Colors.white,
+                  textFamily: 'DM Sans',
+                  textWeight: FontWeight.w700),
             ),
+
+            SizedBox(height: 5),
             ReusableText(
               textString: '$accountBalance',
               textSize: 30,
               textColor: Colors.white,
-              textWeight: FontWeight.bold,
+              textWeight: FontWeight.w800,
               textFamily: 'Nunito',
             ),
+
+            SizedBox(height: 30),
             Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 0.0),
                 alignment: AlignmentDirectional.bottomEnd,
@@ -61,7 +52,7 @@ class SecondBar extends StatelessWidget {
                   textString: '$currency',
                   textSize: 12,
                   textColor: Colors.white,
-                  textWeight: FontWeight.bold,
+                  textWeight: FontWeight.w700,
                   textFamily: 'DM Sans',
                 )),
           ],

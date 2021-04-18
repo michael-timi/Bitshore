@@ -3,7 +3,6 @@ import 'package:bitshore/screens/page/exchangePage.dart';
 import 'package:bitshore/screens/page/homepage_Screen.dart';
 import 'package:bitshore/screens/page/morePage.dart';
 import 'package:bitshore/screens/page/savingsPage.dart';
-import 'package:bitshore/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
