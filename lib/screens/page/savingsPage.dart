@@ -14,10 +14,12 @@ class _SavingsPageState extends State<SavingsPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 24.0),
+          padding: EdgeInsets.only(
+              top: height * 0.03, left: height * 0.03, right: height * 0.03),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
