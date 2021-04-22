@@ -19,7 +19,7 @@ class _SavingsPageState extends State<SavingsPage> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
-              top: height * 0.03, left: height * 0.03, right: height * 0.03),
+              top: height * 0.03, left: height * 0.02, right: height * 0.02),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,46 +34,43 @@ class _SavingsPageState extends State<SavingsPage> {
                 ),
               ),
               SizedBox(height: size.height * 0.02),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
-                child: Container(
-                  height: size.height * 0.17,
-                  width: size.width,
-                  decoration: BoxDecoration(
-                    color: Color(0xff3754E0),
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey[50],
-                          offset: Offset(2, 6),
-                          blurRadius: 10),
-                    ],
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/savingsCard.png'),
-                      fit: BoxFit.cover,
-                    ),
+              Container(
+                height: size.height * 0.17,
+                width: size.width,
+                decoration: BoxDecoration(
+                  color: Color(0xff3754E0),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey[50],
+                        offset: Offset(2, 6),
+                        blurRadius: 10),
+                  ],
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/savingsCard.png'),
+                    fit: BoxFit.cover,
                   ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: size.width * 0.08),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          'Total Savings',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: size.width * 0.04,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        Text(
-                          '#278,000',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: size.width * 0.09,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: size.width * 0.08),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        'Total Savings',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: size.width * 0.04,
+                            fontWeight: FontWeight.w700),
+                      ),
+                      Text(
+                        '#278,000',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: size.width * 0.09,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -111,15 +108,12 @@ class _SavingsPageState extends State<SavingsPage> {
                 },
               ),
               SizedBox(height: size.height * 0.02),
-              Container(
-                padding: EdgeInsets.only(left: 24),
-                child: Text(
-                  'MY SAVINGS',
-                  style: TextStyle(
-                      color: Color(0xff878787),
-                      fontSize: size.width * 0.035,
-                      fontWeight: FontWeight.bold),
-                ),
+              Text(
+                'MY SAVINGS',
+                style: TextStyle(
+                    color: Color(0xff878787),
+                    fontSize: size.width * 0.035,
+                    fontWeight: FontWeight.bold),
               ),
               Divider(),
               SizedBox(height: size.height * 0.01),

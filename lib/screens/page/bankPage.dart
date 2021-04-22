@@ -25,22 +25,23 @@ class _BankPageState extends State<BankPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    // final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffF8F8F8),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
-              top: height * 0.03, left: height * 0.03, right: height * 0.03),
+              top: height * 0.03, left: height * 0.02, right: height * 0.02),
           child: ListView(
             children: [
-              Center(
-                child: ReusableText(
-                  textString: 'Bank and Accounts',
-                  textColor: Color(0xFF343C6B),
-                  textSize: size.width * 0.05,
-                  textWeight: FontWeight.bold,
+              Container(
+                alignment: Alignment.topCenter,
+                child: Text(
+                  'Bank and Account',
+                  style: TextStyle(
+                      color: Color(0xff343C6B),
+                      fontSize: size.width * 0.05,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               SizedBox(height: size.height * 0.02),
