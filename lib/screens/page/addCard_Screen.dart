@@ -1,3 +1,4 @@
+import 'package:bitshore/screens/page/pageNav.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:bitshore/widgets/myReusableTextFormField.dart';
 import 'package:flutter/material.dart';
@@ -227,7 +228,10 @@ class AddCardScreen extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BitshorePages()),
+                      );
                     },
                   ),
                 ],
