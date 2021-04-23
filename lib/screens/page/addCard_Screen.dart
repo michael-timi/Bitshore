@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+// ignore: must_be_immutable
 class AddCardScreen extends StatelessWidget {
   static String id = 'addCardScreen';
   static GlobalKey<FormState> _formKey = GlobalKey<FormState>();

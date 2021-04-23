@@ -54,8 +54,7 @@ class HomeCard extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: size.width * 0.08,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: ''),
+                    fontWeight: FontWeight.bold),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,

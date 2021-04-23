@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:bitshore/models/savingsDetails.dart';
 import 'package:bitshore/widgets/transactionHistroy.dart';
 
-class SavingsDetailsPage extends StatelessWidget {
+class SavingsDetailsPage extends StatefulWidget {
+  final SavingsDetails savingsDetails;
   static String id = 'singleSavingsPage';
 
+  SavingsDetailsPage({this.savingsDetails});
+
+  @override
+  _SavingsDetailsPageState createState() => _SavingsDetailsPageState();
+}
+
+class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -23,7 +32,7 @@ class SavingsDetailsPage extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         child: Icon(Icons.arrow_back_ios, color: Colors.black)),
-                   Spacer(),
+                    Spacer(),
                     Text(
                       'My Savings',
                       style: TextStyle(
@@ -42,7 +51,7 @@ class SavingsDetailsPage extends StatelessWidget {
                   height: size.height * 0.17,
                   width: size.width,
                   decoration: BoxDecoration(
-                    color: Color(0xffF4818B),
+                    color: widget.savingsDetails.color2,
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
@@ -61,14 +70,14 @@ class SavingsDetailsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
-                          'Wife`s Car',
+                          widget.savingsDetails.name,
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: size.width * 0.04,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
-                          '#775,000',
+                          widget.savingsDetails.current.toString(),
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: size.width * 0.09,
@@ -132,7 +141,7 @@ class SavingsDetailsPage extends StatelessWidget {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      '#2,500,000',
+                      widget.savingsDetails.total.toString(),
                       style: TextStyle(
                           color: Color(0xff4F4F4F),
                           fontSize: size.width * 0.04,

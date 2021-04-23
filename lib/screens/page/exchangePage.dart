@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:bitshore/models/exchange.dart';
+import 'package:bitshore/screens/page/exchangeDetailPage.dart';
 
 class ExchangePage extends StatefulWidget {
   static String id = 'exchangePage';
@@ -13,72 +15,164 @@ class _ExchangePageState extends State<ExchangePage> {
     var size = MediaQuery.of(context).size;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            height: size.height * 0.5,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 1,
-                  blurRadius: 3,
-                  offset: Offset(0, 2), // changes position of shadow
+      body: SafeArea(
+          child: Padding(
+        padding: EdgeInsets.only(top: height * 0.03),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: size.height * 0.02),
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: Text(
+                  'Exchange',
+                  style: TextStyle(
+                      color: Color(0xff343C6B),
+                      fontSize: size.width * 0.05,
+                      fontWeight: FontWeight.bold),
                 ),
-              ],
+              ),
             ),
-          ),
-          SafeArea(
-              child: Padding(
-            padding: EdgeInsets.only(
-                top: height * 0.03, left: height * 0.02, right: height * 0.02),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment: Alignment.topCenter,
-                  child: Text(
-                    'Exchange',
-                    style: TextStyle(
-                        color: Color(0xff343C6B),
-                        fontSize: size.width * 0.05,
-                        fontWeight: FontWeight.bold),
+            SizedBox(height: size.height * 0.02),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: size.height * 0.02),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'Pair',
+                        style: TextStyle(
+                            color: Color(0xff4F4F4F),
+                            fontSize: size.width * 0.03,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Container(
+                        height: size.height * 0.01,
+                        width: size.height * 0.01,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/arrow.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      )
+                    ],
                   ),
-                ),
-                SizedBox(height: size.height * 0.02),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'From',
-                      style: TextStyle(
-                          color: Color(0xff343C6B),
-                          fontSize: size.width * 0.03,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    Text(
-                      '200,000',
-                      style: TextStyle(
-                          color: Color(0xff343C6B),
-                          fontSize: size.width * 0.03,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
-                SizedBox(height: size.height * 0.01),
-                Container(
-
-
-                )
-              ],
+                  Row(
+                    children: [
+                      Text(
+                        'Rate',
+                        style: TextStyle(
+                            color: Color(0xff4F4F4F),
+                            fontSize: size.width * 0.03,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Container(
+                        height: size.height * 0.01,
+                        width: size.height * 0.01,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/arrow.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
-          )),
-        ],
-      ),
+            Divider(),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: exchange.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ExchangeDetail(
+                                      exchangeModel: exchange[index],
+                                    )));
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: size.height * 0.02,
+                            vertical: size.height * 0.02),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  height: size.height * 0.03,
+                                  width: size.height * 0.05,
+                                  child: Stack(
+                                    children: [
+                                      Container(
+                                        height: size.height * 0.025,
+                                        width: size.height * 0.025,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    exchange[index].image1))),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: size.height * 0.02),
+                                        child: Container(
+                                          height: size.height * 0.025,
+                                          width: size.height * 0.025,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      exchange[index].image2))),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(width: size.width * 0.02),
+                                Text(
+                                  exchange[index].text1,
+                                  style: TextStyle(
+                                      color: Color(0xff343C6B),
+                                      fontSize: size.width * 0.04,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  '/',
+                                  style: TextStyle(
+                                      color: Color(0xff343C6B),
+                                      fontSize: size.width * 0.04),
+                                ),
+                                Text(
+                                  exchange[index].text2,
+                                  style: TextStyle(
+                                      color: Color(0xff343C6B),
+                                      fontSize: size.width * 0.04),
+                                )
+                              ],
+                            ),
+                            Text(
+                              exchange[index].value.toString(),
+                              style: TextStyle(
+                                  color: Color(0xff343C6B),
+                                  fontSize: size.width * 0.04),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+            )
+          ],
+        ),
+      )),
     );
   }
 }
