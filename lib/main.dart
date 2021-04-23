@@ -2,6 +2,7 @@ import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_two.dart';
+import 'package:bitshore/screens/page/addCard_Screen.dart';
 import 'package:bitshore/screens/page/loginPage.dart';
 import 'package:bitshore/screens/page/pageNav.dart';
 import 'package:bitshore/screens/page/signupPage.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.nunitoTextTheme(Theme.of(context).textTheme),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: BitshorePages(),
+        home:OnBoardingScreenOne(),
         routes: {
           OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
           OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),
@@ -46,10 +47,11 @@ class MyApp extends StatelessWidget {
           OtpPage.id: (context) => OtpPage(),
           BitshorePages.id:(context) => BitshorePages(),
           HomePage.id: (context) => HomePage(),
-          BankPage.id: (context) => BankPage(),
+          BankingPage.id: (context) => BankingPage(),
           SavingsPage.id: (context) => SavingsPage(),
           ExchangePage.id: (context) => ExchangePage(),
           ProfilePage.id: (context) => ProfilePage(),
+          AddCardScreen.id: (context) => AddCardScreen(),
         });
   }
 }

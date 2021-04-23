@@ -17,7 +17,7 @@ class _BitshorePagesState extends State<BitshorePages> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     HomePage(),
-    BankPage(),
+    BankingPage(),
     SavingsPage(),
     ExchangePage(),
     MorePage()
