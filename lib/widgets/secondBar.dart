@@ -11,9 +11,13 @@ class SecondBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Container(
-        height: 135,
-        width: 310,
+        height: height * 0.1663,
+        width: width * (310/345),
         decoration: BoxDecoration(
           color: colour,
           borderRadius: BorderRadius.circular(10.0),
@@ -25,32 +29,32 @@ class SecondBar extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: (20/812)),
             Center(
               child: ReusableText(
                   textString: 'Bitshore new card',
-                  textSize: 14,
+                  textSize: width * (14/375),
                   textColor: Colors.white,
                   textFamily: 'DM Sans',
                   textWeight: FontWeight.w700),
             ),
 
-            SizedBox(height: 5),
+            SizedBox(height: (5/812)),
             ReusableText(
               textString: '$accountBalance',
-              textSize: 30,
+              textSize: width * (30/375),
               textColor: Colors.white,
               textWeight: FontWeight.w800,
               textFamily: 'Nunito',
             ),
 
-            SizedBox(height: 30),
+            SizedBox(height: height * (30/812)),
             Container(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 0.0),
+                padding: EdgeInsets.symmetric(horizontal: width * (15/375), vertical: 0.0),
                 alignment: AlignmentDirectional.bottomEnd,
                 child: ReusableText(
                   textString: '$currency',
-                  textSize: 12,
+                  textSize: width * (12/375),
                   textColor: Colors.white,
                   textWeight: FontWeight.w700,
                   textFamily: 'DM Sans',
