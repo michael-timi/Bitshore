@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.nunitoTextTheme(Theme.of(context).textTheme),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home:OnBoardingScreenOne(),
+        home: OnBoardingScreenOne(),
         routes: {
           OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
           OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),

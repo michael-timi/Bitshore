@@ -47,7 +47,7 @@ class AddCardScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: size.height * 0.09),
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 21),
+                    padding: EdgeInsets.symmetric(vertical: height * 0.0259),
                     width: size.width,
                     height: size.height * 0.20,
                     decoration: BoxDecoration(
@@ -59,14 +59,15 @@ class AddCardScreen extends StatelessWidget {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 10.0),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: width * 0.0267, vertical: height * 0.0123), // 10h, 10v
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 20.0),
+                                EdgeInsets.symmetric(horizontal: width * 0.053), //20h
+
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -75,7 +76,7 @@ class AddCardScreen extends StatelessWidget {
                                       textString: '********',
                                       textFamily: 'DM Sans',
                                       textColor: Colors.white,
-                                      textSize: 28,
+                                      textSize: width * 0.0373 * 2 ,
                                       textWeight: FontWeight.bold),
                                   SvgPicture.asset(
                                       'assets/images/mastercard_logo.svg'),
@@ -84,7 +85,7 @@ class AddCardScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 20.0),
+                              EdgeInsets.symmetric(horizontal:  width * 0.053),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -93,13 +94,13 @@ class AddCardScreen extends StatelessWidget {
                                       textString: '**** **** **** ****',
                                       textFamily: 'DM Sans',
                                       textColor: Colors.white,
-                                      textSize: 14,
+                                      textSize: width * 0.0373, //14h
                                       textWeight: FontWeight.bold),
                                   ReusableText(
                                       textString: '**/**',
                                       textFamily: 'DM Sans',
                                       textColor: Colors.white,
-                                      textSize: 14,
+                                      textSize: width * 0.0373,
                                       textWeight: FontWeight.bold),
                                 ],
                               ),
@@ -138,7 +139,7 @@ class AddCardScreen extends StatelessWidget {
                                 child: ReusableText(
                                   textString: 'Card number',
                                   textColor: Color(0xFF878787),
-                                  textSize: 14,
+                                  textSize: width * 0.0373,
                                 ),
                               ),
                               SizedBox(height: 2),
@@ -161,7 +162,7 @@ class AddCardScreen extends StatelessWidget {
                                     ReusableText(
                                       textString: 'Expiry',
                                       textColor: Color(0xFF878787),
-                                      textSize: 14,
+                                      textSize: width * 0.0373,
                                     ),
                                     ReusableTextField(
                                       controller: _dateNoController,
@@ -181,7 +182,7 @@ class AddCardScreen extends StatelessWidget {
                                     ReusableText(
                                       textString: 'CVV',
                                       textColor: Color(0xFF878787),
-                                      textSize: 14,
+                                      textSize: width * 0.0373,
                                     ),
                                     ReusableTextField(
                                       controller: _cvvController,
@@ -209,7 +210,7 @@ class AddCardScreen extends StatelessWidget {
                         child: ReusableText(
                             textString: 'Add card',
                             textColor: Colors.white,
-                            textSize: 18,
+                            textSize: width * 0.048, //18h
                             textAligner: TextAlign.center),
                       ),
                     ),
@@ -223,7 +224,7 @@ class AddCardScreen extends StatelessWidget {
                       child: ReusableText(
                         textString: 'I\'ll add my card later',
                         textColor: Color(0xff003FA4),
-                        textSize: 18,
+                        textSize: width * 0.048,
                         textAligner: TextAlign.center,
                         stringDecor: TextDecoration.underline,
                       ),
@@ -245,6 +246,9 @@ class AddCardScreen extends StatelessWidget {
   }
 
   void _addCardSuccessBottomScreen(context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     showModalBottomSheet(
         context: context,
         shape: RoundedRectangleBorder(
@@ -255,7 +259,7 @@ class AddCardScreen extends StatelessWidget {
                 bottomLeft: Radius.zero)),
         builder: (BuildContext bc) {
           return Padding(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.fromLTRB(width * 0.043, height * 0.02, width * 0.043, height * 0.02),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -278,28 +282,28 @@ class AddCardScreen extends StatelessWidget {
                   ),
                   Image.asset('assets/images/addCardSuccess.png'),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    padding: EdgeInsets.symmetric(vertical: height * 0.0123),
                     child: Text(
                       'Card added successfully',
                       style: TextStyle(
                           color: Color(0xff263238),
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: width * 0.053,
                           fontFamily: 'DM Sans'),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40.0),
+                    padding: EdgeInsets.symmetric(horizontal:  width * 0.053 *2),
                     child: Text(
                         'You can now manage your cards in the bank section',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xff6F6F6F),
-                          fontSize: 14,
+                          fontSize: width * 0.0373,
                           fontFamily: 'DM Sans',
                         )),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: height * 0.0123),
                 ],
               ),
             ),
