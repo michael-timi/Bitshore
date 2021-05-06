@@ -14,11 +14,10 @@ class _SavingsPageState extends State<SavingsPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(top: height * 0.03),
+          padding: EdgeInsets.only(top: size.height * 0.03),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,7 +34,7 @@ class _SavingsPageState extends State<SavingsPage> {
               SizedBox(height: size.height * 0.02),
               Padding(
                 padding:
-                    EdgeInsets.only(left: height * 0.02, right: height * 0.02),
+                    EdgeInsets.only(left: size.height * 0.02, right: size.height * 0.02),
                 child: Container(
                   height: size.height * 0.17,
                   width: size.width,
@@ -112,7 +111,7 @@ class _SavingsPageState extends State<SavingsPage> {
               SizedBox(height: size.height * 0.02),
               Padding(
                 padding:
-                    EdgeInsets.only(left: height * 0.02, right: height * 0.02),
+                    EdgeInsets.only(left: size.height * 0.02, right: size.height * 0.02),
                 child: Text(
                   'MY SAVINGS',
                   style: TextStyle(
@@ -139,7 +138,7 @@ class _SavingsPageState extends State<SavingsPage> {
                           child: Padding(
                             padding: EdgeInsets.only(
                                 left: size.height * 0.02,
-                                right: height * 0.02,
+                                right: size.height * 0.02,
                                 bottom: 16),
                             child: Container(
                               height: size.height * 0.10,
