@@ -54,7 +54,7 @@ class _SavingsPageState extends State<SavingsPage> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: size.width * 0.08),
+                    padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -69,7 +69,7 @@ class _SavingsPageState extends State<SavingsPage> {
                           '#278,000',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: size.width * 0.09,
+                              fontSize: size.width * 0.08,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -187,7 +187,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                   style: TextStyle(
                                                       color: Color(0xff878787),
                                                       fontSize:
-                                                          size.width * 0.030,
+                                                          size.width * 0.025,
                                                       fontWeight:
                                                           FontWeight.w700),
                                                 ),
@@ -200,7 +200,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                           color:
                                                               Color(0xff4F4F4F),
                                                           fontSize:
-                                                              size.width * 0.04,
+                                                              size.width * 0.035,
                                                           fontWeight:
                                                               FontWeight.w700),
                                                     ),
@@ -211,7 +211,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                           color:
                                                               Color(0xff4F4F4F),
                                                           fontSize:
-                                                              size.width * 0.04,
+                                                              size.width * 0.035,
                                                           fontWeight:
                                                               FontWeight.w700),
                                                     ),
@@ -294,7 +294,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                                       .color2,
                                                               fontSize:
                                                                   size.width *
-                                                                      0.03,
+                                                                      0.02,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold))),
