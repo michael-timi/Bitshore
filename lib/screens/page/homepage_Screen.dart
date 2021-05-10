@@ -173,10 +173,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.push(
+                    /*Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => AddCardScreen()),
-                    );
+                    );*/
                   },
                 ),
                 SizedBox(height: size.height * 0.02),

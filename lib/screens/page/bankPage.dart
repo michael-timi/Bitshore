@@ -120,6 +120,7 @@ class _BankingPageState extends State<BankingPage> {
                 ),
 
 
+
                 Column(
                   children: [
                     Padding(
@@ -203,14 +204,12 @@ class _BankingPageState extends State<BankingPage> {
 
                                 child:
                                 Column(
-                                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
 
                                     Row(
-                                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.fromLTRB( width * 0.0533, height * 0.02667, width * 0.0533, height * 0.02667),
+                                          padding: EdgeInsets.fromLTRB(width * 0.0533, height * 0.02667, width * 0.0533, 0.0),
                                           child: Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
@@ -222,7 +221,6 @@ class _BankingPageState extends State<BankingPage> {
                                                 ),
 
                                                 SizedBox(height: height * 0.006158
-                                                //height * 0.01333
                                                 ),
 
                                                 ReusableText(textString: 'name',
@@ -272,63 +270,55 @@ class _BankingPageState extends State<BankingPage> {
                                     ),
 
                                     Padding(
-                                      padding: EdgeInsets.fromLTRB(width * 0.533, height * 0.0123, width * 0.533,  height * 0.0 ),
-                                        //(horizontal: width * 0.533, vertical: height * 0.0123),
+                                      padding: EdgeInsets.fromLTRB(width * 0.533, 0.0, width * 0.533, height * 0.0123 ),
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
 
-                                          Flexible(
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-
-                                                  ReusableText(textString: 'Lagbaja Tamedo',
-                                                    textColor: Color(0xFF4F4F4F),
-                                                    textSize: width * 0.0373,
-                                                    textWeight: FontWeight.w700,
-                                                    textFamily: 'Nunito',
-                                                  ),
-
-                                                  Flexible(
-
-                                                    child: ReusableText(textString: 'owner',
-                                                    textColor: Color(0xFFBDBDBD),
-                                                    textSize: width * 0.0266,
-                                                    textWeight: FontWeight.w400,
-                                                    textFamily: 'Nunito',
-                                                  ),
-                                                  ),
-
-                                                  SizedBox(height: height * 0.006158),
-                                                ]
-                                            ),
-                                          ),
-
-                                          SizedBox(width: width * 0.10666),
-
-                                          Flexible(
-                                            child: Column(
+                                          Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                ReusableText(textString: '12/01/2001',
+
+                                                ReusableText(textString: 'Lagbaja Tamedo',
                                                   textColor: Color(0xFF4F4F4F),
                                                   textSize: width * 0.0373,
                                                   textWeight: FontWeight.w700,
                                                   textFamily: 'Nunito',
                                                 ),
 
-                                                SizedBox(height: height * 0.006158),
-
-                                                ReusableText(textString: 'created',
-                                                  textColor: Color(0xFFBDBDBD),
-                                                  textSize: width * 0.0266,
-                                                  textWeight: FontWeight.w400,
-                                                  textFamily: 'Nunito',
+                                                ReusableText(textString: 'owner',
+                                                textColor: Color(0xFFBDBDBD),
+                                                textSize: width * 0.0266,
+                                                textWeight: FontWeight.w400,
+                                                textFamily: 'Nunito',
                                                 ),
 
+                                                SizedBox(height: height * 0.006158),
                                               ]
                                           ),
+
+                                          SizedBox(width: width * 0.10666),
+
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              ReusableText(textString: '12/01/2001',
+                                                textColor: Color(0xFF4F4F4F),
+                                                textSize: width * 0.0373,
+                                                textWeight: FontWeight.w700,
+                                                textFamily: 'Nunito',
+                                              ),
+
+                                              SizedBox(height: height * 0.006158),
+
+                                              ReusableText(textString: 'created',
+                                                textColor: Color(0xFFBDBDBD),
+                                                textSize: width * 0.0266,
+                                                textWeight: FontWeight.w400,
+                                                textFamily: 'Nunito',
+                                              ),
+
+                                            ]
                                           ),
                                         ],
                                       ),
@@ -345,7 +335,8 @@ class _BankingPageState extends State<BankingPage> {
                   ],
                 ),
 
-                Column(
+
+               Column(
                   children: [
                     Padding(
                       padding: EdgeInsets.fromLTRB(width * 0.042667, 0.0, width * 0.042667, height * 0.002463),
@@ -409,8 +400,8 @@ class _BankingPageState extends State<BankingPage> {
                                 padding: EdgeInsets.fromLTRB(width * 0.0266, height * 0.0246, width * 0.0266,  height * 0.0185),
 
                                 child: Container(
-                                  height: height * 0.15025,
-                                  width: width * 0.0266,
+                                  height: (height * 0.1502),
+                                  width: (width * 0.8553),
                                   decoration: BoxDecoration(
                                     border: Border.all( width: 1.0,
                                       color: Color.fromRGBO(196, 196, 196, 0.34),
@@ -425,6 +416,7 @@ class _BankingPageState extends State<BankingPage> {
                                         tileMode: TileMode.clamp
                                     ),
                                   ),
+
                                   child: Column(
 
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -492,7 +484,7 @@ class _BankingPageState extends State<BankingPage> {
                 ),
 
                 Padding(
-                  padding:  EdgeInsets.fromLTRB( width * 0.042667, 0.0,  width * 0.042667, height* 0.04926),
+                  padding:  EdgeInsets.fromLTRB( width * 0.042667, 2.0, width * 0.042667, height* 0.04926),
                   child: Material(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0) , bottomRight: Radius.circular(5.0),
@@ -521,7 +513,7 @@ class _BankingPageState extends State<BankingPage> {
                               },
                             ),
 
-                            SizedBox(width: width * 0.92),
+                            SizedBox(width: width * 0.000092),
 
                             ReusableText(textString: 'Create DOM account',
                               textColor: Color(0xFF4F4F4F),

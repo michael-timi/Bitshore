@@ -17,19 +17,19 @@ class SecondBar extends StatelessWidget {
 
     return Container(
         height: height * 0.1663,
-        width: width * (310/345),
+        width: (width * 0.8553),
         decoration: BoxDecoration(
           color: colour,
           borderRadius: BorderRadius.circular(10.0),
           image: DecorationImage(
-            image: AssetImage('assets/images/secondCard.png'),
+            image: AssetImage('assets/images/card.png'),
             fit: BoxFit.cover,
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: (20/812)),
+            SizedBox(height: height * (20/812)),
             Center(
               child: ReusableText(
                   textString: 'Bitshore new card',
@@ -39,7 +39,7 @@ class SecondBar extends StatelessWidget {
                   textWeight: FontWeight.w700),
             ),
 
-            SizedBox(height: (5/812)),
+            SizedBox(height: height * (5/812)),
             ReusableText(
               textString: '$accountBalance',
               textSize: width * (30/375),
@@ -48,9 +48,9 @@ class SecondBar extends StatelessWidget {
               textFamily: 'Nunito',
             ),
 
-            SizedBox(height: height * (30/812)),
+            SizedBox(height: height * (20/812)),
             Container(
-                padding: EdgeInsets.symmetric(horizontal: width * (15/375), vertical: 0.0),
+                padding: EdgeInsets.symmetric(horizontal: width * (15/375), vertical: 2.0),
                 alignment: AlignmentDirectional.bottomEnd,
                 child: ReusableText(
                   textString: '$currency',
