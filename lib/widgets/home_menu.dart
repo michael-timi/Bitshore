@@ -24,26 +24,26 @@ class HomeMenu extends StatelessWidget {
                 Icon(
                   FontAwesomeIcons.arrowRight,
                   color: Color(0xFF30459D),
-                  size: size.width * 0.04,
+                  size: size.width * 0.03,
                 ),
               ],
             ),
-            SizedBox(height: size.height * 0.005),
+            SizedBox(height: size.height * 0.002),
             Text(
               firstText,
               style: TextStyle(
-                  fontSize: size.width * 0.045,
+                  fontSize: size.width * 0.035,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff30459D)),
             ),
             Text(
               secondText,
               style: TextStyle(
-                  fontSize: size.width * 0.045,
+                  fontSize: size.width * 0.035,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff30459D)),
             ),
-            SizedBox(height: size.height * 0.005),
+            SizedBox(height: size.height * 0.002),
             Text(
               lastText,
               style: TextStyle(

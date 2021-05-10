@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
           ),
           SafeArea(
               child: Padding(
-            padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 24),
+            padding: EdgeInsets.only(left: size.height * 0.02, right: size.height * 0.02, top: size.height * 0.03),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

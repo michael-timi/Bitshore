@@ -29,7 +29,7 @@ class HomeCard extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
+          padding:  EdgeInsets.only(left: size.width * 0.03, right: size.width * 0.03, top: size.width* 0.02, bottom: size.width* 0.02),
           child: Column(
             children: [
               Padding(
@@ -53,7 +53,7 @@ class HomeCard extends StatelessWidget {
                 card.accountBalance,
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: size.width * 0.08,
+                    fontSize: size.width * 0.06,
                     fontWeight: FontWeight.bold),
               ),
               Row(
@@ -63,7 +63,7 @@ class HomeCard extends StatelessWidget {
                     card.currency,
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: size.width * 0.04,
+                        fontSize: size.width * 0.03,
                         fontWeight: FontWeight.w600),
                   ),
                 ],

@@ -30,7 +30,7 @@ class _SignUpPageState extends State<SignUpPage> {
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: [
-              SizedBox(height: size.height * 0.08),
+              SizedBox(height: size.height * 0.07),
               Container(
                 height: size.height / 4,
                 decoration: BoxDecoration(
@@ -39,7 +39,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-              SizedBox(height: size.height * 0.03),
+              SizedBox(height: size.height * 0.02),
               Padding(
                 padding: const EdgeInsets.only(left: 24.0, right: 24),
                 child: Column(
@@ -50,7 +50,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         textColor: Color(0xff263238),
                         textSize: size.width * 0.05,
                         textWeight: FontWeight.bold),
-                    SizedBox(height: size.height * 0.05),
+                    SizedBox(height: size.height * 0.04),
                     Form(
                         key: _formKey,
                         child: Column(

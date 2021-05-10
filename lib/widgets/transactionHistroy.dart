@@ -21,14 +21,14 @@ class TransactionHistory extends StatelessWidget {
                 name,
                 style: TextStyle(
                     color: Color(0xff4F4F4F),
-                    fontSize: size.width * 0.04,
+                    fontSize: size.width * 0.03,
                     fontWeight: FontWeight.bold),
               ),
               Text(
                 amount,
                 style: TextStyle(
                     color: color,
-                    fontSize: size.width * 0.04,
+                    fontSize: size.width * 0.03,
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -39,7 +39,7 @@ class TransactionHistory extends StatelessWidget {
               Text(
                 date,
                 style: TextStyle(
-                    color: Color(0xff4F4F4F), fontSize: size.width * 0.025),
+                    color: Color(0xff4F4F4F), fontSize: size.width * 0.02),
               ),
             ],
           ),

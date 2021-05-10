@@ -17,7 +17,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 24.0),
           child: Column(
@@ -26,13 +26,13 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
                         onTap: () {
                           Navigator.pop(context);
                         },
                         child: Icon(Icons.arrow_back_ios, color: Colors.black)),
-                    Spacer(),
                     Text(
                       'My Savings',
                       style: TextStyle(
@@ -40,7 +40,13 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           fontSize: size.width * 0.05,
                           fontWeight: FontWeight.bold),
                     ),
-                    Spacer()
+                    Text(
+                      '',
+                      style: TextStyle(
+                          color: Color(0xff343C6B),
+                          fontSize: size.width * 0.05,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ),
@@ -65,7 +71,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: size.width * 0.08),
+                    padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -80,7 +86,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           widget.savingsDetails.current.toString(),
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: size.width * 0.09,
+                              fontSize: size.width * 0.08,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -122,7 +128,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                   'DETAILS',
                   style: TextStyle(
                       color: Color(0xff878787),
-                      fontSize: size.width * 0.03,
+                      fontSize: size.width * 0.02,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -137,14 +143,14 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                       'TARGET',
                       style: TextStyle(
                           color: Color(0xff878787),
-                          fontSize: size.width * 0.03),
+                          fontSize: size.width * 0.02),
                     ),
                     SizedBox(height: 8),
                     Text(
                       widget.savingsDetails.total.toString(),
                       style: TextStyle(
                           color: Color(0xff4F4F4F),
-                          fontSize: size.width * 0.04,
+                          fontSize: size.width * 0.03,
                           fontWeight: FontWeight.bold),
                     ),
                     Divider(),
@@ -155,14 +161,14 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           'SAVINGS TYPE',
                           style: TextStyle(
                               color: Color(0xff878787),
-                              fontSize: size.width * 0.03),
+                              fontSize: size.width * 0.02),
                         ),
                         Spacer(),
                         Text(
                           'FREQUENCY',
                           style: TextStyle(
                               color: Color(0xff878787),
-                              fontSize: size.width * 0.03),
+                              fontSize: size.width * 0.02),
                         ),
                         Spacer(),
                       ],
@@ -174,7 +180,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           'Flexi-Save',
                           style: TextStyle(
                               color: Color(0xff4F4F4F),
-                              fontSize: size.width * 0.04,
+                              fontSize: size.width * 0.03,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -182,7 +188,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           'Daily',
                           style: TextStyle(
                               color: Color(0xff4F4F4F),
-                              fontSize: size.width * 0.04,
+                              fontSize: size.width * 0.03,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -196,14 +202,14 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           'START DATE',
                           style: TextStyle(
                               color: Color(0xff878787),
-                              fontSize: size.width * 0.03),
+                              fontSize: size.width * 0.02),
                         ),
                         Spacer(),
                         Text(
                           'END DATE',
                           style: TextStyle(
                               color: Color(0xff878787),
-                              fontSize: size.width * 0.03),
+                              fontSize: size.width * 0.02),
                         ),
                         Spacer(),
                       ],
@@ -215,7 +221,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           '31/04/2021',
                           style: TextStyle(
                               color: Color(0xff4F4F4F),
-                              fontSize: size.width * 0.04,
+                              fontSize: size.width * 0.03,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -223,7 +229,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           '31/04/2021',
                           style: TextStyle(
                               color: Color(0xff4F4F4F),
-                              fontSize: size.width * 0.04,
+                              fontSize: size.width * 0.03,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -240,7 +246,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                   'TRANSACTION HISTORY',
                   style: TextStyle(
                       color: Color(0xff878787),
-                      fontSize: size.width * 0.03,
+                      fontSize: size.width * 0.02,
                       fontWeight: FontWeight.bold),
                 ),
               ),

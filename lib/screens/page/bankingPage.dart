@@ -552,6 +552,7 @@ class _BankingPageState extends State<BankingPage> {
   }
 }
 
+// ignore: must_be_immutable
 class PaymentListView extends StatelessWidget {
 
   String bill;

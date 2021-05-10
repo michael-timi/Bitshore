@@ -14,11 +14,10 @@ class _SavingsPageState extends State<SavingsPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(top: height * 0.03),
+          padding: EdgeInsets.only(top: size.height * 0.03),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,7 +34,7 @@ class _SavingsPageState extends State<SavingsPage> {
               SizedBox(height: size.height * 0.02),
               Padding(
                 padding:
-                    EdgeInsets.only(left: height * 0.02, right: height * 0.02),
+                    EdgeInsets.only(left: size.height * 0.02, right: size.height * 0.02),
                 child: Container(
                   height: size.height * 0.17,
                   width: size.width,
@@ -54,7 +53,7 @@ class _SavingsPageState extends State<SavingsPage> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: size.width * 0.08),
+                    padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -69,7 +68,7 @@ class _SavingsPageState extends State<SavingsPage> {
                           '#278,000',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: size.width * 0.09,
+                              fontSize: size.width * 0.08,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -112,7 +111,7 @@ class _SavingsPageState extends State<SavingsPage> {
               SizedBox(height: size.height * 0.02),
               Padding(
                 padding:
-                    EdgeInsets.only(left: height * 0.02, right: height * 0.02),
+                    EdgeInsets.only(left: size.height * 0.02, right: size.height * 0.02),
                 child: Text(
                   'MY SAVINGS',
                   style: TextStyle(
@@ -139,7 +138,7 @@ class _SavingsPageState extends State<SavingsPage> {
                           child: Padding(
                             padding: EdgeInsets.only(
                                 left: size.height * 0.02,
-                                right: height * 0.02,
+                                right: size.height * 0.02,
                                 bottom: 16),
                             child: Container(
                               height: size.height * 0.10,
@@ -187,7 +186,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                   style: TextStyle(
                                                       color: Color(0xff878787),
                                                       fontSize:
-                                                          size.width * 0.030,
+                                                          size.width * 0.025,
                                                       fontWeight:
                                                           FontWeight.w700),
                                                 ),
@@ -200,7 +199,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                           color:
                                                               Color(0xff4F4F4F),
                                                           fontSize:
-                                                              size.width * 0.04,
+                                                              size.width * 0.035,
                                                           fontWeight:
                                                               FontWeight.w700),
                                                     ),
@@ -211,7 +210,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                           color:
                                                               Color(0xff4F4F4F),
                                                           fontSize:
-                                                              size.width * 0.04,
+                                                              size.width * 0.035,
                                                           fontWeight:
                                                               FontWeight.w700),
                                                     ),
@@ -294,7 +293,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                                       .color2,
                                                               fontSize:
                                                                   size.width *
-                                                                      0.03,
+                                                                      0.02,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold))),
