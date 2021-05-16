@@ -174,7 +174,7 @@ class OtherCards extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: size.height * 0.015),
                     child: Container(
                       padding: EdgeInsets.all(size.height * 0.02),
-                      height: size.height * 0.2,
+                      height: size.height * 0.22,
                       width: size.width,
                       decoration: BoxDecoration(
                         color: Color(0xff3754E0),
@@ -218,7 +218,7 @@ class OtherCards extends StatelessWidget {
                                 fontSize: size.width * 0.06,
                                 fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: size.height * 0.02),
+                          SizedBox(height: size.height * 0.04),
                           Container(
                             alignment: Alignment.bottomCenter,
                             child: Row(

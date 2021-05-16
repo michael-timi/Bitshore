@@ -7,13 +7,13 @@ class Payment {
 List<Payment> paymentList = [
   Payment(
       name: 'Electricity',
-      image: 'assets/images/ghana_card.png'),
+      image: 'assets/images/light.png'),
   Payment(
       name: 'Airtime & Data',
-      image: 'assets/images/canada_card.png'),
+      image: 'assets/images/smartphone.png'),
   Payment(
       name: 'Pay A Bill',
-      image: 'assets/images/usa_card.png'),
+      image: 'assets/images/invoice.png'),
   Payment(
       name: 'Pay A Bill',
       image: 'assets/images/usa_card.png'),
