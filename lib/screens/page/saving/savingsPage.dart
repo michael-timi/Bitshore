@@ -1,7 +1,7 @@
-import 'package:bitshore/screens/page/newGoalPage.dart';
+import 'package:bitshore/screens/page/saving/newGoalPage.dart';
 import 'package:flutter/material.dart';
 import 'package:bitshore/models/savingsDetails.dart';
-import 'package:bitshore/screens/page/SavingsDetailPage.dart';
+import 'package:bitshore/screens/page/saving/SavingsDetailPage.dart';
 
 class SavingsPage extends StatefulWidget {
   static String id = 'savingsPage';

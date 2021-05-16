@@ -1,5 +1,5 @@
 import 'package:bitshore/models/homeCard.dart';
-import 'package:bitshore/screens/page/addCard_Screen.dart';
+import 'package:bitshore/screens/page/addCard.dart';
 import 'package:bitshore/widgets/home_card.dart';
 import 'package:bitshore/widgets/home_menu.dart';
 import 'package:bitshore/widgets/transactionItems.dart';

@@ -2,20 +2,20 @@ import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_two.dart';
+import 'package:bitshore/screens/page/morePage.dart';
 import 'package:bitshore/screens/signUp/otpPage.dart';
 import 'package:bitshore/screens/signUp/signupPage.dart';
-import 'package:bitshore/screens/page/addCard_Screen.dart';
+import 'package:bitshore/screens/page/addCard.dart';
 import 'package:bitshore/screens/signUp/loginPage.dart';
 import 'package:bitshore/screens/page/pageNav.dart';
 import 'package:bitshore/screens/signUp/welcomePage.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/page/exchangePage.dart';
-import 'package:bitshore/screens/page/profilePage.dart';
-import 'package:bitshore/screens/page/savingsPage.dart';
+import 'screens/page/exchange/exchangePage.dart';
+import 'package:bitshore/screens/page/saving/savingsPage.dart';
 import 'package:flutter/material.dart';
-import 'screens/page/bankPage.dart';
-import 'screens/page/homepage_Screen.dart';
+import 'screens/page/bank/bankPage.dart';
+import 'screens/page/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
           BankingPage.id: (context) => BankingPage(),
           SavingsPage.id: (context) => SavingsPage(),
           ExchangePage.id: (context) => ExchangePage(),
-          ProfilePage.id: (context) => ProfilePage(),
+          MorePage.id: (context) => MorePage(),
           AddCardScreen.id: (context) => AddCardScreen(),
         });
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bitshore/models/cards.dart';
-import 'package:bitshore/screens/page/newCard.dart';
+import 'package:bitshore/screens/page/bank/newCard.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DirhamCard extends StatelessWidget {
@@ -16,7 +16,7 @@ class DirhamCard extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(size.height * 0.02),
-            height: size.height * 0.18,
+            height: size.height * 0.2,
             width: size.width,
             decoration: BoxDecoration(
               color: Color(0xff3754E0),
@@ -60,7 +60,7 @@ class DirhamCard extends StatelessWidget {
                       fontSize: size.width * 0.060,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: size.height * 0.01),
+                SizedBox(height: size.height * 0.02),
                 Container(
                   alignment: Alignment.bottomCenter,
                   child: Row(
@@ -174,7 +174,7 @@ class OtherCards extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: size.height * 0.015),
                     child: Container(
                       padding: EdgeInsets.all(size.height * 0.02),
-                      height: size.height * 0.18,
+                      height: size.height * 0.2,
                       width: size.width,
                       decoration: BoxDecoration(
                         color: Color(0xff3754E0),
@@ -218,7 +218,7 @@ class OtherCards extends StatelessWidget {
                                 fontSize: size.width * 0.06,
                                 fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: size.height * 0.01),
+                          SizedBox(height: size.height * 0.02),
                           Container(
                             alignment: Alignment.bottomCenter,
                             child: Row(

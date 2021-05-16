@@ -1,6 +1,6 @@
 import 'package:bitshore/models/cards.dart';
 import 'package:flutter/material.dart';
-import 'package:bitshore/screens/page/newCardType.dart';
+import 'package:bitshore/screens/page/bank/newCardType.dart';
 
 class NewCard extends StatelessWidget {
   @override

@@ -16,13 +16,11 @@ class AddCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * 0.14),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.14),
             child: Column(
               children: [
                 SizedBox(height: size.height * 0.23),
@@ -31,7 +29,7 @@ class AddCardScreen extends StatelessWidget {
                   height: size.height * 0.1,
                   decoration: BoxDecoration(
                     color: Color(0xFFC4C4C4),
-                    borderRadius: BorderRadius.circular(13.0),
+                    borderRadius: BorderRadius.circular(12.0),
                   ),
                 ),
               ],
@@ -40,19 +38,22 @@ class AddCardScreen extends StatelessWidget {
           SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.only(
-                  top: height * 0.03, left: width * 0.07, right: width * 0.07),
+                  top: size.height * 0.03,
+                  left: size.width * 0.07,
+                  right: size.width * 0.07),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(height: size.height * 0.09),
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: height * 0.0259),
+                    padding:
+                        EdgeInsets.symmetric(vertical: size.height * 0.02),
                     width: size.width,
                     height: size.height * 0.20,
                     decoration: BoxDecoration(
                       color: Color(0xFF404040),
-                      borderRadius: BorderRadius.circular(13.0),
+                      borderRadius: BorderRadius.circular(12.0),
                       image: DecorationImage(
                         image: AssetImage('assets/images/addCardMask.png'),
                         fit: BoxFit.cover,
@@ -60,13 +61,14 @@ class AddCardScreen extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: width * 0.0267, vertical: height * 0.0123), // 10h, 10v
+                          horizontal: size.width * 0.02,
+                          vertical: size.height * 0.01), // 10h, 10v
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding:
-                                EdgeInsets.symmetric(horizontal: width * 0.053), //20h
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.05), //20h
 
                               child: Row(
                                 mainAxisAlignment:
@@ -76,7 +78,7 @@ class AddCardScreen extends StatelessWidget {
                                       textString: '********',
                                       textFamily: 'DM Sans',
                                       textColor: Colors.white,
-                                      textSize: width * 0.0373 * 2 ,
+                                      textSize: size.width * 0.05,
                                       textWeight: FontWeight.bold),
                                   SvgPicture.asset(
                                       'assets/images/mastercard_logo.svg'),
@@ -84,8 +86,8 @@ class AddCardScreen extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding:
-                              EdgeInsets.symmetric(horizontal:  width * 0.053),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.053),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -94,13 +96,14 @@ class AddCardScreen extends StatelessWidget {
                                       textString: '**** **** **** ****',
                                       textFamily: 'DM Sans',
                                       textColor: Colors.white,
-                                      textSize: width * 0.0373, //14h
+                                      textSize: size.width * 0.03,
+                                      //14h
                                       textWeight: FontWeight.bold),
                                   ReusableText(
                                       textString: '**/**',
                                       textFamily: 'DM Sans',
                                       textColor: Colors.white,
-                                      textSize: width * 0.0373,
+                                      textSize: size.width * 0.03,
                                       textWeight: FontWeight.bold),
                                 ],
                               ),
@@ -117,7 +120,7 @@ class AddCardScreen extends StatelessWidget {
                             textString: 'Add a card',
                             textFamily: 'DM Sans',
                             textColor: Color(0xFF263238),
-                            textSize: size.width * 0.07,
+                            textSize: size.width * 0.05,
                             textWeight: FontWeight.bold),
                         SizedBox(height: size.height * 0.01),
                         ReusableText(
@@ -127,7 +130,7 @@ class AddCardScreen extends StatelessWidget {
                                 'and credited for confirmation.',
                             textFamily: 'DM Sans',
                             textColor: Color(0xFF404040),
-                            textSize: size.width * 0.04,
+                            textSize: size.width * 0.035,
                             textWeight: FontWeight.normal,
                             textAligner: TextAlign.center),
                         SizedBox(height: size.height * 0.05),
@@ -139,7 +142,7 @@ class AddCardScreen extends StatelessWidget {
                                 child: ReusableText(
                                   textString: 'Card number',
                                   textColor: Color(0xFF878787),
-                                  textSize: width * 0.0373,
+                                  textSize: size.width * 0.03,
                                 ),
                               ),
                               SizedBox(height: 2),
@@ -162,7 +165,7 @@ class AddCardScreen extends StatelessWidget {
                                     ReusableText(
                                       textString: 'Expiry',
                                       textColor: Color(0xFF878787),
-                                      textSize: width * 0.0373,
+                                      textSize: size.width * 0.03,
                                     ),
                                     ReusableTextField(
                                       controller: _dateNoController,
@@ -182,7 +185,7 @@ class AddCardScreen extends StatelessWidget {
                                     ReusableText(
                                       textString: 'CVV',
                                       textColor: Color(0xFF878787),
-                                      textSize: width * 0.0373,
+                                      textSize: size.width * 0.03,
                                     ),
                                     ReusableTextField(
                                       controller: _cvvController,
@@ -195,7 +198,6 @@ class AddCardScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-
                       ],
                     ),
                   ),
@@ -210,7 +212,7 @@ class AddCardScreen extends StatelessWidget {
                         child: ReusableText(
                             textString: 'Add card',
                             textColor: Colors.white,
-                            textSize: width * 0.048, //18h
+                            textSize: size.width * 0.04, //18h
                             textAligner: TextAlign.center),
                       ),
                     ),
@@ -224,7 +226,7 @@ class AddCardScreen extends StatelessWidget {
                       child: ReusableText(
                         textString: 'I\'ll add my card later',
                         textColor: Color(0xff003FA4),
-                        textSize: width * 0.048,
+                        textSize: size.width * 0.04,
                         textAligner: TextAlign.center,
                         stringDecor: TextDecoration.underline,
                       ),
@@ -232,7 +234,8 @@ class AddCardScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BitshorePages()),
+                        MaterialPageRoute(
+                            builder: (context) => BitshorePages()),
                       );
                     },
                   ),
@@ -246,26 +249,26 @@ class AddCardScreen extends StatelessWidget {
   }
 
   void _addCardSuccessBottomScreen(context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+    var size = MediaQuery.of(context).size;
 
     showModalBottomSheet(
         context: context,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(9.0),
-                topRight: Radius.circular(9.0),
+                topLeft: Radius.circular(10.0),
+                topRight: Radius.circular(10.0),
                 bottomRight: Radius.zero,
                 bottomLeft: Radius.zero)),
         builder: (BuildContext bc) {
           return Padding(
-            padding: EdgeInsets.fromLTRB(width * 0.043, height * 0.02, width * 0.043, height * 0.02),
+            padding: EdgeInsets.fromLTRB(size.width * 0.04, size.height * 0.02,
+                size.width * 0.04, size.height * 0.02),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20),
                       topLeft: Radius.circular(20))),
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: size.height * 0.4,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -282,28 +285,25 @@ class AddCardScreen extends StatelessWidget {
                   ),
                   Image.asset('assets/images/addCardSuccess.png'),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: height * 0.0123),
+                    padding:
+                        EdgeInsets.symmetric(vertical: size.height * 0.0123),
                     child: Text(
                       'Card added successfully',
                       style: TextStyle(
                           color: Color(0xff263238),
                           fontWeight: FontWeight.bold,
-                          fontSize: width * 0.053,
+                          fontSize: size.width * 0.05,
                           fontFamily: 'DM Sans'),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal:  width * 0.053 *2),
-                    child: Text(
-                        'You can now manage your cards in the bank section',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color(0xff6F6F6F),
-                          fontSize: width * 0.0373,
-                          fontFamily: 'DM Sans',
-                        )),
-                  ),
-                  SizedBox(height: height * 0.0123),
+                  Text(
+                      'You can now manage your cards in the bank section',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xff6F6F6F),
+                        fontSize: size.width * 0.03,
+                        fontFamily: 'DM Sans',
+                      )),
                 ],
               ),
             ),

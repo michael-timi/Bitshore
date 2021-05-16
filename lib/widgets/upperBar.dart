@@ -1,4 +1,3 @@
-import 'package:bitshore/screens/page/profilePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +49,7 @@ class UpperBar extends StatelessWidget {
                       backgroundImage:
                           AssetImage('assets/images/id_image.png')),
                   onPressed: () {
-                    Navigator.pushNamed(context, ProfilePage.id);
+                    // Navigator.pushNamed(context, ProfilePage.id);
                   },
                 ),
               ),
