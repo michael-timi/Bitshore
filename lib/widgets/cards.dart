@@ -16,7 +16,7 @@ class DirhamCard extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(size.height * 0.02),
-            height: size.height * 0.2,
+            height: size.height * 0.21,
             width: size.width,
             decoration: BoxDecoration(
               color: Color(0xff3754E0),
@@ -60,7 +60,7 @@ class DirhamCard extends StatelessWidget {
                       fontSize: size.width * 0.060,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: size.height * 0.02),
+                SizedBox(height: size.height * 0.04),
                 Container(
                   alignment: Alignment.bottomCenter,
                   child: Row(
@@ -166,90 +166,88 @@ class OtherCards extends StatelessWidget {
             },
           ),
           SizedBox(height: size.height * 0.02),
-          Expanded(
-            child: ListView.builder(
-                itemCount: cardList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: size.height * 0.015),
-                    child: Container(
-                      padding: EdgeInsets.all(size.height * 0.02),
-                      height: size.height * 0.22,
-                      width: size.width,
-                      decoration: BoxDecoration(
-                        color: Color(0xff3754E0),
-                        borderRadius: BorderRadius.circular(16),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey[50],
-                              offset: Offset(2, 6),
-                              blurRadius: 10),
-                        ],
-                        image: DecorationImage(
-                          image: AssetImage(cardList[index].image),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            alignment: Alignment.topRight,
-                            child: Text(
-                              cardList[index].type,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: size.width * 0.03,
-                                  fontWeight: FontWeight.w700),
-                            ),
-                          ),
-                          SizedBox(height: size.height * 0.015),
-                          Text(
-                            cardList[index].type,
-                            style: TextStyle(
-                                color: Color(0xffC4C4C4),
-                                fontSize: size.width * 0.03,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          Text(
-                            '****************',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: size.width * 0.06,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: size.height * 0.04),
-                          Container(
-                            alignment: Alignment.bottomCenter,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                InkWell(
-                                  child: Icon(FontAwesomeIcons.eyeSlash,
-                                      color: Colors.white,
-                                      size: size.width * 0.03),
-                                  onTap: () {},
-                                ),
-                                Container(
-                                  height: size.height * 0.025,
-                                  width: size.width * 0.08,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image:
-                                          AssetImage(cardList[index].flag),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+          InkWell(
+            onTap: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => CardPage()),
+              // );
+            },
+            child: Container(
+              padding: EdgeInsets.all(size.height * 0.02),
+              height: size.height * 0.21,
+              width: size.width,
+              decoration: BoxDecoration(
+                color: Color(0xff3754E0),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey[50],
+                      offset: Offset(2, 6),
+                      blurRadius: 10),
+                ],
+                image: DecorationImage(
+                  image: AssetImage('assets/images/usa_card.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    alignment: Alignment.topRight,
+                    child: Text(
+                      'Virtual Card',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: size.width * 0.03,
+                          fontWeight: FontWeight.w700),
                     ),
-                  );
-                }),
-          )
+                  ),
+                  SizedBox(height: size.height * 0.015),
+                  Text(
+                    'Virtual Card',
+                    style: TextStyle(
+                        color: Color(0xffC4C4C4),
+                        fontSize: size.width * 0.03,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    '****************',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: size.width * 0.060,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: size.height * 0.04),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                          child: Icon(FontAwesomeIcons.eyeSlash,
+                              color: Colors.white, size: size.width * 0.03),
+                          onTap: () {},
+                        ),
+                        Container(
+                          height: size.height * 0.02,
+                          width: size.width * 0.08,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/usd.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: size.height * 0.03),
         ],
       ),
     );

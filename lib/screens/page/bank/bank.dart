@@ -1,3 +1,4 @@
+import 'package:bitshore/screens/page/bank/cards.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -110,77 +111,86 @@ class _BankingPageState extends State<BankingPage> {
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: size.height * 0.02),
-                Container(
-                  padding: EdgeInsets.all(size.height * 0.02),
-                  height: size.height * 0.22,
-                  width: size.width,
-                  decoration: BoxDecoration(
-                    color: Color(0xff3754E0),
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey[50],
-                          offset: Offset(2, 6),
-                          blurRadius: 10),
-                    ],
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/dirham_card.png'),
-                      fit: BoxFit.cover,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CardPage()),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(size.height * 0.02),
+                    height: size.height * 0.21,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                      color: Color(0xff3754E0),
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey[50],
+                            offset: Offset(2, 6),
+                            blurRadius: 10),
+                      ],
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/dirham_card.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        alignment: Alignment.topRight,
-                        child: Text(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          alignment: Alignment.topRight,
+                          child: Text(
+                            'Virtual Card',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: size.width * 0.03,
+                                fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                        SizedBox(height: size.height * 0.015),
+                        Text(
                           'Virtual Card',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xffC4C4C4),
                               fontSize: size.width * 0.03,
                               fontWeight: FontWeight.w700),
                         ),
-                      ),
-                      SizedBox(height: size.height * 0.015),
-                      Text(
-                        'Virtual Card',
-                        style: TextStyle(
-                            color: Color(0xffC4C4C4),
-                            fontSize: size.width * 0.03,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      Text(
-                        '****************',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: size.width * 0.060,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: size.height * 0.04),
-                      Container(
-                        alignment: Alignment.bottomCenter,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InkWell(
-                              child: Icon(FontAwesomeIcons.eyeSlash,
-                                  color: Colors.white, size: size.width * 0.03),
-                              onTap: () {},
-                            ),
-                            Container(
-                              height: size.height * 0.02,
-                              width: size.width * 0.08,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('assets/images/aed.png'),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            )
-                          ],
+                        Text(
+                          '****************',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: size.width * 0.060,
+                              fontWeight: FontWeight.bold),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: size.height * 0.04),
+                        Container(
+                          alignment: Alignment.bottomCenter,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              InkWell(
+                                child: Icon(FontAwesomeIcons.eyeSlash,
+                                    color: Colors.white,
+                                    size: size.width * 0.03),
+                                onTap: () {},
+                              ),
+                              Container(
+                                height: size.height * 0.02,
+                                width: size.width * 0.08,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/images/aed.png'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: size.height * 0.03),
@@ -192,13 +202,16 @@ class _BankingPageState extends State<BankingPage> {
                   child: Row(
                     children: [
                       Menu(
-                          firstText: 'Transfer', lastText: 'Send money to local bank'),
+                          firstText: 'Transfer',
+                          lastText: 'Send money to local bank'),
                       SizedBox(width: 12),
                       Menu(
-                          firstText: 'Account', lastText: 'Manage accounts and cards'),
+                          firstText: 'Account',
+                          lastText: 'Manage accounts and cards'),
                       SizedBox(width: 12),
                       Menu(
-                          firstText: 'Earn', lastText: 'Get paid in Dirham for referrals'),
+                          firstText: 'Earn',
+                          lastText: 'Get paid in Dirham for referrals'),
                     ],
                   ),
                 ),

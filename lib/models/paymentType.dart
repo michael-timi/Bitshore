@@ -16,7 +16,7 @@ List<Payment> paymentList = [
       image: 'assets/images/invoice.png'),
   Payment(
       name: 'Pay A Bill',
-      image: 'assets/images/usa_card.png'),
+      image: 'assets/images/invoice.png'),
 ];
 
 class PaymentType {

@@ -2,19 +2,19 @@ import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_two.dart';
-import 'package:bitshore/screens/page/morePage.dart';
+import 'package:bitshore/screens/page/more.dart';
 import 'package:bitshore/screens/signUp/otpPage.dart';
 import 'package:bitshore/screens/signUp/signupPage.dart';
 import 'package:bitshore/screens/page/addCard.dart';
 import 'package:bitshore/screens/signUp/loginPage.dart';
-import 'package:bitshore/screens/page/pageNav.dart';
+import 'package:bitshore/screens/page/pages.dart';
 import 'package:bitshore/screens/signUp/welcomePage.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/page/exchange/exchangePage.dart';
+import 'screens/page/exchange/exchange.dart';
 import 'package:bitshore/screens/page/saving/savingsPage.dart';
 import 'package:flutter/material.dart';
-import 'screens/page/bank/bankPage.dart';
+import 'screens/page/bank/bank.dart';
 import 'screens/page/home.dart';
 
 void main() {

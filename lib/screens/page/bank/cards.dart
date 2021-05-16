@@ -1,14 +1,14 @@
 import 'package:bitshore/widgets/cards.dart';
 import 'package:flutter/material.dart';
 
-class Card extends StatefulWidget {
+class CardPage extends StatefulWidget {
   static String id = 'cardPage';
 
   @override
-  _CardState createState() => _CardState();
+  _CardPageState createState() => _CardPageState();
 }
 
-class _CardState extends State<Card> {
+class _CardPageState extends State<CardPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -16,15 +16,20 @@ class _CardState extends State<Card> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          leading:
+              InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.arrow_back, color: Color(0xff343C6B))),
           title: Text(
-            'Bank and Accounts',
+            'My Cards',
             style: TextStyle(
                 color: Color(0xff343C6B),
                 fontSize: size.width * 0.05,
                 fontWeight: FontWeight.bold),
           ),
           elevation: 0,
-          centerTitle: true,
           backgroundColor: Colors.white,
           bottom: TabBar(
             labelColor: Color(0xff343C6B),

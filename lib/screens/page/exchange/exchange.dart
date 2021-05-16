@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bitshore/models/exchange.dart';
-import 'package:bitshore/screens/page/exchange/exchangeDetailPage.dart';
+import 'package:bitshore/screens/page/exchange/exchangeDetail.dart';
 
 class ExchangePage extends StatefulWidget {
   static String id = 'exchangePage';

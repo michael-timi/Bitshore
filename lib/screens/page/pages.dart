@@ -1,7 +1,7 @@
-import 'package:bitshore/screens/page/bank/bankPage.dart';
-import 'package:bitshore/screens/page/exchange/exchangePage.dart';
+import 'package:bitshore/screens/page/bank/bank.dart';
+import 'package:bitshore/screens/page/exchange/exchange.dart';
 import 'package:bitshore/screens/page/home.dart';
-import 'package:bitshore/screens/page/morePage.dart';
+import 'package:bitshore/screens/page/more.dart';
 import 'package:bitshore/screens/page/saving/savingsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
