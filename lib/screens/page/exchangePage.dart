@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bitshore/models/exchange.dart';
 import 'package:bitshore/screens/page/exchangeDetailPage.dart';
@@ -13,11 +14,10 @@ class _ExchangePageState extends State<ExchangePage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.only(top: height * 0.03),
+        padding: EdgeInsets.only(top: size.height * 0.03),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -117,9 +117,10 @@ class _ExchangePageState extends State<ExchangePage> {
                                         height: size.height * 0.025,
                                         width: size.height * 0.025,
                                         decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
                                             image: DecorationImage(
                                                 image: AssetImage(
-                                                    exchange[index].image1))),
+                                                    exchange[index].image1), fit: BoxFit.fitHeight)),
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
@@ -128,9 +129,10 @@ class _ExchangePageState extends State<ExchangePage> {
                                           height: size.height * 0.025,
                                           width: size.height * 0.025,
                                           decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
                                               image: DecorationImage(
                                                   image: AssetImage(
-                                                      exchange[index].image2))),
+                                                      exchange[index].image2), fit: BoxFit.fitHeight)),
                                         ),
                                       )
                                     ],
@@ -162,7 +164,7 @@ class _ExchangePageState extends State<ExchangePage> {
                               exchange[index].value.toString(),
                               style: TextStyle(
                                   color: Color(0xff343C6B),
-                                  fontSize: size.width * 0.04),
+                                  fontSize: size.width * 0.04, fontWeight: FontWeight.bold),
                             )
                           ],
                         ),

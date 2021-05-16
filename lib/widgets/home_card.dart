@@ -29,7 +29,8 @@ class HomeCard extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding:  EdgeInsets.only(left: size.width * 0.03, right: size.width * 0.03, top: size.width* 0.02, bottom: size.width* 0.02),
+          padding: EdgeInsets.symmetric(
+              horizontal: size.width * 0.03, vertical: size.height * 0.02),
           child: Column(
             children: [
               Padding(
@@ -42,6 +43,7 @@ class HomeCard extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: size.height * 0.005),
               Text(
                 'Account Balance',
                 style: TextStyle(
@@ -53,7 +55,7 @@ class HomeCard extends StatelessWidget {
                 card.accountBalance,
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: size.width * 0.06,
+                    fontSize: size.width * 0.07,
                     fontWeight: FontWeight.bold),
               ),
               Row(

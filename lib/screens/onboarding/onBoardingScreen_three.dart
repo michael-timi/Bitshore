@@ -1,4 +1,4 @@
-import 'package:bitshore/screens/page/signupPage.dart';
+import 'package:bitshore/screens/signUp/signupPage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'onBoardingScreen_four.dart';

@@ -32,14 +32,14 @@ class HomeMenu extends StatelessWidget {
             Text(
               firstText,
               style: TextStyle(
-                  fontSize: size.width * 0.035,
+                  fontSize: size.width * 0.045,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff30459D)),
             ),
             Text(
               secondText,
               style: TextStyle(
-                  fontSize: size.width * 0.035,
+                  fontSize: size.width * 0.045,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff30459D)),
             ),

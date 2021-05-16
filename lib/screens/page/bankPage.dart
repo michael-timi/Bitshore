@@ -1,53 +1,17 @@
-import 'package:bitshore/widgets/reusableText.dart';
-import 'package:bitshore/widgets/secondBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bitshore/widgets/cards.dart';
 
 class BankingPage extends StatefulWidget {
   static String id = 'bankingPage';
-
-  MaterialColor createMaterialColor(Color color) {
-    List strengths = <double>[.05];
-    Map swatch = <int, Color>{};
-    final int r = color.red, g = color.green, b = color.blue;
-
-    for (int i = 1; i < 10; i++) {
-      strengths.add(0.1 * i);
-    }
-    strengths.forEach((strength) {
-      final double ds = 0.5 - strength;
-      swatch[(strength * 1000).round()] = Color.fromRGBO(
-        r + ((ds < 0 ? r : (255 - r)) * ds).round(),
-        g + ((ds < 0 ? g : (255 - g)) * ds).round(),
-        b + ((ds < 0 ? b : (255 - b)) * ds).round(),
-        1,
-      );
-    });
-    return MaterialColor(color.value, swatch);
-  }
 
   @override
   _BankingPageState createState() => _BankingPageState();
 }
 
 class _BankingPageState extends State<BankingPage> {
-  bool _setBaseContainerVisible = true;
-  bool _setHomeContainerVisible = true;
 
-  void _setBaseContainer() {
-    setState(() {
-      _setBaseContainerVisible = !_setBaseContainerVisible;
-    });
-  }
-
-  void _setHomeContainer() {
-    setState(() {
-      _setHomeContainerVisible = !_setHomeContainerVisible;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -643,130 +607,5 @@ class _BankingPageState extends State<BankingPage> {
 //   }
 // }
 
-class DirhamCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Padding(
-      padding: EdgeInsets.only(
-          left: size.height * 0.02,
-          right: size.height * 0.02,
-          top: size.height * 0.03),
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(size.height * 0.02),
-            height: size.height * 0.25,
-            width: size.width,
-            decoration: BoxDecoration(
-              color: Color(0xff3754E0),
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey[50],
-                    offset: Offset(2, 6),
-                    blurRadius: 10),
-              ],
-              image: DecorationImage(
-                image: AssetImage('assets/images/dirham_card.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment: Alignment.topRight,
-                  child: Text(
-                    'Virtual Card',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: size.width * 0.03,
-                        fontWeight: FontWeight.w700),
-                  ),
-                ),
-                SizedBox(height: size.height * 0.02),
-                Text(
-                  'Virtual Card',
-                  style: TextStyle(
-                      color: Color(0xffC4C4C4),
-                      fontSize: size.width * 0.03,
-                      fontWeight: FontWeight.w700),
-                ),
-                Text(
-                  '*********************',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: size.width * 0.05,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: size.height * 0.05),
-                Container(
-                  alignment: Alignment.bottomCenter,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        child: Icon(FontAwesomeIcons.eyeSlash,
-                            color: Colors.white, size: size.width * 0.03),
-                        onTap: () {},
-                      ),
-                      Container(
-                        height: size.height * 0.03,
-                        width: size.height * 0.03,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/aed.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: size.height * 0.04),
-          InkWell(
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Color(0xff003FA4), width: 1)),
-                    child: Icon(Icons.add,
-                        color: Colors.black, size: size.width * 0.04),
-                  ),
-                  SizedBox(width: size.width * 0.04),
-                  Text(
-                    'Create DOM account',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: size.width * 0.035,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => NewGoalPage()),
-              // );
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
 
-class OtherCards extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
+

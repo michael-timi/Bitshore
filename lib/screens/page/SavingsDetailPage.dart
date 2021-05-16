@@ -19,7 +19,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 24.0),
+          padding:  EdgeInsets.only(top: size.height * 0.07),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -32,7 +32,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+                        child: Icon(Icons.arrow_back, color: Colors.black)),
                     Text(
                       'My Savings',
                       style: TextStyle(
@@ -52,7 +52,8 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
               ),
               SizedBox(height: size.height * 0.02),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
+                padding:
+                EdgeInsets.only(left: size.height * 0.02, right: size.height * 0.02),
                 child: Container(
                   height: size.height * 0.17,
                   width: size.width,
@@ -71,9 +72,9 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
+                    padding: EdgeInsets.all(size.height * 0.04),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+
                       children: [
                         Text(
                           widget.savingsDetails.name,
@@ -128,7 +129,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                   'DETAILS',
                   style: TextStyle(
                       color: Color(0xff878787),
-                      fontSize: size.width * 0.02,
+                      fontSize: size.width * 0.025,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -143,14 +144,14 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                       'TARGET',
                       style: TextStyle(
                           color: Color(0xff878787),
-                          fontSize: size.width * 0.02),
+                          fontSize: size.width * 0.025),
                     ),
                     SizedBox(height: 8),
                     Text(
                       widget.savingsDetails.total.toString(),
                       style: TextStyle(
                           color: Color(0xff4F4F4F),
-                          fontSize: size.width * 0.03,
+                          fontSize: size.width * 0.035,
                           fontWeight: FontWeight.bold),
                     ),
                     Divider(),
@@ -161,14 +162,14 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           'SAVINGS TYPE',
                           style: TextStyle(
                               color: Color(0xff878787),
-                              fontSize: size.width * 0.02),
+                              fontSize: size.width * 0.025),
                         ),
                         Spacer(),
                         Text(
                           'FREQUENCY',
                           style: TextStyle(
                               color: Color(0xff878787),
-                              fontSize: size.width * 0.02),
+                              fontSize: size.width * 0.025),
                         ),
                         Spacer(),
                       ],
@@ -180,7 +181,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           'Flexi-Save',
                           style: TextStyle(
                               color: Color(0xff4F4F4F),
-                              fontSize: size.width * 0.03,
+                              fontSize: size.width * 0.035,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -188,7 +189,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           'Daily',
                           style: TextStyle(
                               color: Color(0xff4F4F4F),
-                              fontSize: size.width * 0.03,
+                              fontSize: size.width * 0.035,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -202,14 +203,14 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           'START DATE',
                           style: TextStyle(
                               color: Color(0xff878787),
-                              fontSize: size.width * 0.02),
+                              fontSize: size.width * 0.025),
                         ),
                         Spacer(),
                         Text(
                           'END DATE',
                           style: TextStyle(
                               color: Color(0xff878787),
-                              fontSize: size.width * 0.02),
+                              fontSize: size.width * 0.025),
                         ),
                         Spacer(),
                       ],
@@ -221,7 +222,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           '31/04/2021',
                           style: TextStyle(
                               color: Color(0xff4F4F4F),
-                              fontSize: size.width * 0.03,
+                              fontSize: size.width * 0.035,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -229,7 +230,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                           '31/04/2021',
                           style: TextStyle(
                               color: Color(0xff4F4F4F),
-                              fontSize: size.width * 0.03,
+                              fontSize: size.width * 0.035,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -246,7 +247,7 @@ class _SavingsDetailsPageState extends State<SavingsDetailsPage> {
                   'TRANSACTION HISTORY',
                   style: TextStyle(
                       color: Color(0xff878787),
-                      fontSize: size.width * 0.02,
+                      fontSize: size.width * 0.025,
                       fontWeight: FontWeight.bold),
                 ),
               ),

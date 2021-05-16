@@ -2,11 +2,12 @@ import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_two.dart';
+import 'package:bitshore/screens/signUp/otpPage.dart';
+import 'package:bitshore/screens/signUp/signupPage.dart';
 import 'package:bitshore/screens/page/addCard_Screen.dart';
-import 'package:bitshore/screens/page/loginPage.dart';
+import 'package:bitshore/screens/signUp/loginPage.dart';
 import 'package:bitshore/screens/page/pageNav.dart';
-import 'package:bitshore/screens/page/signupPage.dart';
-import 'package:bitshore/screens/page/welcomePage.dart';
+import 'package:bitshore/screens/signUp/welcomePage.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/page/exchangePage.dart';
@@ -15,7 +16,6 @@ import 'package:bitshore/screens/page/savingsPage.dart';
 import 'package:flutter/material.dart';
 import 'screens/page/bankPage.dart';
 import 'screens/page/homepage_Screen.dart';
-import 'screens/page/otpPage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
     });
     return MaterialColor(color.value, swatch);
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
           LoginPage.id: (context) => LoginPage(),
           WelcomePage.id: (context) => WelcomePage(),
           OtpPage.id: (context) => OtpPage(),
-          BitshorePages.id:(context) => BitshorePages(),
+          BitshorePages.id: (context) => BitshorePages(),
           HomePage.id: (context) => HomePage(),
           BankingPage.id: (context) => BankingPage(),
           SavingsPage.id: (context) => SavingsPage(),

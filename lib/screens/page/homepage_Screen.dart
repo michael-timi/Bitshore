@@ -151,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                         color: Color(0xff005CEE),
                         borderRadius: BorderRadius.circular(5)),
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(size.height* 0.01),
                       child: Row(
                         children: [
                           HomeMenu(
