@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: createMaterialColor(Color(0xff343C6B)),
           textTheme: GoogleFonts.nunitoTextTheme(Theme.of(context).textTheme),
         ),
-        home: BitshorePages(),
+        home: OnBoardingScreenOne(),
         routes: {
           OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
           OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),
