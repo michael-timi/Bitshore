@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   static GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _passwordController = new TextEditingController();
   TextEditingController _emailController = new TextEditingController();
-  String email;
+  String email, password;
   bool isValid = false;
   bool isHiddenPassword = true;
 
@@ -66,22 +66,16 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             SizedBox(height: size.height * 0.005),
-                            NewTextField(
+                            textField(
                               controller: _emailController,
+                              isHiddenPssword: false,
+                              keyType: TextInputType.emailAddress,
                               label: 'mail@example.com',
                               onChangedValue: (value) {
                                 email = value;
                               },
                             ),
                             SizedBox(height: size.height * 0.02),
-                            NewTextField(
-                              controller: _passwordController,
-                              label: 'password',
-
-                              onChangedValue: (value) {
-                                email = value;
-                              },
-                            ),
                             Padding(
                               padding: const EdgeInsets.only(left: 4),
                               child: Text(
@@ -93,67 +87,25 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             SizedBox(height: size.height * 0.01),
-                            TextFormField(
+                            textField(
                               controller: _passwordController,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1
-                                  .copyWith(color: Colors.black),
-                              obscureText: isHiddenPassword,
-                              maxLines: 1,
-                              enabled: true,
-                              textInputAction: TextInputAction.next,
-                              keyboardType: TextInputType.visiblePassword,
-                              decoration: InputDecoration(
-                                  suffixIcon: IconButton(
-                                      icon: Icon(
-                                        isHiddenPassword
-                                            ? Icons.visibility
-                                            : Icons.visibility_off,
-                                        color: Color(isHiddenPassword
-                                            ? 0xff003FA4
-                                            : 0xff828282),
-                                      ),
-                                      onPressed: () {
-                                        _togglePasswordView();
-                                      }),
-                                  labelText: 'Enter your password',
-                                  labelStyle: Theme.of(context)
-                                      .textTheme
-                                      .caption
-                                      .copyWith(
-                                          fontSize: size.width * 0.035,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xff263238)),
-                                  alignLabelWithHint: true,
-                                  fillColor: Color.fromRGBO(243, 246, 250, 1),
-                                  filled: true,
-                                  errorStyle: Theme.of(context)
-                                      .textTheme
-                                      .caption
-                                      .copyWith(color: Colors.red),
-                                  errorBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide:
-                                          BorderSide(color: Colors.red)),
-                                  contentPadding: const EdgeInsets.all(10),
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide: BorderSide.none),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide: BorderSide.none)),
-                              onFieldSubmitted: (String value) {
-                                if (value.isEmpty) {
-                                  isValid = false;
-                                }
-                                setState(() {});
-                              },
-                              validator: (String value) {
-                                if (value.isEmpty) {
-                                  return 'Password field cannot be Empty.';
-                                }
-                                return null;
+                              keyType: TextInputType.visiblePassword,
+                              label: 'Enter your password',
+                              isHiddenPssword: isHiddenPassword,
+                              sIcon: IconButton(
+                                  icon: Icon(
+                                    isHiddenPassword
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: Color(isHiddenPassword
+                                        ? 0xff003FA4
+                                        : 0xff828282),
+                                  ),
+                                  onPressed: () {
+                                    _togglePasswordView();
+                                  }),
+                              onChangedValue: (value) {
+                                password = value;
                               },
                             ),
                             SizedBox(height: size.height * 0.02),

@@ -1,5 +1,6 @@
 import 'package:bitshore/screens/page/addCard.dart';
 import 'package:bitshore/screens/signUp/loginPage.dart';
+import 'package:bitshore/widgets/myReusableTextFormField.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,6 +17,7 @@ class _WelcomePageState extends State<WelcomePage> {
   TextEditingController _passwordController = new TextEditingController();
   bool isValid = false;
   bool isHiddenPassword = true;
+  String password;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class _WelcomePageState extends State<WelcomePage> {
           child: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -71,66 +73,25 @@ class _WelcomePageState extends State<WelcomePage> {
                             ),
                           ),
                           SizedBox(height: size.height * 0.01),
-                          TextFormField(
+                          textField(
                             controller: _passwordController,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText1
-                                .copyWith(color: Colors.black),
-                            obscureText: isHiddenPassword,
-                            maxLines: 1,
-                            enabled: true,
-                            textInputAction: TextInputAction.next,
-                            keyboardType: TextInputType.visiblePassword,
-                            decoration: InputDecoration(
-                                suffixIcon: IconButton(
-                                    icon: Icon(
-                                      isHiddenPassword
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
-                                      color: Color(isHiddenPassword
-                                          ? 0xff003FA4
-                                          : 0xff828282),
-                                    ),
-                                    onPressed: () {
-                                      _togglePasswordView();
-                                    }),
-                                labelText: 'Enter your password',
-                                labelStyle: Theme.of(context)
-                                    .textTheme
-                                    .caption
-                                    .copyWith(
-                                        fontSize: size.width * 0.035,
-                                        fontWeight: FontWeight.w500,
-                                        color: Color(0xff263238)),
-                                alignLabelWithHint: true,
-                                fillColor: Color.fromRGBO(243, 246, 250, 1),
-                                filled: true,
-                                errorStyle: Theme.of(context)
-                                    .textTheme
-                                    .caption
-                                    .copyWith(color: Colors.red),
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide(color: Colors.red)),
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide.none),
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide.none)),
-                            onFieldSubmitted: (String value) {
-                              if (value.isEmpty) {
-                                isValid = false;
-                              }
-                              setState(() {});
-                            },
-                            validator: (String value) {
-                              if (value.isEmpty) {
-                                return 'Password field cannot be Empty.';
-                              }
-                              return null;
+                            keyType: TextInputType.visiblePassword,
+                            label: 'Enter your password',
+                            isHiddenPssword: isHiddenPassword,
+                            sIcon: IconButton(
+                                icon: Icon(
+                                  isHiddenPassword
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                  color: Color(isHiddenPassword
+                                      ? 0xff003FA4
+                                      : 0xff828282),
+                                ),
+                                onPressed: () {
+                                  _togglePasswordView();
+                                }),
+                            onChangedValue: (value) {
+                              password = value;
                             },
                           ),
                         ],
@@ -199,7 +160,8 @@ class _WelcomePageState extends State<WelcomePage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AddCardScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => AddCardScreen()),
                       );
                     },
                   ),
