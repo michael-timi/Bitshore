@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bitshore/models/bankMenuCard.dart';
+import 'package:bitshore/models/bankMenu.dart';
 
 // ignore: must_be_immutable
 class BankMenuCard extends StatelessWidget {
