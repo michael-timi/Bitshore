@@ -28,6 +28,7 @@ class _BitshorePagesState extends State<BitshorePages> {
     return Scaffold(
         body: _pages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
+          elevation: 0,
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(

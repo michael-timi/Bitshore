@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:bitshore/models/cards.dart';
 import 'package:bitshore/screens/page/bank/newCard.dart';
+import 'package:flutter/material.dart';
+import 'package:bitshore/widgets/addCard.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DirhamCard extends StatelessWidget {
@@ -124,7 +124,12 @@ class DirhamCard extends StatelessWidget {
   }
 }
 
-class OtherCards extends StatelessWidget {
+class OtherCards extends StatefulWidget {
+  @override
+  _OtherCardsState createState() => _OtherCardsState();
+}
+
+class _OtherCardsState extends State<OtherCards> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -136,42 +141,45 @@ class OtherCards extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
-            child: Container(
-              child: Row(
-                children: [
-                  Container(
+          Container(
+            height: size.height * 0.15,
+            width: size.width,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
+            child: Row(
+              children: [
+                AddCardsMenu(
+                  name: 'Spending',
+                  border: Border.all(color: Color(0xff003FA4), width: 1),
+                  cColor: Color(0xffC4C4C4),
+                ),
+                SizedBox(width: size.width * 0.03),
+                AddCardsMenu(name: 'Web-card', cColor: Color(0xffC4C4C4)),
+                SizedBox(width: size.width * 0.03),
+                AddCardsMenu(name: 'Misc', cColor: Color(0xffC4C4C4)),
+                SizedBox(width: size.width * 0.03),
+                AddCardsMenu(
+                  name: 'Add New',
+                  cColor: Color(0xffE0E3ED),
+                  child: Container(
+                    height: size.height * 0.06,
+                    width: size.height * 0.06,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black, width: 1)),
-                    child: Icon(Icons.add,
-                        color: Colors.black, size: size.width * 0.04),
+                        border: Border.all(color: Color(0xff003FA4), width: 2)),
+                    child: Icon(FontAwesomeIcons.plus,
+                        color: Color(0xff003FA4), size: size.width * 0.04),
                   ),
-                  SizedBox(width: size.width * 0.02),
-                  Text(
-                    'New Card',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: size.width * 0.035,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
+                ),
+              ],
             ),
+          ),
+          SizedBox(height: size.height * 0.02),
+          InkWell(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NewCard()),
               );
-            },
-          ),
-          SizedBox(height: size.height * 0.02),
-          InkWell(
-            onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => CardPage()),
-              // );
             },
             child: Container(
               padding: EdgeInsets.all(size.height * 0.02),
@@ -248,6 +256,45 @@ class OtherCards extends StatelessWidget {
             ),
           ),
           SizedBox(height: size.height * 0.03),
+          Container(
+            height: size.height * 0.14,
+            width: size.width,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
+            child: Row(
+              children: [
+                AddCardsOption(
+                    firstText: 'Fund card', lastText: 'Add money to the card'),
+                SizedBox(width: size.width * 0.03),
+                AddCardsOption(
+                    firstText: 'Controls ',
+                    lastText: 'Set controls on your card'),
+                SizedBox(width: size.width * 0.03),
+                AddCardsOption(
+                    firstText: 'Limit card',
+                    lastText: 'Set payment limits on this card'),
+              ],
+            ),
+          ),
+          SizedBox(height: size.height * 0.02),
+          Container(
+            height: size.height * 0.14,
+            width: size.width,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
+            child: Row(
+              children: [
+                AddCardsOption(
+                    firstText: 'Lock card',
+                    lastText: 'Suspend or deactivate card'),
+                SizedBox(width: size.width * 0.03),
+                AddCardsOption(
+                    firstText: 'Change PIN',
+                    lastText: 'Change transaction PIN'),
+                SizedBox(width: size.width * 0.03),
+                AddCardsOption(
+                    firstText: 'Edit card', lastText: 'Edit card details'),
+              ],
+            ),
+          ),
         ],
       ),
     );

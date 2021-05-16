@@ -14,9 +14,10 @@ class Menu extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(5)),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(size.height * 0.01),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -37,7 +38,7 @@ class Menu extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: size.height * 0.03),
+            Spacer(),
             Text(
               firstText,
               style: TextStyle(

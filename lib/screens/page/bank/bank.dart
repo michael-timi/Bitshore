@@ -195,20 +195,25 @@ class _BankingPageState extends State<BankingPage> {
                 ),
                 SizedBox(height: size.height * 0.03),
                 Container(
-                  height: size.height * 0.15,
-                  width: size.width * 0.9,
+                  height: size.height * 0.14,
+                  width: size.width,
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(5)),
                   child: Row(
                     children: [
-                      Menu(
-                          firstText: 'Transfer',
-                          lastText: 'Send money to local bank'),
-                      SizedBox(width: 12),
+                      InkWell(
+                        child: Menu(
+                            firstText: 'Transfer',
+                            lastText: 'Send money to local bank'),
+                        onTap: () {
+                          _transferBottomScreen(context);
+                        },
+                      ),
+                      SizedBox(width: size.width * 0.03),
                       Menu(
                           firstText: 'Account',
                           lastText: 'Manage accounts and cards'),
-                      SizedBox(width: 12),
+                      SizedBox(width: size.width * 0.03),
                       Menu(
                           firstText: 'Earn',
                           lastText: 'Get paid in Dirham for referrals'),
@@ -243,5 +248,103 @@ class _BankingPageState extends State<BankingPage> {
         ))
       ],
     ));
+  }
+
+  void _transferBottomScreen(context) {
+    var size = MediaQuery.of(context).size;
+
+    showModalBottomSheet(
+        context: context,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10.0),
+                topRight: Radius.circular(10.0),
+                bottomRight: Radius.zero,
+                bottomLeft: Radius.zero)),
+        builder: (BuildContext bc) {
+          return Padding(
+            padding: EdgeInsets.fromLTRB(size.width * 0.04, size.height * 0.02,
+                size.width * 0.04, size.height * 0.02),
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      topLeft: Radius.circular(20))),
+              height: size.height * 0.4,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(FontAwesomeIcons.times,
+                              color: Colors.black)),
+                    ],
+                  ),
+                  Text(
+                    'Transfer Money',
+                    style: TextStyle(
+                        color: Color(0xff343C6B),
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.05,
+                        fontFamily: 'DM Sans'),
+                  ),
+                  SizedBox(height: size.height * 0.05),
+                  TransferOption(
+                      firstText: 'Bitshore accounts',
+                      secondText:
+                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
+                  SizedBox(height: size.height * 0.02),
+                  TransferOption(
+                      firstText: 'Other accounts',
+                      secondText:
+                          'Condimentum lobortis nulla ornare accumsan, semper.'),
+                ],
+              ),
+            ),
+          );
+        });
+  }
+}
+
+class TransferOption extends StatelessWidget {
+  TransferOption({this.firstText, this.secondText});
+
+  final firstText, secondText;
+
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    return Container(
+      padding: EdgeInsets.all(size.height * 0.01),
+      height: size.height * 0.07,
+      width: size.width,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Color(0xffE6E6E6), width: 2)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            firstText,
+            style: TextStyle(
+                color: Color(0xff343C6B),
+                fontSize: size.width * 0.03,
+                fontFamily: 'DM Sans'),
+          ),
+          Text(
+            secondText,
+            style: TextStyle(
+                color: Color(0xff343C6B),
+                fontSize: size.width * 0.03,
+                fontFamily: 'DM Sans'),
+          ),
+        ],
+      ),
+    );
   }
 }
