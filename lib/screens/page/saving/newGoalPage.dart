@@ -1,3 +1,4 @@
+import 'package:bitshore/widgets/myReusableTextFormField.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -9,7 +10,7 @@ class NewGoalPage extends StatefulWidget {
 }
 
 class _NewGoalPageState extends State<NewGoalPage> {
-  String planChoose, methodChoose;
+  String planChoose, methodChoose, amount, startDate, endDate;
   List paymentPlanList = ['choose a plan', 'PLAN A', 'PLAN B', 'PLAN C'];
   List paymentMethodList = ['One off', 'Two off'];
   static GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -98,49 +99,13 @@ class _NewGoalPageState extends State<NewGoalPage> {
                       ),
                     ),
                     SizedBox(height: size.height * 0.01),
-                    TextFormField(
+                    textField(
                       controller: _savingsAmountController,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1
-                          .copyWith(color: Colors.black),
-                      obscureText: false,
-                      maxLines: 1,
-                      enabled: true,
-                      textInputAction: TextInputAction.next,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          labelText: 'amount to save',
-                          labelStyle: Theme.of(context)
-                              .textTheme
-                              .caption
-                              .copyWith(
-                                  fontSize: size.width * 0.035,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0xff263238)),
-                          alignLabelWithHint: true,
-                          fillColor: Color.fromRGBO(243, 246, 250, 1),
-                          filled: true,
-                          errorStyle: Theme.of(context)
-                              .textTheme
-                              .caption
-                              .copyWith(color: Colors.red),
-                          errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(1),
-                              borderSide: BorderSide(color: Colors.red)),
-                          contentPadding: const EdgeInsets.all(10),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(1),
-                              borderSide: BorderSide.none),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(1),
-                              borderSide: BorderSide.none)),
-                      onFieldSubmitted: (String value) {},
-                      validator: (String value) {
-                        if (value.isEmpty) {
-                          return 'Field cannot be Empty.';
-                        }
-                        return null;
+                      isHiddenPssword: false,
+                      keyType: TextInputType.number,
+                      hintText: 'amount to save',
+                      onChangedValue: (value) {
+                        amount = value;
                       },
                     ),
                     SizedBox(height: size.height * 0.02),
@@ -191,98 +156,26 @@ class _NewGoalPageState extends State<NewGoalPage> {
                       children: [
                         Flexible(
                           flex: 1,
-                          child: TextFormField(
+                          child:  textField(
                             controller: _startDateController,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText1
-                                .copyWith(color: Colors.black),
-                            obscureText: false,
-                            maxLines: 1,
-                            enabled: true,
-                            textInputAction: TextInputAction.next,
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                                labelText: 'start date',
-                                labelStyle: Theme.of(context)
-                                    .textTheme
-                                    .caption
-                                    .copyWith(
-                                        fontSize: size.width * 0.035,
-                                        fontWeight: FontWeight.w500,
-                                        color: Color(0xff263238)),
-                                alignLabelWithHint: true,
-                                fillColor: Color.fromRGBO(243, 246, 250, 1),
-                                filled: true,
-                                errorStyle: Theme.of(context)
-                                    .textTheme
-                                    .caption
-                                    .copyWith(color: Colors.red),
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide(color: Colors.red)),
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide.none),
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide.none)),
-                            onFieldSubmitted: (String value) {},
-                            validator: (String value) {
-                              if (value.isEmpty) {
-                                return 'Field cannot be Empty.';
-                              }
-                              return null;
+                            isHiddenPssword: false,
+                            keyType: TextInputType.number,
+                            hintText: 'start date',
+                            onChangedValue: (value) {
+                              startDate = value;
                             },
                           ),
                         ),
                         SizedBox(width: size.height * 0.02),
                         Flexible(
                           flex: 1,
-                          child: TextFormField(
+                          child: textField(
                             controller: _endDateController,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText1
-                                .copyWith(color: Colors.black),
-                            obscureText: false,
-                            maxLines: 1,
-                            enabled: true,
-                            textInputAction: TextInputAction.next,
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                                labelText: 'end date',
-                                labelStyle: Theme.of(context)
-                                    .textTheme
-                                    .caption
-                                    .copyWith(
-                                        fontSize: size.width * 0.035,
-                                        fontWeight: FontWeight.w500,
-                                        color: Color(0xff263238)),
-                                alignLabelWithHint: true,
-                                fillColor: Color.fromRGBO(243, 246, 250, 1),
-                                filled: true,
-                                errorStyle: Theme.of(context)
-                                    .textTheme
-                                    .caption
-                                    .copyWith(color: Colors.red),
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide(color: Colors.red)),
-                                contentPadding: const EdgeInsets.all(10),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide.none),
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1),
-                                    borderSide: BorderSide.none)),
-                            onFieldSubmitted: (String value) {},
-                            validator: (String value) {
-                              if (value.isEmpty) {
-                                return 'Field cannot be Empty.';
-                              }
-                              return null;
+                            isHiddenPssword: false,
+                            keyType: TextInputType.number,
+                            hintText: 'end date',
+                            onChangedValue: (value) {
+                              endDate = value;
                             },
                           ),
                         ),

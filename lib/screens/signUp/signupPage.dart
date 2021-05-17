@@ -1,5 +1,6 @@
 import 'package:bitshore/screens/signUp/loginPage.dart';
 import 'package:bitshore/screens/signUp/otpPage.dart';
+import 'package:bitshore/widgets/myReusableTextFormField.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController _phoneController = new TextEditingController();
   bool isValid = false;
   bool isHiddenPassword = true;
-  String valueChoose;
+  String valueChoose, email, password, phone;
   List countryList = ['NGN', 'CAD', 'USA'];
 
   @override
@@ -67,125 +68,35 @@ class _SignUpPageState extends State<SignUpPage> {
                               ),
                             ),
                             SizedBox(height: size.height * 0.005),
-                            TextFormField(
+                            textField(
                               controller: _emailController,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1
-                                  .copyWith(color: Colors.black),
-                              obscureText: false,
-                              maxLines: 1,
-                              enabled: true,
-                              textInputAction: TextInputAction.next,
-                              keyboardType: TextInputType.emailAddress,
-                              decoration: InputDecoration(
-                                  labelText: 'mail@example.com',
-                                  labelStyle: Theme.of(context)
-                                      .textTheme
-                                      .caption
-                                      .copyWith(
-                                          fontSize: size.width * 0.035,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xff263238)),
-                                  alignLabelWithHint: true,
-                                  fillColor: Color.fromRGBO(243, 246, 250, 1),
-                                  filled: true,
-                                  errorStyle: Theme.of(context)
-                                      .textTheme
-                                      .caption
-                                      .copyWith(color: Colors.red),
-                                  errorBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide:
-                                          BorderSide(color: Colors.red)),
-                                  contentPadding: const EdgeInsets.all(10),
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide: BorderSide.none),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide: BorderSide.none)),
-                              onFieldSubmitted: (String value) {},
-                              validator: (String value) {
-                                if (value.isEmpty) {
-                                  return 'Field cannot be Empty.';
-                                }
-                                return null;
+                              keyType: TextInputType.emailAddress,
+                              isHiddenPssword: false,
+                              label: 'mail@example.com',
+                              onChangedValue: (value) {
+                                email = value;
                               },
                             ),
                             SizedBox(height: size.height * 0.02),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 4),
-                              child: Text(
-                                'Password',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyText2
-                                    .copyWith(color: Color(0xff263238)),
-                              ),
-                            ),
-                            SizedBox(height: size.height * 0.01),
-                            TextFormField(
+                            textField(
                               controller: _passwordController,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1
-                                  .copyWith(color: Colors.black),
-                              obscureText: isHiddenPassword,
-                              maxLines: 1,
-                              enabled: true,
-                              textInputAction: TextInputAction.next,
-                              keyboardType: TextInputType.visiblePassword,
-                              decoration: InputDecoration(
-                                  suffixIcon: IconButton(
-                                      icon: Icon(
-                                        isHiddenPassword
-                                            ? Icons.visibility
-                                            : Icons.visibility_off,
-                                        color: Color(isHiddenPassword
-                                            ? 0xff003FA4
-                                            : 0xff828282),
-                                      ),
-                                      onPressed: () {
-                                        _togglePasswordView();
-                                      }),
-                                  labelText: 'Enter your password',
-                                  labelStyle: Theme.of(context)
-                                      .textTheme
-                                      .caption
-                                      .copyWith(
-                                          fontSize: size.width * 0.035,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xff263238)),
-                                  alignLabelWithHint: true,
-                                  fillColor: Color.fromRGBO(243, 246, 250, 1),
-                                  filled: true,
-                                  errorStyle: Theme.of(context)
-                                      .textTheme
-                                      .caption
-                                      .copyWith(color: Colors.red),
-                                  errorBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide:
-                                          BorderSide(color: Colors.red)),
-                                  contentPadding: const EdgeInsets.all(10),
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide: BorderSide.none),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
-                                      borderSide: BorderSide.none)),
-                              onFieldSubmitted: (String value) {
-                                if (value.isEmpty) {
-                                  isValid = false;
-                                }
-                                setState(() {});
-                              },
-                              validator: (String value) {
-                                if (value.isEmpty) {
-                                  return 'Password field cannot be Empty.';
-                                }
-                                return null;
+                              label: 'Enter your password',
+                              keyType: TextInputType.visiblePassword,
+                              isHiddenPssword: isHiddenPassword,
+                              sIcon: IconButton(
+                                  icon: Icon(
+                                    isHiddenPassword
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: Color(isHiddenPassword
+                                        ? 0xff003FA4
+                                        : 0xff828282),
+                                  ),
+                                  onPressed: () {
+                                    _togglePasswordView();
+                                  }),
+                              onChangedValue: (value) {
+                                password = value;
                               },
                             ),
                             SizedBox(height: size.height * 0.02),
@@ -230,55 +141,14 @@ class _SignUpPageState extends State<SignUpPage> {
                                 SizedBox(width: size.width * 0.02),
                                 Flexible(
                                   flex: 2,
-                                  child: TextFormField(
+                                  child: textField(
                                     controller: _phoneController,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText1
-                                        .copyWith(color: Colors.black),
-                                    obscureText: false,
-                                    maxLines: 1,
-                                    enabled: true,
-                                    textInputAction: TextInputAction.next,
-                                    keyboardType: TextInputType.number,
-                                    decoration: InputDecoration(
-                                        labelText: '08123456789',
-                                        labelStyle: Theme.of(context)
-                                            .textTheme
-                                            .caption
-                                            .copyWith(
-                                                fontSize: size.width * 0.035,
-                                                fontWeight: FontWeight.w500,
-                                                color: Color(0xff263238)),
-                                        alignLabelWithHint: true,
-                                        fillColor:
-                                            Color.fromRGBO(243, 246, 250, 1),
-                                        filled: true,
-                                        errorStyle: Theme.of(context)
-                                            .textTheme
-                                            .caption
-                                            .copyWith(color: Colors.red),
-                                        errorBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(1),
-                                            borderSide:
-                                                BorderSide(color: Colors.red)),
-                                        contentPadding:
-                                            const EdgeInsets.all(10),
-                                        border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(1),
-                                            borderSide: BorderSide.none),
-                                        enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(1),
-                                            borderSide: BorderSide.none)),
-                                    onFieldSubmitted: (String value) {},
-                                    validator: (String value) {
-                                      if (value.isEmpty) {
-                                        return 'Password field cannot be Empty.';
-                                      }
-                                      return null;
+                                    isHiddenPssword: false,
+                                    label: 'Phone',
+                                    hintText: '08123456789',
+                                    keyType: TextInputType.phone,
+                                    onChangedValue: (value) {
+                                      phone = value;
                                     },
                                   ),
                                 ),

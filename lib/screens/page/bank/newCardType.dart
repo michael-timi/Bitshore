@@ -1,6 +1,7 @@
 import 'package:bitshore/models/cards.dart';
 import 'package:bitshore/widgets/myReusableTextFormField.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NewCardType extends StatefulWidget {
   final CardType cardType;
@@ -65,7 +66,7 @@ class _NewCardTypeState extends State<NewCardType> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.01),
-            NewTextField(
+            passwordField(
               hintText: 'Lagbaja Tamedo',
               keyType: TextInputType.name,
             ),
@@ -82,11 +83,11 @@ class _NewCardTypeState extends State<NewCardType> {
               'Phone number',
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: size.width * 0.02,
+                  fontSize: size.width * 0.025,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.01),
-            NewTextField(
+            passwordField(
               hintText: '2348012345678',
               keyType: TextInputType.phone,
             ),
@@ -95,11 +96,11 @@ class _NewCardTypeState extends State<NewCardType> {
               'Alternate phone',
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: size.width * 0.02,
+                  fontSize: size.width * 0.025,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.01),
-            NewTextField(
+            passwordField(
               hintText: '2348012345678',
               keyType: TextInputType.phone,
             ),
@@ -108,17 +109,18 @@ class _NewCardTypeState extends State<NewCardType> {
               'Address',
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: size.width * 0.02,
+                  fontSize: size.width * 0.025,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.01),
-            NewTextField(
+            passwordField(
               hintText: 'Street address',
               keyType: TextInputType.name,
             ),
             SizedBox(height: size.height * 0.02),
             Container(
-              padding: EdgeInsets.only(left: 16, right: 8),
+              padding: EdgeInsets.only(
+                  left: size.height * 0.015, right: size.height * 0.015),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(1),
                   color: Color.fromRGBO(243, 246, 250, 1)),
@@ -139,7 +141,8 @@ class _NewCardTypeState extends State<NewCardType> {
             ),
             SizedBox(height: size.height * 0.02),
             Container(
-              padding: EdgeInsets.only(left: 16, right: 8),
+              padding: EdgeInsets.only(
+                  left: size.height * 0.015, right: size.height * 0.015),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(1),
                   color: Color.fromRGBO(243, 246, 250, 1)),
@@ -170,22 +173,81 @@ class _NewCardTypeState extends State<NewCardType> {
                     'Continue',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: size.width * 0.03,
+                        fontSize: size.width * 0.04,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
               onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //       builder: (context) => WelcomePage()),
-                // );
+                _addCardSuccessBottomScreen(context);
               },
             )
           ],
         ),
       )),
     );
+  }
+
+  void _addCardSuccessBottomScreen(context) {
+    var size = MediaQuery.of(context).size;
+
+    showModalBottomSheet(
+        context: context,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10.0),
+                topRight: Radius.circular(10.0),
+                bottomRight: Radius.zero,
+                bottomLeft: Radius.zero)),
+        builder: (BuildContext bc) {
+          return Padding(
+            padding: const EdgeInsets.all(16),
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      topLeft: Radius.circular(20))),
+              height: size.height * 0.35,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(FontAwesomeIcons.times,
+                              color: Colors.black)),
+                    ],
+                  ),
+                  SizedBox(height: size.height * 0.01),
+                  Center(
+                      child: Column(
+                    children: [
+                      Container(
+                        height: size.height * 0.15,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/done.png'),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: size.height * 0.01),
+                      Text(
+                          'You`ve successfully\n'
+                          'added a savings goal',
+                          style: TextStyle(
+                              color: Color(0xff343C6B),
+                              fontSize: size.width * 0.04,
+                              fontWeight: FontWeight.bold)),
+                    ],
+                  )),
+                ],
+              ),
+            ),
+          );
+        });
   }
 }
