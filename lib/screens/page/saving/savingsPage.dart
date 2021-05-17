@@ -1,7 +1,7 @@
-import 'package:bitshore/screens/page/newGoalPage.dart';
+import 'package:bitshore/screens/page/saving/newGoalPage.dart';
 import 'package:flutter/material.dart';
 import 'package:bitshore/models/savingsDetails.dart';
-import 'package:bitshore/screens/page/SavingsDetailPage.dart';
+import 'package:bitshore/screens/page/saving/SavingsDetailPage.dart';
 
 class SavingsPage extends StatefulWidget {
   static String id = 'savingsPage';
@@ -53,9 +53,8 @@ class _SavingsPageState extends State<SavingsPage> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
+                    padding: EdgeInsets.all(size.height * 0.04),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           'Total Savings',
@@ -293,7 +292,7 @@ class _SavingsPageState extends State<SavingsPage> {
                                                                       .color2,
                                                               fontSize:
                                                                   size.width *
-                                                                      0.02,
+                                                                      0.03,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold))),

@@ -1,4 +1,4 @@
-import 'package:bitshore/screens/page/pageNav.dart';
+import 'package:bitshore/screens/page/pages.dart';
 import 'package:bitshore/utils/constant.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';

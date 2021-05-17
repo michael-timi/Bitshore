@@ -1,5 +1,5 @@
-import 'package:bitshore/screens/page/loginPage.dart';
-import 'package:bitshore/screens/page/otpPage.dart';
+import 'package:bitshore/screens/signUp/loginPage.dart';
+import 'package:bitshore/screens/signUp/otpPage.dart';
 import 'package:bitshore/widgets/reusableText.dart';
 import 'package:flutter/material.dart';
 

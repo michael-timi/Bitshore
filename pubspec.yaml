@@ -25,7 +25,18 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: fonts/DMSans-Bold.ttf
+        - asset: fonts/DMSans-BoldItalic.ttf
+        - asset: fonts/DMSans-Italic.ttf
+        - asset: fonts/DMSans-Medium.ttf
+        - asset: fonts/DMSans-MediumItalic.ttf
+        - asset: fonts/DMSans-Regular.ttf
 
   uses-material-design: true
   assets:
     - assets/images/
+

@@ -1,8 +1,8 @@
-import 'package:bitshore/screens/page/bankPage.dart';
-import 'package:bitshore/screens/page/exchangePage.dart';
-import 'package:bitshore/screens/page/homepage_Screen.dart';
-import 'package:bitshore/screens/page/morePage.dart';
-import 'package:bitshore/screens/page/savingsPage.dart';
+import 'package:bitshore/screens/page/bank/bank.dart';
+import 'package:bitshore/screens/page/exchange/exchange.dart';
+import 'package:bitshore/screens/page/home.dart';
+import 'package:bitshore/screens/page/more.dart';
+import 'package:bitshore/screens/page/saving/savingsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -28,6 +28,7 @@ class _BitshorePagesState extends State<BitshorePages> {
     return Scaffold(
         body: _pages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
+          elevation: 0,
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
