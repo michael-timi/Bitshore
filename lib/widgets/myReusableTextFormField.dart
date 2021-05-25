@@ -8,7 +8,8 @@ class ReusableTextField extends StatefulWidget {
       this.onChangedValue,
       this.keyType,
       this.boxWidth,
-      this.controller});
+      this.controller,
+      this.inputLength});
 
   String hintOfTextField;
   Function onChangedValue;
@@ -16,6 +17,7 @@ class ReusableTextField extends StatefulWidget {
   TextInputType keyType;
   double boxWidth;
   TextEditingController controller;
+  int inputLength;
 
   @override
   _ReusableTextFieldState createState() => _ReusableTextFieldState();
@@ -32,6 +34,7 @@ class _ReusableTextFieldState extends State<ReusableTextField> {
         keyboardType: widget.keyType,
         obscureText: widget.hidePassword,
         onChanged: widget.onChangedValue,
+        maxLength: widget.inputLength,
         decoration: InputDecoration(
             alignLabelWithHint: true,
             labelStyle: Theme.of(context).textTheme.caption.copyWith(
