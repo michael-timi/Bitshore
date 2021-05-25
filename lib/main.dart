@@ -2,6 +2,7 @@ import 'package:bitshore/screens/onboarding/onBoardingScreen_four.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_one.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_three.dart';
 import 'package:bitshore/screens/onboarding/onBoardingScreen_two.dart';
+import 'package:bitshore/screens/page/ent_transactionrecord.dart';
 import 'package:bitshore/screens/page/more.dart';
 import 'package:bitshore/screens/signUp/otpPage.dart';
 import 'package:bitshore/screens/signUp/signupPage.dart';
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: createMaterialColor(Color(0xff343C6B)),
           textTheme: GoogleFonts.nunitoTextTheme(Theme.of(context).textTheme),
         ),
-        home: OnBoardingScreenOne(),
+        home: EnterpriseTransactionRecord(),
         routes: {
           OnBoardingScreenOne.id: (context) => OnBoardingScreenOne(),
           OnBoardingScreenTwo.id: (context) => OnBoardingScreenTwo(),
