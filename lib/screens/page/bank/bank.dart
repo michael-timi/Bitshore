@@ -20,7 +20,7 @@ class _BankingPageState extends State<BankingPage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
-    return Scaffold(
+    return Scaffold( 
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(

@@ -72,14 +72,14 @@ class _TransferMoneyState extends State<TransferMoney> {
                     name: 'Beneficiary',
                     cColor: Color(0xffE0E3ED),
                     child: Container(
-                      height: size.height * 0.06,
-                      width: size.height * 0.06,
+                      height: size.height * 0.05,
+                      width: size.height * 0.05,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border:
-                              Border.all(color: Color(0xff003FA4), width: 2)),
+                              Border.all(color: Color(0xff003FA4), width: 1)),
                       child: Icon(FontAwesomeIcons.plus,
-                          color: Color(0xff003FA4), size: size.width * 0.04),
+                          color: Color(0xff003FA4), size: size.width * 0.025),
                     ),
                   ),
                 ],
@@ -248,11 +248,10 @@ class _TransferMoneyState extends State<TransferMoney> {
                       ),
                       SizedBox(height: size.height * 0.01),
                       Text(
-                          'You`ve successfully\n'
-                          'added a savings goal',
+                          'Transfer successful',
                           style: TextStyle(
                               color: Color(0xff343C6B),
-                              fontSize: size.width * 0.04,
+                              fontSize: size.width * 0.05,
                               fontWeight: FontWeight.bold)),
                     ],
                   )),

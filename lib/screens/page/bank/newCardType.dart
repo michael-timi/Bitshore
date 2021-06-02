@@ -13,7 +13,7 @@ class NewCardType extends StatefulWidget {
 }
 
 class _NewCardTypeState extends State<NewCardType> {
-  String valueState, valueCity;
+  String valueState, valueCity, name, phone, aPhone, address;
   List stateList = ['Select state', 'Oyo', 'Osun', 'Lagos'];
   List cityList = ['Select city', 'Ibadan', 'Ile-Ife', 'Osun'];
 
@@ -66,9 +66,13 @@ class _NewCardTypeState extends State<NewCardType> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.01),
-            passwordField(
+            textField(
               hintText: 'Lagbaja Tamedo',
               keyType: TextInputType.name,
+              isHiddenPssword: false,
+              onChangedValue: (value) {
+                name = value;
+              },
             ),
             SizedBox(height: size.height * 0.02),
             Text(
@@ -87,9 +91,13 @@ class _NewCardTypeState extends State<NewCardType> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.01),
-            passwordField(
+            textField(
               hintText: '2348012345678',
-              keyType: TextInputType.phone,
+              keyType: TextInputType.number,
+              isHiddenPssword: false,
+              onChangedValue: (value) {
+                phone = value;
+              },
             ),
             SizedBox(height: size.height * 0.01),
             Text(
@@ -100,9 +108,13 @@ class _NewCardTypeState extends State<NewCardType> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.01),
-            passwordField(
+            textField(
               hintText: '2348012345678',
-              keyType: TextInputType.phone,
+              keyType: TextInputType.number,
+              isHiddenPssword: false,
+              onChangedValue: (value) {
+                aPhone = value;
+              },
             ),
             SizedBox(height: size.height * 0.01),
             Text(
@@ -113,9 +125,13 @@ class _NewCardTypeState extends State<NewCardType> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.01),
-            passwordField(
+            textField(
               hintText: 'Street address',
               keyType: TextInputType.name,
+              isHiddenPssword: false,
+              onChangedValue: (value) {
+                address = value;
+              },
             ),
             SizedBox(height: size.height * 0.02),
             Container(
@@ -235,13 +251,16 @@ class _NewCardTypeState extends State<NewCardType> {
                         ),
                       ),
                       SizedBox(height: size.height * 0.01),
-                      Text(
-                          'You`ve successfully\n'
-                          'added a savings goal',
+                      Text('Request successful',
+                          style: TextStyle(
+                              color: Color(0xff343C6B),
+                              fontSize: size.width * 0.05,
+                              fontWeight: FontWeight.bold)),
+                      Text('Your card will be processed in no time',
                           style: TextStyle(
                               color: Color(0xff343C6B),
                               fontSize: size.width * 0.04,
-                              fontWeight: FontWeight.bold)),
+                              fontWeight: FontWeight.normal)),
                     ],
                   )),
                 ],
