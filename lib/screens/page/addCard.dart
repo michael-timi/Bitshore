@@ -191,6 +191,7 @@ class AddCardScreen extends StatelessWidget {
                                       controller: _cvvController,
                                       hintOfTextField: 'CVV',
                                       hidePassword: false,
+                                      inputLength: 3,
                                     )
                                   ],
                                 ),
